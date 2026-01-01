@@ -1,4 +1,5 @@
-.obsidian/
+**/.obsidian/
 **/_assets/
 _excalidraw/
 _output/
+**/.vscode

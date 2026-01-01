@@ -3,7 +3,7 @@ tags:
   - computer-engineering
   - computer-architecture
 book: Digital Design and Computer Architecture Risc-V Edition
-time: 2025-11-23
+date: 2025-11-23
 ---
 
 ## 1 Introduction

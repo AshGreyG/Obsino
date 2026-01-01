@@ -384,7 +384,7 @@ date: 2025-12-01
     \end{aligned}
     $$
 
-+ [ ] A special case of master theorem, if $f(n) = \Theta(n^{\log_b a}\log^k n)$,
++ [o] A special case of master theorem, if $f(n) = \Theta(n^{\log_b a}\log^k n)$,
   then the master recurrence has solution $T(n) = \Theta(n^{\log_b a}\log^{k+1}n)$.
 
   *Proof :* This proof needs Bernoulli's inequality:
