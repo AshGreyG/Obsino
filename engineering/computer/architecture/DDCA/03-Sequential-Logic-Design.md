@@ -24,14 +24,14 @@ date: 2025-12-14
 
     <div style="display: flex; justify-content: space-between">
       <img
-        src="_assets/image/co-ddca-02-sr-latch.png"
+        src="/_assets/image/co-ddca-02-sr-latch.png"
         style="100%"
       />
     </div>
 
   + [o] Check its truth table:
 
-    ```
+    ``` plaintext
     R  S  Q     Q'
     1  0  0     1
     0  1  1     0
@@ -47,14 +47,14 @@ date: 2025-12-14
 
     <div style="display: flex; justify-content: space-between">
       <img
-        src="_assets/image/co-ddca-02-d-latch.png"
+        src="/_assets/image/co-ddca-02-d-latch.png"
         style="100%"
       />
     </div>
 
   + [o] Check its truth table:
 
-    ```
+    ``` plaintext
     CLK  D  R  S  Q      Q'
     0    x  0  0  Qprev  Q'prev
     1    1  0  1  1      0
@@ -65,7 +65,7 @@ date: 2025-12-14
 
     <div style="display: flex; justify-content: space-between">
       <img
-        src="_assets/image/co-ddca-02-d-latch.png"
+        src="/_assets/image/co-ddca-02-d-latch.png"
         style="100%"
       />
     </div>
@@ -91,7 +91,7 @@ date: 2025-12-14
 
     <div style="display: flex; justify-content: space-between">
       <img
-        src="_assets/image/co-ddca-02-transmission-gate-d-latch.png"
+        src="/_assets/image/co-ddca-02-transmission-gate-d-latch.png"
         style="100%"
       />
     </div>
@@ -100,7 +100,7 @@ date: 2025-12-14
 
     <div style="display: flex; justify-content: space-between">
       <img
-        src="_assets/image/co-ddca-02-transmission-gate-d-flipflop.png"
+        src="/_assets/image/co-ddca-02-transmission-gate-d-flipflop.png"
         style="100%"
       />
     </div>
@@ -185,7 +185,7 @@ date: 2025-12-14
 
     <div style="display: flex; justify-content: space-between">
       <img
-        src="_assets/image/co-ddca-02-timing-setup-constraint.png"
+        src="/_assets/image/co-ddca-02-timing-setup-constraint.png"
         style="100%"
       />
     </div>
@@ -214,7 +214,7 @@ date: 2025-12-14
 
     <div style="display: flex; justify-content: space-between">
       <img
-        src="_assets/image/co-ddca-02-timing-hold-constraint.png"
+        src="/_assets/image/co-ddca-02-timing-hold-constraint.png"
         style="100%"
       />
     </div>
@@ -272,7 +272,7 @@ date: 2025-12-14
 
   <div style="display: flex; justify-content: space-between">
     <img
-      src="_assets/image/co-ddca-02-synchronizer.png"
+      src="/_assets/image/co-ddca-02-synchronizer.png"
       style="100%"
     />
   </div>

@@ -133,11 +133,11 @@ date: 2025-11-23
   + [i] tristate buffer
     <div style="display: flex; justify-content: space-between">
       <img
-        src="_assets/image/co-ddca-01-tristate-buffer.png"
+        src="/_assets/image/co-ddca-01-tristate-buffer.png"
         style="width:40%"
       />
       <img
-        src="_assets/image/co-ddca-01-tristate-buffer-low.png"
+        src="/_assets/image/co-ddca-01-tristate-buffer-low.png"
         style="width:40%"
       />
     </div>
@@ -171,7 +171,7 @@ date: 2025-11-23
 
     <div style="display: flex; align-items: center; justify-content: center;">
       <img
-        src="_assets/image/co-ddca-01-karnaugh-map.png"
+        src="/_assets/image/co-ddca-01-karnaugh-map.png"
         style="width:40%"
       />
     </div>
@@ -185,7 +185,7 @@ date: 2025-11-23
 
     <div style="display: flex; align-items: center; justify-content: center;">
       <img
-        src="_assets/image/co-ddca-01-multiplexer.png"
+        src="/_assets/image/co-ddca-01-multiplexer.png"
         style="width:40%"
       />
     </div>
@@ -201,7 +201,7 @@ date: 2025-11-23
 
     <div style="display: flex; align-items: center; justify-content: center;">
       <img
-        src="_assets/image/co-ddca-01-decoder.png"
+        src="/_assets/image/co-ddca-01-decoder.png"
         style="width:40%"
       />
     </div>
@@ -219,7 +219,7 @@ date: 2025-11-23
 
   <div style="display: flex; align-items: center; justify-content: center;">
     <img
-      src="_assets/image/co-ddca-01-delay.png"
+      src="/_assets/image/co-ddca-01-delay.png"
       style="width:40%"
     />
   </div>
