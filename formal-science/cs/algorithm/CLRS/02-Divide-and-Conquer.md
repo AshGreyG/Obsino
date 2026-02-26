@@ -219,7 +219,7 @@ date: 2025-12-01
   
       <div style="display: flex; justify-content: space-between">
         <img
-          src="_assets/image/algo-clrs-01-recursion-tree.png"
+          src="/_assets/image/algo-clrs-01-recursion-tree.png"
         />
       </div>
 
