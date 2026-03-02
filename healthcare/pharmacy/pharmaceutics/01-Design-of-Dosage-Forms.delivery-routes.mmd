@@ -1,0 +1,69 @@
+flowchart LR
+  subgraph administrationRoutes [administration routes]
+    oral("oral")
+    rectal("rectal")
+    vaginal("vaginal")
+    topical("topical")
+    parenteral("parenteral")
+    pulmonary("pulmonary")
+    nasal("nasal")
+    ocular("ocular")
+    otic("otic")
+  end
+
+  subgraph dosageForms [dosage forms]
+    solution("solution")
+    syrup("syrup")
+    suspension("suspension")
+    emulsion("emulsion")
+    gel("gel")
+    powder("powder")
+    granule("granule")
+    capsule("capsule")
+    tablet("tablet")
+    suppository("suppository")
+    ointment("ointment")
+    cream("cream")
+    foam("foam")
+    tampon("tampon")
+    pessary("pessary")
+    film("film")
+    ring("ring")
+  end
+
+  %% Oral dosage forms
+  solution   -.Paracetamol Oral Solution      .-> oral
+  syrup      -.Ibuprofen Oral Syrups          .-> oral
+  suspension -.Ferrous Sulfate Oral Suspension.-> oral
+  emulsion   -.Vitamin A and D Oral Emulsion  .-> oral
+  gel        -.Hydrotalcite Oral Gel          .-> oral
+  powder     -.Compound Pancreatin Powder     .-> oral
+  granule    -.Amoxicillin Granules           .-> oral
+  capsule    -.Amoxicillin Capsules           .-> oral
+  tablet     -.Aspirin Tablets                .-> oral
+
+  %% Rectal dosage forms
+  suppository -.Paracetamol Suppositories              .-> rectal
+  capsule     -.Glycerin Rectal Capsules               .-> rectal
+  ointment    -.Nitroglycerin Ointment                 .-> rectal
+  cream       -.Hydrocortisone Rectal Cream            .-> rectal
+  powder      -.Potassium Permanganate Rectal Powder   .-> rectal
+  solution    -.Metronidazole Rectal Perfusion Solution.-> rectal
+  foam        -.Chlorhexidine Acetate Hemorrhoid Foam  .-> rectal
+  tampon      -.Absorbable Hemostatic Rectal Tampon    .-> rectal
+
+  %% Vaginal dosage forms
+  pessary    -.Clotrimazole Pessaries                      .-> vaginal
+  cream      -.Miconazole Nitrate Vaginal Cream            .-> vaginal
+  gel        -.Recombinant Human Interferon α2b Vaginal Gel.-> vaginal
+  film       -.Contraceptive Vaginal Film                  .-> vaginal
+  ring       -.Contraceptive Vaginal Ring                  .-> vaginal
+  solution   -.Vaginal Douche Solution                     .-> vaginal
+  suspension -.Clotrimazole Vaginal Suspension             .-> vaginal
+  emulsion   -.Estriol Vaginal Emulsion                    .-> vaginal
+  foam       -.Tinidazole Vaginal Foam                     .-> vaginal
+  tampon     -.Menstrual Tampon                            .-> vaginal
+
+  %% Topical dosage foams
+  ointment -.Mupriocin Ointment  .-> topical
+  cream    -.Hydrocortisone Cream.-> topical
