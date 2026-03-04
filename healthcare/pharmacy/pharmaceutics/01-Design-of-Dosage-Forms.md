@@ -7,7 +7,7 @@ tags:
 date: 2026-02-28
 ---
 
-# 1 Concepts
+## 1 Concepts
 
 - [ ] Pharmaceutics is the science of preparation of drugs, dosage forms, and
       drug delivery systems, taking into account the **pharmacokinetics** and
@@ -37,7 +37,7 @@ date: 2026-02-28
 
 - [ ] [Delivery routes in diagram](./01-Design-of-Dosage-Forms.delivery-routes.mmd)
 
-# 2 Mission
+## 2 Mission
 
 - [ ] Basic theories
 
@@ -49,6 +49,12 @@ date: 2026-02-28
   - tablet formation
   - kinetics of drug release
   - kinetics of product stability
+  - intelligent release
+  - biopharmaceutics
+
+- [ ] Technologies
+
+  - **micronization** (微粒化)
 
 <!--
 
