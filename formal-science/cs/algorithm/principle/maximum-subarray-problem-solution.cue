@@ -5,7 +5,7 @@ package principle
 import "formal-science.cs.algorithm/desire"
 
 maximum_subarray_problem_solution: {
-	content: """
+  content: """
     - Principle: suppose we want to find a maximum subarray of the subarray
       $A["low"..."high"]$, divide-and-conquer suggests that we divide the subarray
       into two subarrays of as equal size as possible. We can find the midpoint
@@ -42,9 +42,9 @@ maximum_subarray_problem_solution: {
       $ T(n) & = 2T(n / 2) + Θ(n) + Θ(1) + Θ(1) \\
           & = 2T(n / 2) + Θ(n) $
   """
-	code_find_max_crossing_subarray: _ @embed(file=src/find_max_crossing_subarray.py,type=text)
-	code_find_maximum_subarray:      _ @embed(file=src/find_maximum_subarray.py,type=text)
-	from: [
-		desire.maximum_subarray_problem.content,
-	]
+  code_find_max_crossing_subarray: _ @embed(file=src/find_max_crossing_subarray.py,type=text)
+  code_find_maximum_subarray:      _ @embed(file=src/find_maximum_subarray.py,type=text)
+  from: [
+    desire.maximum_subarray_problem.content,
+  ]
 }

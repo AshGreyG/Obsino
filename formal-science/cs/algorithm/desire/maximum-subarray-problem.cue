@@ -5,5 +5,9 @@ maximum_subarray_problem: {
     Consider an array $A[0..n - 1]$ whose elements may be negative, find its
     subarray $A[p..q]$ to maximize $∑_(i=p)^q A[i]$, and you cannot use methods
     whose time complexity is $O(n²)$
-  """#
+  """#,
+  driven: [
+    "principle.maximum_subarray_problem_solution",
+    "concept.divide_and_conquer"
+  ]
 }
