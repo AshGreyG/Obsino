@@ -6,4 +6,8 @@ surfactant: {
     interfacial tension between two liquids, a liquid and a gas or a liquid and
     a solid. The word "surfactant" is a blend of "surface-active agent".
   """#
+  related: [
+    "concept/solubilizer",
+    "concept/solubilizate"
+  ]
 }
