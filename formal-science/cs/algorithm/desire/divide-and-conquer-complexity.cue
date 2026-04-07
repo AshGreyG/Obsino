@@ -1,9 +1,6 @@
 package desire
 
-import "formal-science.cs.algorithm/concept"
-
 divide_and_conquer_complexity: {
-  from: concept.divide_and_conquer.content
   content: """
     All divide-and-conquer algorithm has a common format of recurrence relation
     for the time complexity:
