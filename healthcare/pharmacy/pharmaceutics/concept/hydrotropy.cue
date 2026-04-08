@@ -4,7 +4,7 @@ hydrotropy: {
   content: #"""
     *Hydrotropy* (also called *cosolubilization*) refers to the process of
     increasing the solubility of a poorly soluble drug into a solvent by adding
-    a third substances that forms a soluble complex, double salt, or association
+    a third substance that forms a soluble complex, double salt, or association
     with the drug.
 
     This third substance is called *hydrotropic agent*. Hydrotropic agents are
