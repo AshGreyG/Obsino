@@ -31,7 +31,12 @@ single-export:
 	@echo "✅ successfully generate the pdf of content"
 
 clean:
-	@rm -f *.pdf *.typ && echo "✅ clean successfully" || echo "❌ failed to clean because there are no matched files"
+	@if ls *.pdf *.typ >/dev/null 2>&1; then \
+		rm -f *.pdf *.typ; \
+		echo "✅ clean successfully"; \
+	else \
+		echo "❌ failed to clean because there are no matched files"; \
+	fi
 
 help:
 	@echo "Available subcommands: "
