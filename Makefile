@@ -26,12 +26,6 @@ single-export:
 	@echo "→ Starting to process single CUE file $(FILE)"
 	@cue export $(FILE) --out yaml | yq -r ".$(CLASS).content" > $(TEMP)
 
-	@# sed processes these cases:
-	@# 1. After yq processing the cue export, there are "s at the beginning and
-	@#    the end of the content;
-	@# 2. "" in math equation will be escaped as \" so typst cannot deal with
-	@#    them correctly.
-
 	@typst compile $(TEMP) $(RAW_CLASS).pdf
 	@rm -f $(TEMP)
 	@echo "✅ successfully generate the pdf of content"
