@@ -3,3 +3,6 @@
 _excalidraw/
 _output/
 **/.vscode
+
+**/*.pdf
+**/__pycache__
