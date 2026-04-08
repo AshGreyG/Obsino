@@ -8,7 +8,7 @@ CLASS := $(subst -,_,$(RAW_CLASS))
 
 TEMP = temp.typ
 
-.PHONY = single-export package-export clean help
+.PHONY: single-export package-export clean help
 
 package-export:
 	@echo "→ Starting to process package $(PACKAGE) and single property $(TARGET) in it"
