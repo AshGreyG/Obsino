@@ -7,8 +7,8 @@ peptide_bond: {
     and negative electrical charges*). 
 
     The peptide bond has a partial *double-bond* character that keeps the entire
-    six-atom peptide group in a rigid planar configuration (in same plane). So
-    the poly peptide is made up of a series of planes linked at $α$ carbons.
+    six-atom peptide group in a rigid planar configuration (in same plane). Thus
+    the polypeptide backbone is made up of a series of planes linked at the $α$ carbons.
 
     The $"N"-"C"_α$ and $"C"_α-"C"$ bonds designated as $ϕ$ and $ψ$, respectively,
     can rotate. The peptide $"C"-"N"$ bond is not free to rotate. Other single
