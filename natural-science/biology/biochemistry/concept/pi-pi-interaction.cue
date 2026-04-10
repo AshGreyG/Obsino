@@ -19,7 +19,7 @@ pi_pi_interaction: {
       The two aromatic planes are parallel, with a dihedral angle near $0°$.
       Their centers overlap vertically.
 
-      This geometry is *energetically unflavorable* in most cases because direct
+      This geometry is *energetically unfavorable* in most cases because direct
       face-to-face alignment causes strong *electrostatic repulsion* between the
       electron-rich $π$ systems of the two rings. For this reason, perfectly
       parallel face-centered stacking is *rare in proteins*.
