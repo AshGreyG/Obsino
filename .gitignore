@@ -6,3 +6,5 @@ _output/
 
 **/*.pdf
 **/__pycache__
+**/.venv
+**/.pdb
