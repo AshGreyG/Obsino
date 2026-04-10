@@ -18,7 +18,7 @@ conformation: {
 
     - Van der Waals interactions:
 
-      Medium-range week attraction between all atoms contributes significantly
+      Medium-range weak attraction between all atoms contributes significantly
       to the stability in the interior of the protein.
 
     - Electrostatic interactions:
