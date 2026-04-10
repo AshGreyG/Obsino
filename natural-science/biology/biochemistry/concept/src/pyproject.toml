@@ -1,0 +1,8 @@
+[project]
+name = "src"
+version = "0.1.0"
+description = "This is a source directory of some biochemistry scripts"
+requires-python = ">=3.14"
+dependencies = [
+    "ramachandraw>=1.1.0",
+]
