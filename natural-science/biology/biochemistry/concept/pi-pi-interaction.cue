@@ -2,8 +2,8 @@ package concept
 
 pi_pi_interaction: {
   content: """
-    *$π$-$π$ interaction* (also called $π$-$π$ stacking) are noncovalent
-    molecular forces that occur between the *delocalized $π$-electron systems*
+    *$π$-$π$ interaction* (also called $π$-$π$ stacking) is a noncovalent
+    molecular force that occurs between the *delocalized $π$-electron systems*
     of two aromatic rings. They are a subtype of van der Waals attraction,
     driven primarily by *London dispersion forces* and electrostatic quadrupole
     interactions.
