@@ -17,7 +17,7 @@ anion_pi_interaction: {
     can form an anion-$π$ interaction with the *electron-deficient isoalloxazine
     ring of FAD (flavin adenine dinucleotide, 黄素腺嘌呤二核苷酸)*. This interaction
     helps anchor the cofactor in its binding pocket, stabilizes the protein's
-    functional conformation, and molecules electron transfer during catalysis.
+    functional conformation, and modulates electron transfer during catalysis.
 
     // Glutamate  (Glu, E)    C(CC(=O)O)[C@@H](C(=O)O)N
     // Aspartate  (Asp, D)    C([C@@H](C(=O)O)N)C(=O)O
