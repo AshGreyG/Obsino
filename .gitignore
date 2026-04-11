@@ -8,3 +8,4 @@ _output/
 **/__pycache__
 **/.venv
 **/.pdb
+**/build
