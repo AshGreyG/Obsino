@@ -85,19 +85,21 @@ handbook:
 			echo "== $$(title_func $$(basename $$file | sed -e "s/.cue//g"))" >> $(TEMP); \
 			\
 			# Write file reference link \
-			echo "<$$(echo $$file | sed -e 's/\//-/g' -e 's/.cue//g')>" >> $(TEMP); \
+			reference="<$$(echo $$file | sed -e 's/\//-/g' -e 's/.cue//g')>"; \
+			echo $$reference >> $(TEMP); \
 			\
 			# Export file content and extract content property \
 			cue export $(PACKAGE)/$$dir --out yaml | yq -r ".$$(basename $$file | sed -e 's/.cue//g' -e 's/-/_/g').content" >> $(TEMP); \
 			\
 			# Extract related knowledge links if they exist \
-			related=$$(cue export $(PACKAGE)/$$dir --out yaml | yq -r ".$$(basename $$file | sed -e 's/.cue//g' -e 's/-/_/g').related"); \
+			related=$$(cue export $(PACKAGE)/$$dir --out json | yq -r ".$$(basename $$file | sed -e 's/.cue//g' -e 's/-/_/g').related"); \
 			if [[ ! $$related =~ "null" ]]; then \
 				echo -e "\nRelated Knowledge: " >> $(TEMP); \
 				tmp=$${related#[}; \
 				tmp=$${tmp%]}; \
 				for label in $$(echo "$$tmp" | tr "," " "); do \
-					echo "- #link(<$$(echo $$label | sed -e 's/\//-/g' -e 's/\"//g')>)[#text(blue)[$$(echo $$label | sed -e 's/\"//g')]]" >> $(TEMP); \
+					link="- #link(<$$(echo $$label | sed -e 's/\//-/g' -e 's/\"//g')>)[#text(blue)[$$(echo $$label | sed -e 's/\"//g')]]"; \
+					echo $$link >> $(TEMP); \
 				done; \
 			fi; \
 		done; \
@@ -116,8 +118,8 @@ handbook:
 # Clean up generated PDF files
 clean:
 	@echo "→ Cleaning up generated PDF files"
-	@if ls *.pdf >/dev/null 2>&1; then \
-		rm -f *.pdf; \
+	@if ls *.pdf >/dev/null 2>&1 || ls *.typ >/dev/null 2>&1; then \
+		rm -f *.pdf *.typ; \
 		echo "✅ clean successfully"; \
 	else \
 		echo "❌ failed to clean because there are no matched files"; \
