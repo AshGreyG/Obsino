@@ -5,7 +5,7 @@ hlb: {
     HLB is an acronym for Hydrophilic-Lipophilic Balance, a numerical scale to
     characterize surfactants by their relative affinity for water vs. oil.
 
-    There is a experience formula to calculate the magnitude of HLB:
+    There is a empirical formula to calculate the magnitude of HLB:
 
     $ "HLB" = (M_("hydro"))/(M_("hydro") + M_("lipo")) × 20 $
 
@@ -15,7 +15,7 @@ hlb: {
 
     - The higher the HLB value, it's more appropriate for O/W system (oil in
       water system, 水包油);
-    - The lower  the HLB value, it's more appropriate for W/O system (water in'
+    - The lower  the HLB value, it's more appropriate for W/O system (water in
       oil system, 油包水).
   """#
   related: [
