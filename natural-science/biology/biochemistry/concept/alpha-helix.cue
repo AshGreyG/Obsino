@@ -1,7 +1,7 @@
 package concept
 
 alpha_helix: {
-  content: #"""
+  content: """
     The backbone is more compact with the $ψ$ dihedral in the range ($-70° < ψ <
     0°$), helical backbone is held together by *hydrogen bonds* between the
     nearby backbone amides, stabilized by the hydrogen bond between the C=O and

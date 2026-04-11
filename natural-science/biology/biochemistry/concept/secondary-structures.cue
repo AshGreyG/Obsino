@@ -1,5 +1,7 @@
 package concept
 
+import "natural-science.biology.biochemistry/phenomenon"
+
 secondary_structures: {
   content: #"""
     Secondary structure refers to a local spatial arrangement of the main-chain
@@ -12,4 +14,7 @@ secondary_structures: {
       segments that may not be nearby;
     - random coil: irregular arrangement of the polypeptide chain.
   """#
+  from: [
+    phenomenon.floppy_string_protein.content
+  ]
 }
