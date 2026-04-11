@@ -16,6 +16,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Set current date
+        id: date
+        # We store the date in the GITHUB_OUTPUT buffer
+        run: echo "now=$(date +'%Y-%m-%d %H:%M')" >> $GITHUB_OUTPUT
+
       - name: Install Nix
         uses: cachix/install-nix-action@v25
         with:
@@ -30,7 +35,10 @@ jobs:
         with:
           tag_name: nightly
           name: "Nightly Build (Latest)"
-          body: "Automated build of algorithm handbooks. Updated on $(date +'%Y-%m-%d %H:%M')"
+          body: |
+            🔮 **Digital Knowledge Tree Auto-Build**
+            **Last Updated:** ${{ steps.date.outputs.now }}
+            **Commit:** ${{ github.sha }}
           prerelease: true
           # This grabs every PDF in your build folder
           files: build/*.pdf 
