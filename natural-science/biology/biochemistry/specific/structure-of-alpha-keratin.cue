@@ -31,4 +31,7 @@ structure_of_alpha_keratin: {
       of the cytoskeleton in eukaryotic cells. They are rope-like fibers which is
       intermediate between the thinner microfilaments and thicker microtubules.
   """#
+  related: [
+    "concept/tertiary-structure"
+  ]
 }

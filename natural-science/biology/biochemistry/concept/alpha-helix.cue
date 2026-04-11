@@ -80,4 +80,8 @@ alpha_helix: {
       ]
     ]
   """#
+  related: [
+    "concept/secondary-structure",
+    "concept/beta-conformation"
+  ]
 }
