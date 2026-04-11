@@ -8,4 +8,7 @@ formula: {
     Formula is a mixture or a structure such as a capsule, a pill, a tablet, or
     an emulsion, prepared according to a specific procedure.
   """#
+  related: [
+    "concept/dosage-form"
+  ]
 }
