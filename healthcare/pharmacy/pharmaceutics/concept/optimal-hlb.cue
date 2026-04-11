@@ -9,4 +9,7 @@ optimal_hlb: {
     Every oil or oily phase requires a certain HLB value to form a stable
     emulsion. That ideal value is called its *optimal HLB*.
   """#
+  related: [
+    "concept/hlb"
+  ]
 }
