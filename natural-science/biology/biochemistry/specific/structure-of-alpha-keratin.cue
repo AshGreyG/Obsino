@@ -24,11 +24,11 @@ structure_of_alpha_keratin: {
       assembly of soluble keratin tetramers* in a longitudinal fashion;
 
     - *Protofibril* (原纤丝, diameter $3-4 "nm"$): consisting of *four
-      protofilaments associated laterally* It is a longer, thicker rope-like
+      protofilaments associated laterally*. It is a longer, thicker rope-like
       structure;
 
     - *Intermediate filament* (IF, 中间丝, diameter $10 "nm"$): major component
-      of the cytoskeleton in eukaryotic cells. They are rope-like fibers which is
+      of the cytoskeleton in eukaryotic cells. They are rope-like fibers which are
       intermediate between the thinner microfilaments and thicker microtubules.
   """#
   related: [

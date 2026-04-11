@@ -22,7 +22,7 @@ alpha_helix: {
 
     Not all polypeptide sequences adopt $α$-helical structures.
     
-    - Small hydrophobic residues residues such as Alanine (Ala, A) and Leucine
+    - Small hydrophobic residues such as Alanine (Ala, A) and Leucine
       (Leu, L) are strong helix formers;
     - Proline (Pro, P) acts as a helix breaker because the rotation around the
       $"N"-"C"_α$ bond is impossible;
@@ -41,7 +41,7 @@ alpha_helix: {
     amino terminus of the helical segment to interact with the positive charge
     of the helix dipole.
 
-    The two helices wind around one another to form a superhelix. Such structure
+    The two helices wind around one another to form a superhelix. Such structures
     are found in many proteins including *keratin* (角蛋白) in hair, quills and
     horns.
   """

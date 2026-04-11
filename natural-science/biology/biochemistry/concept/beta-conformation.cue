@@ -10,7 +10,7 @@ beta_conformation: {
     sheet alternating in up and down direction.
 
     Parallel or antiparallel orientations of two chains within a sheet are
-    both possible. But the antiparallel orientation is more significantly more
+    both possible. But the antiparallel orientation is significantly more
     stable than the parallel orientation.
 
     - Antiparallel $β$-sheets: The strands run in opposite directions (H-N-C=O
