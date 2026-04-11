@@ -39,9 +39,9 @@
               pushd "$dir" > /dev/null
 
               echo "    → Running 'make clean' ..."
-              make clean
+              make clean > /dev/null
               echo "    → Running 'make handbook' ..."
-              if make handbook; then
+              if make handbook >/dev/null 2>&1; then
                 # Assuming the compiled book is a PDF, we copy any pdf found in
                 # that directory to our external build folder.
                 find . -maxdepth 1 -name "*.pdf" -exec cp {} "$BUILD_DIR/" \;
