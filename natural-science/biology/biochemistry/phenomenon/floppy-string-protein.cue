@@ -15,4 +15,7 @@ floppy_string_protein: {
     side chains and looking at the repeating N-H and C=O groups, scientists
     discovered the two universal solutions to the stability problem.
   """#
+  related: [
+    "concept/secondary-structure"
+  ]
 }

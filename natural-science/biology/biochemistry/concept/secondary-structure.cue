@@ -1,6 +1,6 @@
 package concept
 
-secondary_structures: {
+secondary_structure: {
   content: #"""
     Secondary structure refers to a local spatial arrangement of the main-chain
     atoms in a selected segment of a polypeptide chain. The organization around
@@ -12,4 +12,9 @@ secondary_structures: {
       segments that may not be nearby;
     - random coil: irregular arrangement of the polypeptide chain.
   """#
+  related: [
+    "phenomenon/floppy-string-protein",
+    "concept/alpha-helix",
+    "concept/beta-conformation"
+  ]
 }

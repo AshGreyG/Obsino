@@ -75,4 +75,8 @@ cation_pi_interaction: {
       ]
     ]
   """#
+  related: [
+    "concept/anion-pi-interaction",
+    "concept/pi-pi-interaction"
+  ]
 }
