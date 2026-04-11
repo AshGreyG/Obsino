@@ -56,7 +56,7 @@ handbook:
 	\
 	# 1. Get all directories, filtering out ignored ones \
 	i=0; \
-  t="ABCDEFGHIJKLMNOPQRSTUVWXYZ"; \
+	t="ABCDEFGHIJKLMNOPQRSTUVWXYZ"; \
 	for dir in $$(ls -d */ | cut -f1 -d"/"); do \
 		if echo "$(IGNORE_DIRS)" | grep -qw "$$dir"; then continue; fi; \
 		\
