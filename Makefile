@@ -105,11 +105,11 @@ handbook:
 	done; \
 	\
 	# Format and compile the handbook
-	@echo "  Formatting handbook with typstyle"
+	@echo "→ Formatting handbook with typstyle"
 	@typstyle -i $(TEMP);
-	@echo "  Compiling handbook to PDF"
+	@echo "→ Compiling handbook to PDF"
 	@typst compile $(TEMP) handbook-$(HANDBOOK_POSTFIX).pdf;
-	@echo "  Cleaning up temporary files"
+	@echo "→ Cleaning up temporary files"
 	@rm -rf $(TEMP);
 	@echo "✅ successfully generate the pdf of content"
 
