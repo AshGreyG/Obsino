@@ -1,0 +1,40 @@
+name: "Nightly Build"
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '0 0 * * *' # Optional: Runs every night at midnight UTC
+
+jobs:
+  nightly-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v25
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build Handbooks
+        # This runs your custom Nix command which populates ./build
+        run: nix run .#handbook
+
+      - name: Create Nightly Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: nightly
+          name: "Nightly Build (Latest)"
+          body: "Automated build of algorithm handbooks. Updated on $(date +'%Y-%m-%d %H:%M')"
+          prerelease: true
+          # This grabs every PDF in your build folder
+          files: build/*.pdf 
+          # Overwrites the existing 'nightly' tag assets
+          make_latest: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
