@@ -1,0 +1,22 @@
+WORD	POS	MEANING	FAMILY	CHINESE MEANING
+gambler	cn.	a person who gambles	gamble, v.	赌徒	deck#2	due@2026-04-13 08:46:18
+stake	cn.	a sum of money or something else of value gambled on the outcome of a risky game or venture	staker, cn, a person who stakes something, often used in gambling or finance	赌注	deck#2	due@2026-04-13 08:45:40
+marvel	v.	be filled with wonder and surprise. cn. a wonderful or surprising person or thing	marvelous, adj., causing great wonder, extraordinary or extremely good; marvelousness, un., the quality of being marvelous or wonderful	惊讶, 惊愕	deck#2	due@2026-04-13 08:46:15
+pulley	cn.	a wheel with a grooved rim around which a cord passes. It acts to change the direction of a force applied to the cord and is chiefly used to raise heavy weights	hoist with a pulley	滑轮	deck#2	due@2026-04-13 08:46:03
+elastic	adj.	able to resume its normal shape spontaneously after contraction, dilatation or distortion	inelastic, adj, opposite to elastic	有弹性的	deck#2	due@2026-04-13 08:46:35
+tacit	adj.	understood or implied without being states	taciturn, adj, reserved or uncommunicative in speech; saying little	默契的, 心照不宣的	deck#2	due@2026-04-13 08:45:01
+lateral	adj.	of, at, toward or from the side or sides	bilateral, adj, involving two sides or parties, affecting both sides; unilateral; multilateral	侧向的	deck#2	due@2026-04-13 08:45:57
+filament	cn.	a slender threadlike object or fiber, especially one found in animal or plant structures	filamentous, adj, having the form of a filament	丝状物	deck#2	due@2026-04-13 08:46:47
+disparity	cn.	a difference in level or treatment, especially one that is seen as unfair	disparate, adj, essentially different in kind, not allowing comparison	差距	deck#2	due@2026-04-13 08:45:49
+attenuate	v.	reduce the force, effect or value	attenuated, adj, having been reduced in force, effect, or value	衰减	deck#2	due@2026-04-13 08:45:21
+grind	v.	reduce something to small particles or powder by crushing it	grinding, adj, oppressive and seemingly without end	研磨
+oppressive	adj.	unjustly inflicting hardship and constraint, especially on a minority or other subordinate group	oppress, v, keep someone in subservience and hardship	压抑的
+unjust	adj.	not based on or behaving according to what is morally right and fair	just, based on or behaving according to what is morally right and fair	不公正的
+odor	cn.	a distinctive smell, especially an unpleasant one	odorous, adj, having or giving off a smell	臭味
+irritation	cn.	the state of feeling annoyed, impatient, or slightly angry	irritate, make someone annoyed, impatient or angry	刺激, 激怒
+evaporate	vt.	turn from liquid into vapor	evaporation, un, the process of turning from liquid into vapor; related to vapor	蒸发
+
+#--decks immediate,daily,weekly,monthly,quarterly,yearly
+#--intervals 0,1440,10080,43200,129600,518400
+#--showcolumns WORD
+#--showcolumns POS,MEANING,FAMILY,CHINESE MEANING
