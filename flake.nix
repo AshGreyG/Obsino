@@ -17,10 +17,10 @@
       packages = forAllSystems ({ pkgs }: {
         handbook = pkgs.writeShellApplication {
           name = "handbook";
-          runtimeInputs = [ pkgs.cue pkgs.yq-go pkgs.typst pkgs.typstyle pkgs.source-han-sans pkgs.source-han-serif ];
+          runtimeInputs = [ pkgs.cue pkgs.yq-go pkgs.typst pkgs.typstyle pkgs.noto-fonts-cjk-serif ];
           text = ''
             # Tell Typst where Nix installed the fonts
-            export TYPST_FONT_PATHS="${pkgs.source-han-sans}/share/fonts/opentype/source-han-sans:${pkgs.source-han-serif}/share/fonts/opentype/source-han-serif"
+            export TYPST_FONT_PATHS="${pkgs.noto-fonts-cjk-serif}/share/fonts/opentype/noto-fonts-cjk-serif"
 
             # Define workspace root (relative to where flake is)
             WORKSPACE_ROOT=$(pwd)
