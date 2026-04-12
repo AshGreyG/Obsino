@@ -1,4 +1,4 @@
-WORD	POS	MEANING	FAMILY	CHINESE MEANING
+WORD	POS	MEANING	FAMILY	CHINESE MEANING	FREQUENCY	NEXT
 gambler	cn.	a person who gambles	gamble, v.	赌徒	deck#2	due@2026-04-13 08:46:18
 stake	cn.	a sum of money or something else of value gambled on the outcome of a risky game or venture	staker, cn, a person who stakes something, often used in gambling or finance	赌注	deck#2	due@2026-04-13 08:45:40
 marvel	v.	be filled with wonder and surprise. cn. a wonderful or surprising person or thing	marvelous, adj., causing great wonder, extraordinary or extremely good; marvelousness, un., the quality of being marvelous or wonderful	惊讶, 惊愕	deck#2	due@2026-04-13 08:46:15

@@ -1,5 +1,5 @@
-WORD	POS	MEANING	FAMILY
-dosage	un.	the size of frequency of a dose of a medicine or drug	dose, cn, a quantity of a medicine or drug taken or recommended to be taken at a particular time
-excipient	cn.	an inactive substance that serves as the vehicle or medium for a drug or other active substance	excipiential, adj. relating to or acting as an excipient
-therapeutic	adj.	relating to the healing of disease	therapeutics, un, the branch of medicine that deals with the treatment of diseases
-contamination	un.	the action of state of making or being made impure by polluting or poisoning	contaminate, vt, pollute, make something no longer clean
+WORD	POS	MEANING	FAMILY	CHINESE MEANING	FREQUENCY	NEXT
+dosage	un.	the size of frequency of a dose of a medicine or drug	dose, cn, a quantity of a medicine or drug taken or recommended to be taken at a particular time	剂型
+excipient	cn.	an inactive substance that serves as the vehicle or medium for a drug or other active substance	excipiential, adj. relating to or acting as an excipient	辅料
+therapeutic	adj.	relating to the healing of disease	therapeutics, un, the branch of medicine that deals with the treatment of diseases	临床的, 治疗的
+contamination	un.	the action of state of making or being made impure by polluting or poisoning	contaminate, vt, pollute, make something no longer clean	污染
