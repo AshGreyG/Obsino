@@ -30,6 +30,9 @@ structure_of_alpha_keratin: {
     - *Intermediate filament* (IF, 中间丝, diameter $10 "nm"$): major component
       of the cytoskeleton in eukaryotic cells. They are rope-like fibers which are
       intermediate between the thinner microfilaments and thicker microtubules.
+
+    The stretchability of $α$-keratins and their numerous disulfide cross-linkages
+    are the basis of permanent waving.
   """#
   related: [
     "concept/tertiary-structure"
