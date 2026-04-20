@@ -16,7 +16,7 @@ exp_restriction_enzyme_digestion: {
         we run in the first or last lane of our agarose gel to compare against
         our experimental samples);
 
-      - *ExoRI* (restriction enzyme cutting site is `G'AATTC`);
+      - *EcoRI* (restriction enzyme cutting site is `G'AATTC`);
 
       - *XhoI* (restriction enzyme cutting site is `C'TCGAG`);
 

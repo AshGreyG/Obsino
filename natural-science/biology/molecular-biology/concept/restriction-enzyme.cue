@@ -16,10 +16,10 @@ restriction_enzyme: {
     enzymes *selectively cut up foreign DNA* in a process called *restriction
     digestion*; meanwhile, host DNA is protected by a modification enzyme (
     a methyltransferase) that modifies the prokaryotic DNA and blocks cleavage.
-    Together these two process form the restriction modification system.
+    Together these two processes form the restriction modification system.
 
     Different restriction enzymes acting on different recognition sites produce
-    different different DNA fragments.
+    different DNA fragments.
 
     Restriction enzymes recognize a specific sequence of nucleotides and produce
     a double-strand cut in the DNA. The recognition sequences can also be
@@ -44,7 +44,7 @@ restriction_enzyme: {
     as *isoschizomers*. Different enzymes that recognize the same location but
     cut at a different position are known as *neoschizomers*. Different restriction
     enzymes recognize slightly different sequence but generate the same sticky
-    end (cohesive end) are called *isocaudomer*.
+    end (cohesive end) are called *isocaudomers*.
 
     Naturally occurring restriction endonucleases are categorized into five
     groups (Types I, II, III, IV and V) based on
@@ -55,7 +55,7 @@ restriction_enzyme: {
     - The position of their DNA cleavage site relative to the target sequence.
 
     All types of enzymes recognize specific short DNA sequences and carry out
-    the endonucleoytic cleavage of DNA to give specific fragments with terminal
+    the endonucleolytic cleavage of DNA to give specific fragments with terminal
     5'-phosphates.
 
     1. Type I enzymes cleave at sites remote from a recognition site; require
@@ -93,7 +93,7 @@ restriction_enzyme: {
     3' ... C C T A G G ... 5'        3' ... C C T A G 5'      3' G ... 5'
     ```
 
-    Enzyme nonmenclature of restriction endonuclease: the first one letter
+    Enzyme nomenclature of restriction endonuclease: the first one letter
     represents the Species such as Eco represents *Escherichia coli*. One
     English letter is used to represent the strain. For example, R represents 
     Escherichia coli RY13 strain. If there are several different kinds of

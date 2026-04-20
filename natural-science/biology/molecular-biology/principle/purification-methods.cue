@@ -29,7 +29,7 @@ purification_methods: {
       then eluted with low-salt buffer or water. Fast, easy and suitable for PCR
       purification, gel extraction and plasmid miniprep;
 
-    - *Ethanol precipitation*: The classic methods for concentrating and desalting
+    - *Ethanol precipitation*: The classic method for concentrating and desalting
       DNA. Salt (e.g. sodium acetate or NaCl) and absolute ethanol (or isopropanol)
       are added to the DNA solution, causing DNA to dehydrate and precipitate.
       The pellet is collected by centrifugation, washed with 70% ethanol to

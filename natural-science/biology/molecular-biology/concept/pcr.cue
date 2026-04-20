@@ -35,7 +35,7 @@ pcr: {
 
     Commonly used thermostable DNA polymerase is taq DNA polymerase.
 
-    Notice, the DNA polymerase can only starts from 3'-OH at binding primer. So
+    Notice, the DNA polymerase can only start from 3'-OH at binding primer. So
     we need a pair of primers, one to bind *sense strand* (reverse primer) and
     another to bind *antisense strand* (forward primer).
 
@@ -51,10 +51,10 @@ pcr: {
     - Melting temperature $T_m$ should be 55-70°C, difference between the primer
       pair should be less than 5°C;
 
-    - Not self-complementary or complementary to each other to avoid formation or
+    - Not self-complementary or complementary to each other to avoid formation of
       internal secondary structures or primer-dimers;
 
-    - Sometimes restriction sites and enhance factors, which are not complementary
+    - Sometimes restriction sites and enhancer factors, which are not complementary
       to template, can be added to primer 5' ends for the purpose of gene cloning.
       For efficient restriction enzyme digestion, additional 3-4 nucleotides as
       *flanking sequence* should be added to 5' end.
