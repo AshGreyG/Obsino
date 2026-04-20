@@ -42,7 +42,9 @@ restriction_enzyme: {
 
     Different restriction enzymes that recognize the same sequence are known
     as *isoschizomers*. Different enzymes that recognize the same location but
-    cut at a different position are known as *neoschizomers*.
+    cut at a different position are known as *neoschizomers*. Different restriction
+    enzymes recognize slightly different sequence but generate the same sticky
+    end (cohesive end) are called *isocaudomer*.
 
     Naturally occurring restriction endonucleases are categorized into five
     groups (Types I, II, III, IV and V) based on
@@ -73,5 +75,29 @@ restriction_enzyme: {
       hydroxymethylated (羟甲基化), glucosyl-hydroxymethylated (葡萄糖羟甲基化) DNA;
 
     5. Type V enzymes utilize guide RNAs (gRNAs).
+
+    Some restriction endonucleases form two *blunt ends* after cleavage and some
+    form *sticky ends*.
+
+    ```plaintext
+    EcoRV (blunt ends):
+
+    5' ... G A T A T C ... 3'        5' ... G A T 3'    5' A T C ... 3'
+           | | | | | |          =>          | | |          | | |
+    3' ... C T A T A G ... 5'        3' ... C T A 5'    3' T A G ... 5'
+
+    BamHI (sticky ends):
+
+    5' ... G G A T C C ... 3'        5' ... G 3'      5' G A T C C ... 3'
+           | | | | | |          =>          | + + + +    + + + + |
+    3' ... C C T A G G ... 5'        3' ... C C T A G 5'      3' G ... 5'
+    ```
+
+    Enzyme nonmenclature of restriction endonuclease: the first one letter
+    represents the Species such as Eco represents *Escherichia coli*. One
+    English letter is used to represent the strain. For example, R represents 
+    Escherichia coli RY13 strain. If there are several different kinds of
+    restriction enzymes from one host, roman numerals are used such as EcoRI
+    and EcoRV.
   """#
 }
