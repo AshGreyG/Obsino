@@ -11,7 +11,7 @@ molecular_chaperones: {
 
     - Examples: chaperonin (桶状分子伴侣) is a protein complexes required for the
       folding of some cellular proteins that do not fold spontaneously. GroEL/
-      GroES are for folding under normal conditions in #math.italics("E.Coli")
+      GroES are for folding under normal conditions in #math.italic("E.Coli")
       using energy from ATP hydrolysis.
 
       Two enzymes required in the folding pathway:
