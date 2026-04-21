@@ -19,7 +19,7 @@ drug_polymorphism: {
       cis-trans isomers, chiral isomer). Configurational differences require bond
       breaking/formation to interconvert;
 
-    - *color polymorphism* (颜色多晶型): Polymorphism forms of a substance that
+    - *color polymorphism* (颜色多晶型): Polymorphic forms of a substance that
       have *identical chemical composition* but *different colors* in the solid
       state. Color differences result from distinct crystal packing, intermolecular
       interactions, or electronic arrangements;
