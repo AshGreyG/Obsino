@@ -65,7 +65,7 @@ handbook:
 	}; \
 	\
 	# Write handbook title to temp file \
-	echo "#set text(font: (\"Linux Libertine\", \"Source Han Serif SC\"), lang: \"zh\")"	> $(TEMP); \
+	echo "#set text(font: (\"Libertinus Serif\", \"Source Han Serif SC\"), lang: \"zh\")"	> $(TEMP); \
 	echo "#align(center)[= Handbook of $$(title_func $(HANDBOOK_POSTFIX))]" >> $(TEMP); \
 	\
 	# 1. Get all directories, filtering out ignored ones \
