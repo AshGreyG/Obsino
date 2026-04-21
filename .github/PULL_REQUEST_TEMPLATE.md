@@ -6,7 +6,7 @@
 
 <!-- Mark the relevant option with an `x` -->
 
-- [ ] `feat` - New feature or implementation (e.g., new algorithm, course exercise)
+- [ ] `feat` - New feature or implementation (e.g., new concepts, principles, specifics)
 - [ ] `fix` - Bug fix or correction
 - [ ] `docs` - Documentation only changes
 - [ ] `style` - Code style changes (formatting, indentation)
@@ -18,9 +18,18 @@
 
 <!-- Which course or directory does this PR affect? -->
 
-- [ ] MIT/
-- [ ] THU/
-- [ ] SocialPlatform/
+- [ ] formal-science
+  - [ ] math
+  - [ ] cs
+    - [ ] algorithm
+- [ ] natural-science
+  - [ ] biology
+    - [ ] biochemistry
+    - [ ] molecular-biology
+  - [ ] chemistry
+- [ ] healthcare
+  - [ ] pharmacy
+    - [ ] pharmaceutics
 
 ## Files Changed
 
@@ -28,8 +37,8 @@
 
 ```bash
 # Example:
-- MIT/6.006/lecture-1-introduction-to-algorithms.py
-- THU/44.000.112-0-Pharmaceutics/week-01-biologics-dosage-form-2025.typ
+- healthcare/pharmacy/pharmaceutics/concept/**.cue
+- healthcare/pharmacy/pharmaceutics/principle/**.cue
 ```
 
 ## Testing
@@ -37,9 +46,8 @@
 <!-- Describe how you tested your changes -->
 
 - [ ] Code runs without errors
-- [ ] Typst files compile successfully (use `typst compile <file>.typ`)
-- [ ] Python files pass inline tests
-- [ ] C code compiles and runs correctly
+- [ ] Files in `src` directory can run successfully
+- [ ] Run `nix .#clean` and `nix .#handbook` successfully at local environment
 
 ## Screenshots (if applicable)
 
