@@ -3,3 +3,9 @@
 _excalidraw/
 _output/
 **/.vscode
+
+**/*.pdf
+**/__pycache__
+**/.venv
+**/.pdb
+**/build

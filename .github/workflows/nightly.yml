@@ -1,0 +1,49 @@
+name: "Nightly Build"
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '0 0 * * *' # Optional: Runs every night at midnight UTC
+
+jobs:
+  nightly-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set current date
+        id: date
+        # We store the date in the GITHUB_OUTPUT buffer
+        run: echo "now=$(date +'%Y-%m-%d %H:%M')" >> $GITHUB_OUTPUT
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v25
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build Handbooks
+        # This runs your custom Nix command which populates ./build
+        run: nix run .#handbook
+
+      - name: Create Nightly Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: nightly
+          name: "Nightly Build (Latest)"
+          body: |
+            ### Notes of AshGrey Nightly Build
+            Release created at ${{ steps.date.outputs.now }}
+            Release commit at ${{ github.sha }}
+
+          prerelease: true
+          # This grabs every PDF in your build folder
+          files: build/*.pdf 
+          # Overwrites the existing 'nightly' tag assets
+          make_latest: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
