@@ -26,6 +26,10 @@
             WORKSPACE_ROOT=$(pwd)
             BUILD_DIR="$WORKSPACE_ROOT/build"
 
+            # Debug for fonts list
+
+            ${pkgs.typst}/bin/typst fonts
+
             # Create build directory if it doesn't exist
             mkdir -p "$BUILD_DIR"
 

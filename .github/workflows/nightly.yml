@@ -36,9 +36,10 @@ jobs:
           tag_name: nightly
           name: "Nightly Build (Latest)"
           body: |
-            🔮 **Digital Knowledge Tree Auto-Build**
-            **Last Updated:** ${{ steps.date.outputs.now }}
-            **Commit:** ${{ github.sha }}
+            ### Notes of AshGrey Nightly Build
+            Release created at ${{ steps.date.outputs.now }}
+            Release commit at ${{ github.sha }}
+
           prerelease: true
           # This grabs every PDF in your build folder
           files: build/*.pdf 
