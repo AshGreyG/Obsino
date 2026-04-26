@@ -120,8 +120,8 @@ handbook:
 # Clean up generated PDF files
 clean:
 	@echo "→ Cleaning up generated PDF files"
-	@if ls *.pdf >/dev/null 2>&1 || ls *.typ >/dev/null 2>&1; then \
-		rm -f *.pdf *.typ; \
+	@if ls *.pdf >/dev/null 2>&1 || ls temp.typ >/dev/null 2>&1; then \
+		rm -f *.pdf temp.typ; \
 		echo "✅ clean successfully"; \
 	else \
 		echo "❌ failed to clean because there are no matched files"; \
