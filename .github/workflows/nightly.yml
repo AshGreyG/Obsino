@@ -40,7 +40,7 @@ jobs:
             Release created at ${{ steps.date.outputs.now }}
             Release commit at ${{ github.sha }}
 
-          prerelease: true
+          prerelease: false
           # This grabs every PDF in your build folder
           files: build/*.pdf 
           # Overwrites the existing 'nightly' tag assets
