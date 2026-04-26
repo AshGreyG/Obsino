@@ -9,7 +9,7 @@ motif: {
 
     1. Helix super-secondary structure
 
-      - *Helix hairpin* (also known as an alpha-alpha hairpin) is compose of two
+      - *Helix hairpin* (also known as an alpha-alpha hairpin) is composed of two
         antiparallel alpha helices connected by a loop of two or more residues.
         It resembles a hairpin. A longer loop has a greater number of possible
         conformations. If short strands connect the helices, then the individual
@@ -33,7 +33,7 @@ motif: {
 
     2. Beta sheet super-secondary structure
 
-      - *Beta hairpin* is composed of two antiparallel beta strands connect by
+      - *Beta hairpin* is composed of two antiparallel beta strands connected by
         a loop. The loop between the beta strands can range anywhere from 2 to
         16 (most loops contain less than 7 residues). The function of beta
         hairpins is unknown;
@@ -53,7 +53,7 @@ motif: {
         2. The beta sheet is anti-parallel, and alternate strands run in the same
           directions;
 
-        3. The first strand and last strand are next to each other and boned by
+        3. The first strand and last strand are next to each other and bonded by
           hydrogen bonds;
 
         4. Connecting loops can be long and include other secondary structures.
@@ -68,20 +68,20 @@ motif: {
         \---------->------  β strand 4
         ```
 
-        The geek key motif has no known function.
+        The Greek key motif has no known function.
 
     3. Mixed super-secondary structure
 
-      - *$β$-$α$-$β$ motifs* is composed of two $β$ strands joined by an $α$
+      - *$β$-$α$-$β$ motif* is composed of two $β$ strands joined by an $α$
         helix through connecting loops. The $β$ strands are parallel, and the
         helix is also almost parallel to the strands. This structure can be seen
         in almost all proteins with parallel strands. The loops connecting the
-        $β$ strands and $α$ helix can vary in length and often binds ligands.
+        $β$ strands and $α$ helix can vary in length and often bind ligands.
 
-        $β$-$α$-$β$ motifs helices can be either left-handed or right-handed.
+        The helices in $β$-$α$-$β$ motifs can be either left-handed or right-handed.
         When viewed from the N-terminal side of the data strands, so that one
         strand is on top of the other, a left-handed $β$-$α$-$β$ motif has the
-        $α$ helix on the left side of the $β$ strands. The more command right-
+        $α$ helix on the left side of the $β$ strands. The more common right-
         handed motif would have an $α$ helix on the right side of the plane
         containing the $β$ strand.
 

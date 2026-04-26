@@ -27,7 +27,7 @@ exp_ribonuclease_refolding: {
       1% of the enzymatic activity of the native protein.
 
       Reason is that wrong disulfide bonds were formed in urea. Weak bonding
-      interactions (like hydrogen bonds and hydrophobic interactions) are require
+      interactions (like hydrogen bonds and hydrophobic interactions) are required
       for correct positioning of disulfide bonds and restoration of the native
       conformation. Then native ribonuclease can be reformed from scrambled
       ribonuclease in the presence of a trace of $β$-mercaptoethanol.

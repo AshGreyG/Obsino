@@ -8,7 +8,7 @@ domain: {
     of the protein, and often performs a specific biochemical or functional role
     (e.g. binding, catalysis, localization).
 
-    - *$β$ barrel* is a single domain of $α$-hemolysim ($α$-溶血素, a toxin that
+    - *$β$ barrel* is a single domain of $α$-hemolysin ($α$-溶血素, a toxin that
       kills a cell by creating a hole in its membrane) from the bacterium
       #math.italic("Staphylococcus aureus") (金黄葡萄球菌)
 

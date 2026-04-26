@@ -3,8 +3,8 @@ package specific
 structure_of_myoglobin: {
   content: """
     Myoglobin is the oxygen carrier in muscle. It is a single polypeptide chain,
-    it has 153 amino acids, and $M_r = 16700$. The heme as a prosthetic group
-    is capable to bind oxygen. Myoglobin is extremely compact, 70% main chain
+    it has 153 amino acids, and $M_r = 16700$. The heme prosthetic group
+    is capable of binding oxygen. Myoglobin is extremely compact, 70% main chain
     folded into eight $α$ right-handed helices.
 
     \(figure_part_heme)
