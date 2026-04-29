@@ -1,7 +1,7 @@
 package concept
 
 zero_order_release: {
-  content: #"""
+  content: """
     In pharmacokinetics, *zero-order release* describes a drug delivery system
     where the drug is released at a *constant rate* $k_0$, regardless of the
     concentration of the drug remaining in the dosage form. This is the goal of
@@ -41,14 +41,28 @@ zero_order_release: {
 
     We integrate this equation (assuming an initial concentration of 0 at $t=0$):
 
-    $ & (upright(d) C_p)/(upright(d) t) = (k_0)/(V_d) - k_e ⋅ C_p \ 
-      ⟺ & ∫_0^(C_p) (upright(d) C_p) / (k_0\/V_d - k_e ⋅ C_p) = ∫_0^t upright(d)t \
-      ⟺ & - 1/(k_e) ln((k_0)/(V_d) - k_e C_p) - (-1/(k_e) ln k_0/V_d) = t \
-      ⟺ & k_0/V_d - k_e C_p = exp(ln k_0/V_d - k_e t) \
+    $ & (upright(d) C_p)/(upright(d) t) = (k_0)/(V_d) - k_e ⋅ C_p \\
+      ⟺ & ∫_0^(C_p) (upright(d) C_p) / (k_0\/V_d - k_e ⋅ C_p) = ∫_0^t upright(d)t \\
+      ⟺ & - 1/(k_e) ln((k_0)/(V_d) - k_e C_p) - (-1/(k_e) ln k_0/V_d) = t \\
+      ⟺ & k_0/V_d - k_e C_p = exp(ln k_0/V_d - k_e t) \\
       ⟺ & C_p = (k_0)/(V_d k_e)(1 - upright(e)^(-k_e t)) $
 
-  """#
+    \(figure_part)
+  """
   related: [
     "concept/first-order-elimination-rate"
   ]
+  figure_part: #"""
+    #let z = "assets/zero-order-release.svg"
+    #align(center)[
+      #stack(dir: ltr)[
+        #box(width: 70%)[
+          #figure(
+            image(z),
+            caption: "Plasma Concentration/Time Curve of Zero Order Release"
+          )
+        ],
+      ]
+    ]
+  """#
 }
