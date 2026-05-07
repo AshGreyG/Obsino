@@ -118,7 +118,7 @@ nix run .#status      # check the status of project
 │        └── pharmaceutics
 │         
 │           [x] Typst Header
-│           [x] CUE module
+│           [x] CUE Module
 │           [→] concept: 16 | 272
 │           [→] desire: 1 | 11
 │         
@@ -127,7 +127,7 @@ nix run .#status      # check the status of project
     │    ├── biochemistry
     │    │
     │    │  [x] Typst Header
-    │    │  [x] CUE module
+    │    │  [x] CUE Module
     │    │  [→] concept: 16 | 609
     │    │  [→] phenomenon: 2 | 71
     │    │  [→] principle: 1 | 29
@@ -136,7 +136,7 @@ nix run .#status      # check the status of project
     │    └── molecular-biology
     │     
     │       [x] Typst Header
-    │       [x] CUE module
+    │       [x] CUE Module
     │       [→] concept: 4 | 250
     │       [→] principle: 2 | 83
     │     
@@ -144,7 +144,7 @@ nix run .#status      # check the status of project
         └── classical-mechanics
          
            [x] Typst Header
-           [x] CUE module
+           [x] CUE Module
            [→] concept: 4 | 76
          
 [→] Total Counts: 50
