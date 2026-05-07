@@ -3,6 +3,7 @@
 # 🔮 Obsino
 
 [![build](https://img.shields.io/github/actions/workflow/status/AshGreyG/Obsino/nightly.yml?label=nightly)](https://github.com/AshGreyG/Obsino/actions/workflows/nightly.yml)
+[![status](https://img.shields.io/github/actions/workflow/status/AshGreyG/Obsino/status.yml?label=status)](https://github.com/AshGreyG/Obsino/actions/workflows/status.yml)
 [![Typst](https://img.shields.io/badge/Typst-239DAD?logo=typst&logoColor=fff)](https://typst.app/)
 [![Nix](https://img.shields.io/badge/Nix-5277C3?logo=nixos&logoColor=fff)](https://nixos.org/)
 [![MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -103,7 +104,55 @@ nix run .#status      # check the status of project
 
 ## ♻️ CI
 
-A nightly GitHub Action builds all handbooks and publishes them as a pre-release.
+- A nightly GitHub Action builds all handbooks and publishes them as a pre-release.
+- A status Github Action embeds the status to README.md.
+
+## 🩺 Status
+
+<!-- project-status-start -->
+```text
+├── Human Knowledge Tree (HKT)
+│
+├── healthcare
+│    └── pharmacy
+│        └── pharmaceutics
+│         
+│           [x] Typst Header
+│           [x] CUE module
+│           [→] concept: 16 | 272
+│           [→] desire: 1 | 11
+│         
+└── natural-science
+    ├── biology
+    │    ├── biochemistry
+    │    │
+    │    │  [x] Typst Header
+    │    │  [x] CUE module
+    │    │  [→] concept: 16 | 609
+    │    │  [→] phenomenon: 2 | 71
+    │    │  [→] principle: 1 | 29
+    │    │  [→] specific: 4 | 134
+    │    │
+    │    └── molecular-biology
+    │     
+    │       [x] Typst Header
+    │       [x] CUE module
+    │       [→] concept: 4 | 250
+    │       [→] principle: 2 | 83
+    │     
+    └── physics
+        └── classical-mechanics
+         
+           [x] Typst Header
+           [x] CUE module
+           [→] concept: 4 | 76
+         
+[→] Total Counts: 50
+[→] Total Lines: 1535
+```
+
+<!-- project-status-end -->
+
 
 ## 📝 License
 
