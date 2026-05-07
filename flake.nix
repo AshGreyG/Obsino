@@ -196,7 +196,7 @@
                   echo -e "''${prefix}''${connector} ''${folder_name}"
                   echo -e "''${prefix}''${status_connector}"
                   echo -e "''${prefix}''${status_connector}  ''${h} Typst Header\033[0m"
-                  echo -e "''${prefix}''${status_connector}  ''${c} CUE module\033[0m"
+                  echo -e "''${prefix}''${status_connector}  ''${c} CUE Module\033[0m"
 
                   # Count the number of each directories
                   local spec_subdirs
