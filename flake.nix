@@ -115,6 +115,13 @@
               "__pycache__"
               "build"
             )
+            EXCLUDED=(
+              "cue.mod"
+              "assets"
+              "asset"
+              "src"
+              ".vscode"
+            )
 
             # Find directories containing a Makefile that is symlink (-L follows
             # but we want to check the link itself). We use -type l to find
@@ -129,6 +136,11 @@
               local find_excluded=()
               for d in "''${IGNORE[@]}"; do
                 find_excluded+=("-not" "-name" "$d")
+              done
+
+              local status_excluded=()
+              for d in "''${EXCLUDED[@]}"; do
+                status_excluded+=("-not" "-name" "$d")
               done
 
               # Fix SC2207: use mapfile instead of array=( $(...) )
@@ -163,6 +175,9 @@
 
                 # Check if this specific directory has the target Makefile symlink
                 if [[ -L "$path/Makefile" ]]; then
+                  # Check if this specific directory has the target Typst Header
+                  # and CUE module
+
                   local h="\033[31m[ ]"
                   local c="\033[31m[ ]"
                   [[ -f "$path/$NAME_TYPST_HEADER" ]] && h="\033[32m[x]"
@@ -179,6 +194,30 @@
                   echo -e "''${prefix}''${status_connector}"
                   echo -e "''${prefix}''${status_connector}  ''${h} Typst Header\033[0m"
                   echo -e "''${prefix}''${status_connector}  ''${c} CUE module\033[0m"
+
+                  # Count the number of each directories
+                  local spec_subdirs
+                  mapfile -t spec_subdirs < <(find "$path" -maxdepth 1 -mindepth 1 -type d \
+                    "''${status_excluded[@]}" | sort)
+
+                  for k in "''${!spec_subdirs[@]}"; do
+                    local path="''${spec_subdirs[$k]}"
+
+                    local folder_name
+                    folder_name=$(basename "''${path}")
+
+                    pushd "$path" > /dev/null
+
+                    local counts
+                    counts=$(find ./*.cue | wc -l)
+                    local lines
+                    lines=$(find . -name "*.cue" -exec cat {} + | wc -l)
+
+                    echo -e "''${prefix}''${status_connector}  \033[34m[→] ''${folder_name}: ''${counts} | ''${lines}\033[0m"
+
+                    popd > /dev/null
+                  done
+
                   echo -e "''${prefix}''${status_connector}"
                 elif find "$path" -name "Makefile" -type l | grep -q .; then
                   # Just a structural directory like "natural-science"
