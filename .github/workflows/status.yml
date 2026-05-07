@@ -1,0 +1,54 @@
+name: "Show Status of Obsino"
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  project-status:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set current date for git commit
+        id: date
+        run: echo "now=$(date + '%Y-%m-%d %H:%M')" >> $GITHUB_OUTPUT
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v25
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate Status and Update README
+        run: |
+          echo '```text' > status_output.txt
+    
+          # Run status, strip ANSI colors, and append to file
+          nix run .#status 2>/dev/null | sed 's/\x1b\[[0-9;]*m//g' >> status_output.txt
+    
+          echo '```' >> status_output.txt
+
+          # Update README.md from template
+          # This reads README.template.md and writes to README.md
+          # We use a perl-based regex approach because it handles multi-line better
+          perl -0777 -pe 's/(<!-- project-status-start -->).*(<!-- project-status-end -->)/$1 . "\n" . `cat status_output.txt` . "\n" . $2/se' README.template.md > README.md
+
+      - name: Commit and Push changes
+        run: |
+          git config --local user.email "2191968270@qq.com"
+          git config --local user.name "mayumi[bot]"
+          
+          git add README.md
+          
+          # Only commit if there are actual changes to the status
+          if git diff --staged --quiet; then
+            echo "No changes to status. Skipping commit."
+          else
+            git commit -m "♻️ chore(status): update HKT status ${{ steps.date.outputs.now }}"
+            git push origin master
+          fi
+ 
