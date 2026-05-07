@@ -16,7 +16,7 @@ jobs:
 
       - name: Set current date for git commit
         id: date
-        run: echo "now=$(date + '%Y-%m-%d %H:%M')" >> $GITHUB_OUTPUT
+        run: echo "now=$(date +'%Y-%m-%d %H:%M')" >> $GITHUB_OUTPUT
 
       - name: Install Nix
         uses: cachix/install-nix-action@v25
