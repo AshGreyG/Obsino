@@ -39,7 +39,7 @@ jobs:
 
       - name: Commit and Push changes
         run: |
-          git config --local user.email "2191968270@qq.com"
+          git config --local user.email "2191958270@qq.com"
           git config --local user.name "mayumi[bot]"
           
           git add README.md
@@ -48,7 +48,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to status. Skipping commit."
           else
-            git commit -m "♻️ chore(status): update HKT status ${{ steps.date.outputs.now }}"
+            git commit -m ":recycle: chore(status): update HKT status at ${{ steps.date.outputs.now }}"
             git push origin master
           fi
  
