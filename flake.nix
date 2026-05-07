@@ -123,6 +123,9 @@
               ".vscode"
             )
 
+            total_counts=0
+            total_lines=0
+
             # Find directories containing a Makefile that is symlink (-L follows
             # but we want to check the link itself). We use -type l to find
             # files are symlinks
@@ -213,6 +216,9 @@
                     local lines
                     lines=$(find . -name "*.cue" -exec cat {} + | wc -l)
 
+                    total_counts=$(( total_counts + counts ))
+                    total_lines=$(( total_lines + lines ))
+
                     echo -e "''${prefix}''${status_connector}  \033[34m[→] ''${folder_name}: ''${counts} | ''${lines}\033[0m"
 
                     popd > /dev/null
@@ -229,6 +235,8 @@
               done
             }
             walk_hkt "." ""
+            echo "[→] Total Counts: ''${total_counts}"
+            echo "[→] Total Lines: ''${total_lines}"
           '';
         };
       });
