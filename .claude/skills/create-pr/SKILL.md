@@ -76,7 +76,9 @@ Here `pharmacy/..` represents for subfield of pharmacy like pharmaceutics etc.
 
 ### 4. Generate the PR body
 
-Create a PR description following the template structure:
+Create a PR description following the template structure. **Write the body to a
+temp file** (e.g., `/tmp/pr-body.md`) rather than passing it inline, because the
+PR body contains backticks and other shell-sensitive characters that break heredocs.
 
 ```markdown
 ## Summary
@@ -96,9 +98,9 @@ this PR does and why.>
 
 ## Files Changed
 
-\`\`\`bash
+```
 <list of changed files>
-\`\`\`
+```
 
 ## Testing
 
@@ -131,13 +133,21 @@ Ask whether they want to:
 
 ### 6. Create the PR
 
-If confirmed, push the branch (if not already pushed) and create the PR:
+If confirmed, push the branch (if not already pushed) and create the PR.
+Use `--body-file` instead of `--body` since the body contains backticks and
+other shell-sensitive characters:
 
 ```bash
 gh pr create \
   --title "<PR title>" \
-  --body "<PR body>" \
+  --body-file /tmp/pr-body.md \
   --base master
+```
+
+Clean up the temp file afterward:
+
+```bash
+rm /tmp/pr-body.md
 ```
 
 Report the PR URL to the user when done.
