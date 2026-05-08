@@ -42,6 +42,12 @@ rna: {
       mRNA only 1-3%
     - Despite its low abundance, mRNA carries the coding information for all
       proteins
+
+    Many types of RNA fold into specific shapes that help them function and keep
+    them stable. Complementary sequences at different positions along the length
+    of an RNA fold the molecule into loops and other complex structures:
+
+    \(figure_part_rna_folding)
   """
   figure_part_rna_structure: #"""
     #let rna-structure = "assets/rna-structure.jpg"
@@ -55,6 +61,19 @@ rna: {
         ]
       ]
     ]
+  """#
+  figure_part_rna_folding: #"""
+    #let rna-folding = "assets/rna-fold.jpg"
+    #align(center)[
+      #stack(dir: ltr)[
+        #box(width: 100%)[
+          #figure(
+            image(rna-folding),
+            caption: "RNA structure"
+          )
+        ]
+      ]
+    ] 
   """#
   related: [
     "concept/rna-transcription",
