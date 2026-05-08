@@ -1,7 +1,7 @@
 package concept
 
 rna: {
-  content: #"""
+  content: """
     RNA (ribonucleic acid) is a vital molecule that serves diverse roles in the
     storage and expression of genetic information.
 
@@ -9,8 +9,19 @@ rna: {
     - The sugar is ribose instead of deoxyribose
     - Contains uracil (U) instead of thymine (T)
 
+    DNA is the genetic material for all life, usually existing in long strands
+    that are passed down from generation to generation. RNA molecules range
+    widely in their lengths and are often more transient than DNA. If DNA is like
+    an archive, RNA molecules are like scans or photocopies of specific documents
+    from the archive.
+    
+    *The DNA stores all the necessary information for an organism, and the RNA
+    replicates and distributes pieces of this information as needed*.
+
     // uracil,  U,  Ura,  O=C1C=CNC(=O)N1
     // thymine, T,  Thy,  O=C1NC(=O)NC=C1C
+
+    \(figure_part_rna_structure)
 
     *Physical characteristics*:
     - RNA molecules are rarely more than a few thousand nucleotides in length
@@ -31,5 +42,22 @@ rna: {
       mRNA only 1-3%
     - Despite its low abundance, mRNA carries the coding information for all
       proteins
+  """
+  figure_part_rna_structure: #"""
+    #let rna-structure = "assets/rna-structure.jpg"
+    #align(center)[
+      #stack(dir: ltr)[
+        #box(width: 100%)[
+          #figure(
+            image(rna-structure),
+            caption: "PCR Procedure"
+          )
+        ]
+      ]
+    ]
   """#
+  related: [
+    "concept/rna-transcription",
+    "concept/total-rna"
+  ]
 }
