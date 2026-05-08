@@ -25,6 +25,15 @@ rna_translation: {
     ```
 
     \(figure_part_rna_translation)
+
+    rRNAs combine with proteins to create the structure of the ribosome. As
+    ribosomes read the instruction encoded in the mRNAs, the rRNAs perform the
+    chemical reactions that assemble the new proteins piece-by-piece.
+
+    tRNAs assist in translation. Each tRNA corresponds to one of the 20 possible
+    amino acids building blocks in humans. As the ribosome reads each codon along
+    an mRNA, the tRNA bring the correct amino acids, which is then added to the
+    growing protein molecule.
   """
   figure_part_rna_translation: #"""
     #let central-dogma = "assets/central-dogma.jpg"
