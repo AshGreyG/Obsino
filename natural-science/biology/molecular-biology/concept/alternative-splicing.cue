@@ -8,7 +8,7 @@ alternative_splicing: {
     spliced, mRNAs from the same gene can create different proteins that may
     have different functions.
 
-    About 95% of human genes are though to be alternatively spliced, and some
+    About 95% of human genes are thought to be alternatively spliced, and some
     RNAs can be alternatively spliced in many ways.
 
     \(figure_part_alternative_splicing)

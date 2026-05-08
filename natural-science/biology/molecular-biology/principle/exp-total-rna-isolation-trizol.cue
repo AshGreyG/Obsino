@@ -19,7 +19,7 @@ exp_total_rna_isolation_trizol: {
     1. *Sample preparation*: Snap-freeze 100 mg of fresh tissue in liquid nitrogen
     2. *Grinding*: Grind tissue to fine powder in liquid nitrogen using mortar
       and pestle
-    3. *Lysis*: Add TRIZol Reagent, incubate at room temperature for 5 minutes
+    3. *Lysis*: Add TRIzol Reagent, incubate at room temperature for 5 minutes
     4. *Phase separation*: Add chloroform, centrifuge to separate into three
       layers:
 

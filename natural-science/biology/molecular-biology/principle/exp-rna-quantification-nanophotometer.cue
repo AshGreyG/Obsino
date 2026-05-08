@@ -2,8 +2,8 @@ package principle
 
 exp_rna_quantification_nanophotometer: {
   content: #"""
-    RNA concentration is commonly measure using a Nanophotometer (spectrophotometer)
-    , which measures UV absorbance at 260 nm.
+    RNA concentration is commonly measure using a Nanophotometer
+    (spectrophotometer) , which measures UV absorbance at 260 nm.
 
     *Measurement principle*:
     - Nucleic acids absorb UV light maximally at 260 nm

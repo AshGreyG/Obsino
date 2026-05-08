@@ -13,7 +13,7 @@ rna_transcription: {
     RNA molecules, is also referred as *gene expression*.
 
     Although DNA serves as RNA's template, the final RNA sequence is often not
-    an exact copt of the DNA structure. Some regions of the RNA sequence, known
+    an exact copy of the DNA sequence. Some regions of the RNA sequence, known
     as *introns*, can be cut out of the RNA in a process called *RNA splicing*.
 
     In mRNAs, the pieces of sequence left in the mature mRNA are known as *exons*,

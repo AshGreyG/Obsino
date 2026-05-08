@@ -26,10 +26,10 @@ rna: {
     *Physical characteristics*:
     - RNA molecules are rarely more than a few thousand nucleotides in length
     - Mostly single-stranded, though can form secondary structures through
-      intramolecular base paring
+      intramolecular base pairing
 
     *Major types of RNA*:
-    - *mRNA (message RNA)*: Carries genetic information from DNA to ribosomes for
+    - *mRNA (messenger RNA)*: Carries genetic information from DNA to ribosomes for
       protein synthesis
     - *rRNA (ribosomal RNA)*: Structural and catalytic component of ribosomes
     - *tRNA (transfer RNA)*:  Delivers amino acids to the ribosome during

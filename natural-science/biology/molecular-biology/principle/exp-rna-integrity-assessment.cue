@@ -15,7 +15,7 @@ exp_rna_integrity_assessment: {
     - *Intact RNA*: Clear, sharp 28S and 18S bands with 28S:18S ratio
       approximately 2:1 in animals
     - *Partially degraded RNA*: Smearing between bands, decreased 28S:18S ratio
-    - *Completely degraded RNA*: No distinct bands, low molecular weights smear
+    - *Completely degraded RNA*: No distinct bands, low-molecular-weight smear
   """#
   related: [
     "principle/exp-total-rna-isolation-trizol"

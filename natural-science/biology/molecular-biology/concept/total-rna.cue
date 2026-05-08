@@ -7,7 +7,7 @@ total_rna: {
     isolated total RNA can be applied in many experiments:
 
     - Northern blot (detect specific RNA sequence)
-    - PT-PCR (reverse transcription PCR for gene expression analysis)
+    - RT-PCR (reverse transcription PCR for gene expression analysis)
     - in vitro translation
     - cDNA library construction
     - RNA-seq (transcriptome sequencing)

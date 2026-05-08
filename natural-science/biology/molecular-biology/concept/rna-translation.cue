@@ -11,7 +11,7 @@ rna_translation: {
     or a *codon*, at a time to build a protein. This process is known as
     *translation*.
 
-    mRNAs has some features:
+    mRNAs have some key features:
     1. A protective chemical structure on one end, known as the *five-prime cap*
     2. Long string of A nucleotides on the other end, and this is called the
       *poly-A tail*. (When scientists want to study only the mRNAs in a cell,
@@ -32,7 +32,7 @@ rna_translation: {
 
     tRNAs assist in translation. Each tRNA corresponds to one of the 20 possible
     amino acids building blocks in humans. As the ribosome reads each codon along
-    an mRNA, the tRNA bring the correct amino acids, which is then added to the
+    an mRNA, the tRNA brings the correct amino acids, which is then added to the
     growing protein molecule.
   """
   figure_part_rna_translation: #"""
