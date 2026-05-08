@@ -20,7 +20,7 @@ alternative_splicing: {
         #box(width: 100%)[
           #figure(
             image(alternative-splicing),
-            caption: "PCR Procedure"
+            caption: "Alternative Splicing"
           )
         ]
       ]

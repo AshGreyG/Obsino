@@ -50,7 +50,7 @@ rna: {
         #box(width: 100%)[
           #figure(
             image(rna-structure),
-            caption: "PCR Procedure"
+            caption: "RNA structure"
           )
         ]
       ]
