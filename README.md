@@ -137,8 +137,8 @@ nix run .#status      # check the status of project
     │     
     │       [x] Typst Header
     │       [x] CUE Module
-    │       [→] concept: 4 | 250
-    │       [→] principle: 2 | 83
+    │       [→] concept: 9 | 458
+    │       [→] principle: 5 | 180
     │     
     └── physics
         └── classical-mechanics
@@ -147,8 +147,8 @@ nix run .#status      # check the status of project
            [x] CUE Module
            [→] concept: 4 | 76
          
-[→] Total Counts: 50
-[→] Total Lines: 1535
+[→] Total Counts: 58
+[→] Total Lines: 1840
 ```
 
 <!-- project-status-end -->
