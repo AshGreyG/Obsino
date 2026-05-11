@@ -11,7 +11,7 @@ tensor_product: {
       = (ub(A) ⋅ ub(E)) (ub(B) ⋅ ub(F)) (ub(C) ⋅ ub(G)) $
 
     (we use $ub(A)$ to denote a vector, but we use $sans("A")$ to denote non-vector
-    tensor like whose rank is not 1)
+    tensor whose rank is not 1)
 
     So the tensor product of three vectors create a new rank-3 tensor. Similar
     definitions can be given for the tensor product of any number of vectors,
