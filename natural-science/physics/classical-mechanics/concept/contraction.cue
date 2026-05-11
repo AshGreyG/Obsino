@@ -11,7 +11,8 @@ contraction: {
     $ "contraction" (ub(A) ⊗ ub(B)) := ub(A) ⋅ ub(B) $
   """#
   related: [
+    "concept/tensor",
     "concept/inner-product",
-    "concept/"
+    "concept/tensor-product"
   ]
 }
