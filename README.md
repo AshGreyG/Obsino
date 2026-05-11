@@ -145,10 +145,12 @@ nix run .#status      # check the status of project
          
            [x] Typst Header
            [x] CUE Module
-           [→] concept: 4 | 76
+           [→] concept: 12 | 242
+           [→] desire: 1 | 23
+           [→] proof: 2 | 27
          
-[→] Total Counts: 58
-[→] Total Lines: 1840
+[→] Total Counts: 69
+[→] Total Lines: 2056
 ```
 
 <!-- project-status-end -->
