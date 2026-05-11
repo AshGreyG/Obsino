@@ -5,8 +5,8 @@ kronecker_delta: {
     We define
 
     $ δ_(j k) = ub(e)_j ⋅ ub(e)_k = cases(
-      1 space.en & i = j,
-      0 space.en & i ≠ j
+      1 space.en & j = k,
+      0 space.en & j ≠ k
     ) $
 
     as the Kronecker delta.
