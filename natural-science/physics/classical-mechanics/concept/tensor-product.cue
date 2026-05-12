@@ -23,6 +23,7 @@ tensor_product: {
   """#
   related: [
     "concept/tensor",
-    "concept/inner-product"
+    "concept/inner-product",
+    "desire/composite-systems"
   ]
 }

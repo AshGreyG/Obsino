@@ -29,6 +29,7 @@ inner_product: {
   """#
   related: [
     "concept/tensor",
-    "concept/squared-length"
+    "concept/squared-length",
+    "desire/measurable-reality"
   ]
 }
