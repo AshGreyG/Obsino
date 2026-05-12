@@ -2,7 +2,7 @@ package concept
 
 divergence: {
   content: #"""
-    Since the gradient $∇ub(A)$ of a vector filed $ub(A)$ has two slots,
+    Since the gradient $∇ub(A)$ of a vector field $ub(A)$ has two slots,
     $∇ub(A)(\_,\_)$, we can contract its slots on each other to obtain a scalar
     field. That scalar field is the *divergence* of $ub(A)$ and is denoted
 

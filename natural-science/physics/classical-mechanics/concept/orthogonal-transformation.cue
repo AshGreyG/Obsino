@@ -26,7 +26,7 @@ orthogonal_transformation: {
     space.en
     [R_(i overline(p))] = mat(
       R_(1 overline(1)), R_(1 overline(2)), R_(1 overline(3));
-      R_(2 overline(1)), R_(2 overline(2)), R_(1 overline(3));
+      R_(2 overline(1)), R_(2 overline(2)), R_(2 overline(3));
       R_(3 overline(1)), R_(3 overline(2)), R_(3 overline(3))
     ) $
 

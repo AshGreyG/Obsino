@@ -7,7 +7,8 @@ proof_transformation_matrix_is_orthogonal: {
     overline(q)) R_(overline(q) j)) = R_(overline(p) i) R_(overline(q) j) (
     ub(e)_(overline(p)) ⋅ ub(e)_(overline(q)) ) = R_(overline(p) i) R_(overline(
     q) j) δ_(overline(p) overline(q)) = R_(overline(p) i) R_(overline(p) j)$.
-    According to the definition of orthonormal transformation, we know
+
+    According to the definition of orthogonal transformation, we know
     $R_(i overline(p)) R_(overline(p) j) = δ_(i j)$, hence the transpose of
     $[R_(overline(p) i)]$ is its inverse, which we have already denoted by
     $[R_(i overline(p))]$:

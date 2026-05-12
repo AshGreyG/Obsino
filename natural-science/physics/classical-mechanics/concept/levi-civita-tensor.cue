@@ -3,18 +3,18 @@ package concept
 levi_civita_tensor: {
   content: #"""
     In a Euclidean space with dimension $n$, the Levi-Civita tensor $ϵ$ is a
-    completely antisymmetric tensor with rank $n$. A parallepiped whose edges
+    completely antisymmetric tensor with rank $n$. A parallelepiped whose edges
     are $n$ vectors $ub(A), ub(B), ⋯, ub(F)$ is said to have the *volume*:
 
     $ "volume" := ϵ(ub(A), ub(B), ⋯, ub(F)) $
 
     Notice that this volume can be positive or negative, and if we exchange the
     order of the parallelepiped's legs, the volume's sign changes: $ϵ(ub(B),
-    ub(A), ⋯, ub(F)) = -ϵ(ub(A), ub(B), ⋯, ub(F))$ by antisymmetric of
+    ub(A), ⋯, ub(F)) = -ϵ(ub(A), ub(B), ⋯, ub(F))$ by the antisymmetric of
     $ϵ$.
 
     In a right-handed orthonormal basis of Euclidean 3-space, the only nonzero
-    components of $ϵ$ is
+    components of $ϵ$ are
 
     $ ϵ_(a b c) = cases(
       +1 & "if" (a, b, c) "is an even permutation of" (1, 2, 3),
