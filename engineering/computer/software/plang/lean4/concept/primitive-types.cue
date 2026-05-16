@@ -26,12 +26,12 @@ types: {
 
     For example, `Nat` refers to natural numbers, and `Int` refers to `Integer`.
 
-    \(code_part_types)
+    \(code_part_primitive_types)
   """
-  code_part_types: #"""
-    #let code-types = "src/Types.lean"
+  code_part_primitive_types: #"""
+    #let code-primitive-types = "src/PrimitiveTypes.lean"
     #raw(
-      str(read(code-types)).trim(),
+      str(read(code-primitive-types)).trim(),
       block: true,
       lang: "lean"
     )
