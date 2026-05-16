@@ -117,6 +117,16 @@ nix run .#status      # check the status of project
 ```text
 ├── Human Knowledge Tree (HKT)
 │
+├── engineering
+│    └── computer
+│        └── software
+│            └── plang
+│                └── lean4
+│                 
+│                   [x] Typst Header
+│                   [x] CUE Module
+│                   [→] concept: 4 | 102
+│                 
 ├── healthcare
 │    └── pharmacy
 │        └── pharmaceutics
@@ -154,8 +164,8 @@ nix run .#status      # check the status of project
            [→] proof: 3 | 55
            [→] theorem: 1 | 19
          
-[→] Total Counts: 79
-[→] Total Lines: 2298
+[→] Total Counts: 83
+[→] Total Lines: 2400
 ```
 
 <!-- project-status-end -->
