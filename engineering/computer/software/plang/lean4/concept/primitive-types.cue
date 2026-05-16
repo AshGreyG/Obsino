@@ -20,9 +20,9 @@ primitive_types: {
     mathematical theorems.
 
     Every program in Lean must have a type. In particular, every expression must
-    have a type. In particular, every expression must have a type before it can
-    be evaluated. At most time Lean has been able to discover a type on its
-    own, but it is sometimes necessary to provide one
+    have a type. Every expression must have a type before it can be evaluated.
+    Most of time Lean has been able to discover a type on its own, but it is
+    sometimes necessary to provide one.
 
     For example, `Nat` refers to natural numbers, and `Int` refers to `Integer`.
 
