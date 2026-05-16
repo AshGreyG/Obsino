@@ -20,7 +20,26 @@
 // This is the header of every handbook, you can add predefined functions or
 // styles here.
 
+// styles configuration
+
 #set text(font: ("Libertinus Serif", "Source Han Serif SC"), lang: "en")
 #show raw.where(block: true): set text(font: "Cascadia Mono", 0.8em)
 
+// shortcut functions for math utilities
+
+/// Functions for upright and bold font
+///
+/// - c (content): The original content
+/// -> content
 #let ub(c) = math.upright(math.bold(c))
+
+// shortcut functions for code block utilities
+
+/// Functions for code block
+///
+/// - s (str): The content of code, for example a complete snippet of Python code
+/// - language (str): The language of code
+/// -> content
+#let raw-block(s, language) = raw(s, block: true, lang: language)
+
+#let raw-block-lean(s) = raw-block(s, "lean")
