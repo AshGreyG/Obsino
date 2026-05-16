@@ -38,7 +38,7 @@ CLASS := $(subst -,_,$(RAW_CLASS))
 # Temporary file for typst content generation
 TEMP := temp.typ
 # Directories to ignore when generating handbook
-IGNORE_DIRS := cue.mod assets asset bin
+IGNORE_DIRS := cue.mod assets asset bin src
 # Set shell to bash for compatibility
 SHELL := /bin/bash
 
