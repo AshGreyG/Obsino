@@ -42,4 +42,12 @@
 /// -> content
 #let raw-block(s, language) = raw(s, block: true, lang: language)
 
-#let raw-block-lean(s) = raw-block(s, "lean")
+/// Functions for code block from file
+///
+/// - file (str): The file path relative to compile position
+/// - language (str): The language of code
+/// -> content
+#let raw-block-file(file, language) = raw-block(
+  str(read(file)).trim(),
+  language
+)
