@@ -21,5 +21,6 @@
 // styles here.
 
 #set text(font: ("Libertinus Serif", "Source Han Serif SC"), lang: "en")
+#show raw.where(block: true): set text(font: "Cascadia Mono", 0.8em)
 
 #let ub(c) = math.upright(math.bold(c))
