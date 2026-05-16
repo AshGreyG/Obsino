@@ -29,11 +29,9 @@ primitive_types: {
     \(code_part_primitive_types)
   """
   code_part_primitive_types: #"""
-    #let code-primitive-types = "src/PrimitiveTypes.lean"
-    #raw(
-      str(read(code-primitive-types)).trim(),
-      block: true,
-      lang: "lean"
+    #raw-block-file(
+      "src/PrimitiveTypes.lean",
+      "lean"
     )
   """#
 }

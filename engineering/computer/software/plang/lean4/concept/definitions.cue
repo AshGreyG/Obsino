@@ -13,11 +13,9 @@ definitions: {
     \(code_part_definitions)
   """
   code_part_definitions: #"""
-    #let code-definitions = "src/DefinitionBasicUsage.lean"
-    #raw(
-      str(read(code-definitions)).trim(),
-      block: true,
-      lang: "lean"
+    #raw-block-file(
+      "src/DefinitionBasicUsage.lean",
+      "lean"
     )
   """#
 }

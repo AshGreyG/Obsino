@@ -9,11 +9,9 @@ condition_expression: {
     \(code_part_condition)
   """
   code_part_condition: #"""
-    #let code-condition-expression = "src/ConditionExpression.lean"
-    #raw(
-      str(read(code-condition-expression)).trim(),
-      block: true,
-      lang: "lean"
+    #raw-block-file(
+      "src/ConditionExpression.lean",
+      "lean"
     )
   """#
 }

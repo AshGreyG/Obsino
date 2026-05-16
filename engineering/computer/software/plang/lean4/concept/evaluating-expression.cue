@@ -23,11 +23,9 @@ evaluating_expression: {
     \(code_part_evaluating)
   """
   code_part_evaluating: #"""
-    #let code-evaluating-expression = "src/EvaluatingExpression.lean" 
-    #raw(
-      str(read(code-evaluating-expression)).trim(),
-      block: true,
-      lang: "lean"
+    #raw-block-file(
+      "src/EvaluatingExpression.lean",
+      "lean"
     )
   """#
 }
