@@ -35,4 +35,7 @@
   [=~"^figure_part"]: string
   // Embed figures (e.g., `figure_part_test`) from the assets directory into
   // content.
+  [=~"^code_part"]: string
+  // Embed code blocks (e.g., `code_part_evaluating_expression`) from the src
+  // directory into content
 }

@@ -42,12 +42,16 @@ Knowledge entries are CUE files conforming to the schema in `schema.cue`:
   [=~"^figure_part"]: string
   // Embed figures (e.g., `figure_part_test`) from the assets directory into
   // content.
+  [=~"^code_part"]: string
+  // Embed code blocks (e.g., `code_part_evaluating_expression`) from the src
+  // directory into content
 }
 ```
 
 - **Content**: Written in Typst markup inside the `content` field
 - **Figures**: Typst figure code in `figure_part_*` fields (embedded via `#""`
   raw strings)
+- **Code Blocks**: Typst code blocks in `code_part_*` fields
 - **Assets**: SVG/PNG files in an `assets/` subdirectory
 - **Cross-references**: Array of related concept paths in the `related` field
 
