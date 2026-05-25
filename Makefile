@@ -90,6 +90,8 @@ handbook:
 	cat header.typ > $(TEMP); \
 	echo "" >> $(TEMP); \
 	echo "#align(center)[= Handbook of $$(title_func $(HANDBOOK_POSTFIX))]" >> $(TEMP); \
+	echo "#outline()" >> $(TEMP); \
+	echo "#pagebreak()" >> $(TEMP); \
 	\
 	# 1. Get all directories, filtering out ignored ones \
 	i=0; \
