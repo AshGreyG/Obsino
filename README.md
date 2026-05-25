@@ -42,12 +42,16 @@ Knowledge entries are CUE files conforming to the schema in `schema.cue`:
   [=~"^figure_part"]: string
   // Embed figures (e.g., `figure_part_test`) from the assets directory into
   // content.
+  [=~"^code_part"]: string
+  // Embed code blocks (e.g., `code_part_evaluating_expression`) from the src
+  // directory into content
 }
 ```
 
 - **Content**: Written in Typst markup inside the `content` field
 - **Figures**: Typst figure code in `figure_part_*` fields (embedded via `#""`
   raw strings)
+- **Code Blocks**: Typst code blocks in `code_part_*` fields
 - **Assets**: SVG/PNG files in an `assets/` subdirectory
 - **Cross-references**: Array of related concept paths in the `related` field
 
@@ -113,6 +117,16 @@ nix run .#status      # check the status of project
 ```text
 ├── Human Knowledge Tree (HKT)
 │
+├── engineering
+│    └── computer
+│        └── software
+│            └── plang
+│                └── lean4
+│                 
+│                   [x] Typst Header
+│                   [x] CUE Module
+│                   [→] concept: 4 | 102
+│                 
 ├── healthcare
 │    └── pharmacy
 │        └── pharmaceutics
@@ -145,12 +159,13 @@ nix run .#status      # check the status of project
          
            [x] Typst Header
            [x] CUE Module
-           [→] concept: 12 | 242
-           [→] desire: 1 | 23
-           [→] proof: 2 | 27
+           [→] concept: 18 | 401
+           [→] desire: 3 | 59
+           [→] proof: 3 | 55
+           [→] theorem: 1 | 19
          
-[→] Total Counts: 69
-[→] Total Lines: 2056
+[→] Total Counts: 83
+[→] Total Lines: 2400
 ```
 
 <!-- project-status-end -->
