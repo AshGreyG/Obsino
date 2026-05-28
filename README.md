@@ -120,12 +120,12 @@ nix run .#status      # check the status of project
 ├── engineering
 │    └── computer
 │        └── software
-│            └── plang
+│            └── verifications
 │                └── lean4
 │                 
 │                   [x] Typst Header
 │                   [x] CUE Module
-│                   [→] concept: 4 | 102
+│                   [→] concept: 5 | 135
 │                 
 ├── healthcare
 │    └── pharmacy
@@ -164,8 +164,8 @@ nix run .#status      # check the status of project
            [→] proof: 3 | 55
            [→] theorem: 1 | 19
          
-[→] Total Counts: 83
-[→] Total Lines: 2400
+[→] Total Counts: 84
+[→] Total Lines: 2433
 ```
 
 <!-- project-status-end -->
