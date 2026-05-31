@@ -6,7 +6,7 @@ tensor_product: {
     *tensor product* (also called *outer product* contradistinction to the
     inner product), defined as follows:
 
-    $ ub(A) ⊗ ub(B) ⊗ ub(C) (ub(E), ub(F), ub(G)) 
+    $ ub(A) ⊗ ub(B) ⊗ ub(C) (ub(E), ub(F), ub(G))
       = ub(A)(ub(E)) ub(B)(ub(F)) ub(C)(ub(G))
       = (ub(A) ⋅ ub(E)) (ub(B) ⋅ ub(F)) (ub(C) ⋅ ub(G)) $
 
@@ -18,7 +18,7 @@ tensor_product: {
     and of any two or more tensors of any rank, for example, if $sans("T")$ has
     rank 2 and $sans("S")$ has rank 3, then
 
-    $ sans("T") ⊗ sans("S") (ub(E)_1, ⋯, ub(E)_5) = 
+    $ sans("T") ⊗ sans("S") (ub(E)_1, ⋯, ub(E)_5) =
       sans("T")(ub(E)_1, ub(E)_2) sans("S")(ub(E)_3, ub(E)_4, ub(E)_5) $
   """#
   related: [
