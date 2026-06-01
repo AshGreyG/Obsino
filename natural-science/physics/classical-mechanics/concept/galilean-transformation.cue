@@ -28,7 +28,7 @@ galilean_transformation: {
     Differentiate the position transformation with respect to time:
 
     $ ("d"ub(x))/("d"t) & = ("d"ub(x)_(cal("O")'))/("d"t) + ("d"ub(x)')/("d"t) \
-      & = "d"/("d"t)(ub(x)_(cal("O")'))(0) + ub(v)_r t) + ("d"ub(x)')/("d"t) \
+      & = "d"/("d"t)(ub(x)_(cal("O")')(0) + ub(v)_r t) + ("d"ub(x)')/("d"t) \
       & = ub(v)_r + ("d"ub(x)')/("d"t) $
 
     Then:
