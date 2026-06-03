@@ -9,3 +9,4 @@ _output/
 **/.venv
 **/.pdb
 **/build
+**/assets/bin
