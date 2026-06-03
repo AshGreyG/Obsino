@@ -20,10 +20,17 @@
 // This is the header of every handbook, you can add predefined functions or
 // styles here.
 
+// Typst universe packages import list
+
+#import "@preview/zebraw:0.6.3": *
+
 // styles configuration
 
 #set text(font: ("Libertinus Serif", "Source Han Serif SC"), lang: "en")
 #show raw.where(block: true): set text(font: "Cascadia Mono", 0.8em)
+#show raw.where(block: false): set text(font: "Cascadia Mono")
+#show link: set text(blue)
+#show: zebraw 
 
 // shortcut functions for math utilities
 
