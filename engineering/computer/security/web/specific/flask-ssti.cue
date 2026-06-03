@@ -19,7 +19,7 @@ flask_ssti: {
         [Renders a template file],
         [✅ Safe],
 
-        [#link(render-template)[`render_template_string(string)`]],
+        [#link(render-template-string)[`render_template_string(string)`]],
         [Renders a string as a template],
         [⚠️ Dangerous if string contains user input]
       )

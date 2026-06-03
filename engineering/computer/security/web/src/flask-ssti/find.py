@@ -4,7 +4,7 @@ import sys
 DANGEROUS_CLASSES = [
     "subprocess.Popen",
     "os._wrap_close",
-    "warning.catch_warnings"
+    "warnings.catch_warnings"
 ]
 
 def main() -> None:
