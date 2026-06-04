@@ -119,6 +119,14 @@ nix run .#status      # check the status of project
 │
 ├── engineering
 │    └── computer
+│        ├── security
+│        │    └── web
+│        │     
+│        │       [x] Typst Header
+│        │       [x] CUE Module
+│        │       [→] concept: 1 | 19
+│        │       [→] specific: 1 | 111
+│        │     
 │        └── software
 │            └── verifications
 │                └── lean4
@@ -159,13 +167,14 @@ nix run .#status      # check the status of project
          
            [x] Typst Header
            [x] CUE Module
-           [→] concept: 18 | 401
+           [→] concept: 33 | 965
            [→] desire: 3 | 59
+           [→] law: 3 | 58
            [→] proof: 3 | 55
            [→] theorem: 1 | 19
          
-[→] Total Counts: 84
-[→] Total Lines: 2433
+[→] Total Counts: 104
+[→] Total Lines: 3185
 ```
 
 <!-- project-status-end -->
