@@ -54,7 +54,7 @@ projectile_motion: {
 
     - Position:
 
-    $ ub(x)(t) = ub(x)_0 + (v_0 cos θ)hat(ub(x)) + (v_0 sin θ t - 1/2 g t^2)
+    $ ub(x)(t) = ub(x)_0 + (v_0 cos θ t)hat(ub(x)) + (v_0 sin θ t - 1/2 g t^2)
       hat(ub(z)) $
 
     This is a vector equation that describes the full geometric trajectory of
