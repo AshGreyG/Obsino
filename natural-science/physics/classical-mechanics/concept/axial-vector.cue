@@ -2,9 +2,9 @@ package concept
 
 axial_vector: {
   content: #"""
-    Axial vectors do not directly correspond to directed correspond to directed
-    line segments. Instead, they correspond to *oriented rotations* or *oriented
-    areas*. They arise from the cross product of two polar vectors.
+    Axial vectors do not directly correspond to directed line segments. Instead,
+    they correspond to *oriented rotations* or *oriented areas*. They arise from
+    the cross product of two polar vectors.
 
     Geometric examples: angular velocity $bold(ω)$, angular momentum $ub(L)$,
     torque $bold(τ)$, magnetic field $ub(B)$, vorticity $∇ × ub(v)$. For example,
@@ -28,7 +28,7 @@ axial_vector: {
     rule in the mirror*. If we insist on using the right-hand rule to define
     $bold(ω)$, then indeed the $bold(ω)$ vector points the same way, but the
     perceived "rotation direction" appears opposite. This is because the rule
-    we use to defined direction is itself not parity-invariant.
+    we use to define direction is itself not parity-invariant.
   """#
   related: [
     "concept/angular-speed",

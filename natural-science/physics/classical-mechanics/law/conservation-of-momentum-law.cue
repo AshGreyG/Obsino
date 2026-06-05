@@ -13,7 +13,7 @@ conservation_of_momentum_law: {
     $ub(p)$ is a geometric vector, independent of any coordinate system and total
     momentum is a geometric measure of the system's overall state of motion.
 
-    Forces acting on reach particle in the system can be divided in to two
+    Forces acting on each particle in the system can be divided into two
     categories:
 
     - *Internal forces*: interactions between particles within the system. For
@@ -22,15 +22,15 @@ conservation_of_momentum_law: {
     - *External forces*: forces originating from outside the system. The external
       force on particle is denoted $ub(F)_i^(("ext"))$.
 
-    Newton's second law for the $i$-the particle:
+    Newton's second law for the $i$-th particle:
 
     $ ("d"ub(p)_i)/("d"t) = ∑_(j≠i) ub(F)_(j→i) + ub(F)_i^(("ext")) $
 
     So the time derivative of the total momentum is:
 
     $ ("d"ub(p))/("d"t) & = ∑_(i=1)^N ("d"ub(p)_i) \ 
-      & ∑_(i=1)^N (∑_(j≠i) ub(F)_(j→i) + ub(F)_i^(("ext"))) \
-      & ∑_(i=1)^N ∑_(j≠i) ub(F)_(j→i) + ∑_(i=1)^N ub(F)_i^(("ext")) $
+      & = ∑_(i=1)^N (∑_(j≠i) ub(F)_(j→i) + ub(F)_i^(("ext"))) \
+      & = ∑_(i=1)^N ∑_(j≠i) ub(F)_(j→i) + ∑_(i=1)^N ub(F)_i^(("ext")) $
     
     *Internal force part*: For each pair $i$ and $j$ ($i ≠ j$), Newton's third
     law gives $ub(F)_(j→i) = -ub(F)_(i→j)$, thus in the sum each pair cancels:
