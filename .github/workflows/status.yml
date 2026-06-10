@@ -24,10 +24,32 @@ jobs:
         run: |
           nix run .#status 2>/dev/null | sed 's/\x1b\[[0-9;]*m//g' >> status_output.txt
 
+      - name: Install Cascadia Code Font
+        run: |
+          mkdir -p install
+          pushd ./install
+
+          wget -q https://github.com/microsoft/cascadia-code/releases/download/v2407.24/CascadiaCode-2407.24.zip
+          unzip CascadiaCode-2407.24.zip
+          sudo mv ./ttf/*.ttf /usr/share/fonts/
+
+          popd
+
+      - name: Install Codesnap-CLI
+        run: |
+          mkdir -p install
+          pushd ./install
+
+          wget -q https://github.com/codesnap-rs/codesnap/releases/download/v0.13.4/codesnap-cli_v0.13.4_x86_64-unknown-linux-gnu.tar.gz
+          tar -zxvf codesnap-cli_v0.13.4_x86_64-unknown-linux-gnu.tar.gz
+          sudo mv ./codesnap /usr/bin/codesnap
+
+          popd
+
       - name: Render Codesnap Figure
         run: |
           mkdir -p assets
-          cargo install codesnap-cli
+
           codesnap -f status_output.txt \
             --code-font-family "Cascadia Code" \
             --output ./assets/status.png
