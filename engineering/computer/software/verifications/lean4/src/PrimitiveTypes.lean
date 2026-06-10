@@ -1,0 +1,6 @@
+#eval (1 + 2 : Nat)
+#eval (1 - 2 : Int)
+#eval (true : Bool)
+#eval (1.23 : Float)
+#eval ('c' : Char)
+#eval ("string" : String)
