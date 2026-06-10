@@ -39,7 +39,15 @@
       packages = forAllSystems ({ pkgs }: {
         handbook = pkgs.writeShellApplication {
           name = "handbook";
-          runtimeInputs = [ pkgs.cue pkgs.yq-go pkgs.typst pkgs.typstyle pkgs.source-han-serif ];
+          runtimeInputs = with packages; [
+            cue
+            yq-go
+            typst
+            typstyle
+            cargo
+            source-han-serif
+            cascadia-code
+          ];
           text = ''
             # Tell Typst where Nix installed the fonts
             export TYPST_FONT_PATHS="${pkgs.source-han-serif}"
@@ -248,6 +256,9 @@
             yq-go
             typst
             typstyle
+            cargo
+            source-han-serif
+            cascadia-code
           ];
 
           shellHook = ''
@@ -256,6 +267,7 @@
             yq --version
             typst --version
             typstyle --version
+            cargo --version
           '';
         };
       });
