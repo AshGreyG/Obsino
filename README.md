@@ -1,6 +1,6 @@
-<div align="center" name="markdown">
+<div align="center">
 
-![Obsino](https://socialify.git.ci/AshGreyG/Obsino/image?custom_language=Typst&description=1&font=Source+Code+Pro&language=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FNixOS%2Fnixos-artwork%2F9d2cdedd73d64a068214482902adea3d02783ba8%2Flogo%2Fnix-snowflake-colours.svg&name=1&owner=1&pattern=Transparent&theme=Dark)
+# 🔮 Obsino
 
 [![build](https://img.shields.io/github/actions/workflow/status/AshGreyG/Obsino/nightly.yml?label=nightly)](https://github.com/AshGreyG/Obsino/actions/workflows/nightly.yml)
 [![status](https://img.shields.io/github/actions/workflow/status/AshGreyG/Obsino/status.yml?label=status)](https://github.com/AshGreyG/Obsino/actions/workflows/status.yml)
@@ -10,10 +10,6 @@
 
 </div>
 
-![Rule](https://cdn.jsdelivr.net/gh/andreasbm/readme/assets/lines/rainbow.png)
-
-## ✨ Features
-
 **Obsino** is a digital knowledge tree — a structured personal knowledge base
 organized by academic discipline. Knowledge is authored in [CUE](https://cuelang.org/)
 files with [Typst](https://typst.app/) markup and compiled into PDF handbooks.
@@ -21,13 +17,10 @@ files with [Typst](https://typst.app/) markup and compiled into PDF handbooks.
 Each subject directory is a CUE module. Within each module, content is organized
 into:
 
-- **`concept/`** : fundamental concepts
-- **`law/`** : basic law of nature
-- **`phenomenon/`** : observed phenomena
-- **`principle/`** : experimental principles or methods
-- **`specific/`** : specific case studies
-- **`proof/`** : proof of mathematical theorems
-- **`theorem/`** : theorem of mathematics
+- **`concept/`** — fundamental concepts (e.g., alpha-helix, peptide-bond)
+- **`principle/`** — experimental principles or methods (e.g., gel-electrophoresis)
+- **`phenomenon/`** — observed phenomena (e.g., protein refolding)
+- **`specific/`** — specific case studies (e.g., structure-of-collagen)
 
 ## 🔮 Authoring Knowledge
 
@@ -64,7 +57,7 @@ Knowledge entries are CUE files conforming to the schema in `schema.cue`:
 
 ## ❄️ Build
 
-Enter the development shell
+### Enter the development shell
 
 ```bash
 nix develop
@@ -72,19 +65,19 @@ nix develop
 
 Provides `cue`, `yq`, `typst`, and `typstyle`.
 
-Export a single concept to PDF
+### Export a single concept to PDF
 
 ```bash
 make single-export FILE=concept/alpha-helix.cue
 ```
 
-Export a property from a CUE package
+### Export a property from a CUE package
 
 ```bash
 make package-export PACKAGE=natural-science.biology.biochemistry TARGET=alpha_helix
 ```
 
-Generate a handbook
+### Generate a handbook
 
 ```bash
 make handbook
@@ -92,7 +85,7 @@ make handbook
 
 Scans all subdirectories in the current module and assembles one comprehensive PDF.
 
-Build all handbooks
+### Build all handbooks
 
 ```bash
 nix run .#handbook
@@ -100,14 +93,14 @@ nix run .#handbook
 
 Outputs to `build/`.
 
-Clean
+### Clean
 
 ```bash
 nix run .#clean       # clean all build artifacts
 make clean            # clean PDFs in current directory
 ```
 
-Status
+### Status
 
 ```bash
 nix run .#status      # check the status of project
@@ -188,7 +181,6 @@ nix run .#status      # check the status of project
 <!-- project-status-end -->
 
 
-#### 📝 License
+## 📝 License
 
-Copyright © 2026 [AshGrey](https://github.com/AshGreyG). <br />
-This project is [MIT](https://github.com/liblaf/melon/blob/main/LICENSE) licensed.
+MIT — see [LICENSE](LICENSE).
