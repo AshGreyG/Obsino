@@ -44,4 +44,7 @@ sample_space: {
         experiment is performed. It contains *no outcomes* from the sample space
         It's often denoted as $∅$.
   """#
+  related: [
+    "concept/random-experiment"
+  ]
 }
