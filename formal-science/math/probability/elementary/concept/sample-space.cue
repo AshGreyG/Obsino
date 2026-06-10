@@ -34,6 +34,14 @@ sample_space: {
     ]
 
     - *Outcome* is one single element of the sample space
-    - *Event* is a subset (one or more outcomes) of the sample space
+    - *Event* is a subset (one or more outcomes) of the sample space.
+      - An *elementary event* is an event that contains *exactly one outcome*
+        from the sample space. It cannot be broken down into smaller events.
+      - A *certain event* is an event that always occur every time the random 
+        experiment is performed. It contains *all possible outcomes* of the sample
+        space. The certain event is exactly the sample space $Ω$ itself.
+      - An *impossible event* is an event that *never occurs* when the random
+        experiment is performed. It contains *no outcomes* from the sample space
+        It's often denoted as $∅$.
   """#
 }
