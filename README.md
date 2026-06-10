@@ -21,13 +21,15 @@ files with [Typst](https://typst.app/) markup and compiled into PDF handbooks.
 Each subject directory is a CUE module. Within each module, content is organized
 into:
 
-- **`concept/`** : fundamental concepts
-- **`law/`** : basic law of nature
-- **`phenomenon/`** : observed phenomena
-- **`principle/`** : experimental principles or methods
-- **`specific/`** : specific case studies
-- **`proof/`** : proof of mathematical theorems
-- **`theorem/`** : theorem of mathematics
+| Category          | Purpose                            | Examples                                               |
+| ----------------- | ---------------------------------- | ------------------------------------------------------ |
+| **`concept/`**    | Fundamental concepts               | alpha-helix, peptide-bond, torque                      |
+| **`principle/`**  | Experimental principles or methods | gel-electrophoresis                                    |
+| **`phenomenon/`** | Observed phenomena                 | protein refolding                                      |
+| **`specific/`**   | Specific case studies              | structure-of-collagen, mass-center-of-semicircle       |
+| **`law/`**        | Physical or mathematical laws      | conservation-of-momentum-law, impulse-momentum-theorem |
+| **`proof/`**      | Formal proofs                      | proof-impulse-momentum-theorem                         |
+| **`desire/`**     | Motivation or "why this matters"   | invariant-tensor                                       |
 
 ## 🔮 Authoring Knowledge
 
