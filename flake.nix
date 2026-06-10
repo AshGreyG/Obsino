@@ -44,9 +44,7 @@
             yq-go
             typst
             typstyle
-            cargo
             source-han-serif
-            cascadia-code
           ];
           text = ''
             # Tell Typst where Nix installed the fonts
@@ -256,9 +254,7 @@
             yq-go
             typst
             typstyle
-            cargo
             source-han-serif
-            cascadia-code
           ];
 
           shellHook = ''
@@ -267,7 +263,6 @@
             yq --version
             typst --version
             typstyle --version
-            cargo --version
           '';
         };
       });
