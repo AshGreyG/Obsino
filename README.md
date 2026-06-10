@@ -118,75 +118,12 @@ nix run .#status      # check the status of project
 - A nightly GitHub Action builds all handbooks and publishes them as a pre-release.
 - A status Github Action embeds the status to README.md.
 
-## 🩺 Status
-
-<!-- project-status-start -->
-```text
-├── Human Knowledge Tree (HKT)
-│
-├── engineering
-│    └── computer
-│        ├── security
-│        │    └── web
-│        │     
-│        │       [x] Typst Header
-│        │       [x] CUE Module
-│        │       [→] concept: 1 | 19
-│        │       [→] specific: 1 | 111
-│        │     
-│        └── software
-│            └── verifications
-│                └── lean4
-│                 
-│                   [x] Typst Header
-│                   [x] CUE Module
-│                   [→] concept: 5 | 135
-│                 
-├── healthcare
-│    └── pharmacy
-│        └── pharmaceutics
-│         
-│           [x] Typst Header
-│           [x] CUE Module
-│           [→] concept: 16 | 272
-│           [→] desire: 1 | 11
-│         
-└── natural-science
-    ├── biology
-    │    ├── biochemistry
-    │    │
-    │    │  [x] Typst Header
-    │    │  [x] CUE Module
-    │    │  [→] concept: 16 | 609
-    │    │  [→] phenomenon: 2 | 71
-    │    │  [→] principle: 1 | 29
-    │    │  [→] specific: 4 | 134
-    │    │
-    │    └── molecular-biology
-    │     
-    │       [x] Typst Header
-    │       [x] CUE Module
-    │       [→] concept: 9 | 458
-    │       [→] principle: 5 | 180
-    │     
-    └── physics
-        └── classical-mechanics
-         
-           [x] Typst Header
-           [x] CUE Module
-           [→] concept: 42 | 1202
-           [→] desire: 3 | 59
-           [→] law: 7 | 225
-           [→] proof: 4 | 71
-           [→] specific: 1 | 34
-           [→] theorem: 1 | 19
-         
-[→] Total Counts: 119
-[→] Total Lines: 3639
-```
-
-<!-- project-status-end -->
-
+<div name="status-figure" align="center">
+  <img
+    src="https://raw.githubusercontent.com/AshGreyG/Obsino/refs/heads/gh-pages/status.png"
+    style="width:50%"
+  >
+</div>
 
 #### 📝 License
 
