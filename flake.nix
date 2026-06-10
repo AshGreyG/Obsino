@@ -39,7 +39,7 @@
       packages = forAllSystems ({ pkgs }: {
         handbook = pkgs.writeShellApplication {
           name = "handbook";
-          runtimeInputs = with packages; [
+          runtimeInputs = with pkgs; [
             cue
             yq-go
             typst
