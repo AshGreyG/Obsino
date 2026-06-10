@@ -34,6 +34,8 @@ jobs:
           wget -q https://github.com/microsoft/cascadia-code/releases/download/v2407.24/CascadiaCode-2407.24.zip
           unzip CascadiaCode-2407.24.zip
           sudo mv ./ttf/*.ttf /usr/share/fonts/
+          sudo mv ./ttf/static/*.ttf /usr/share/fonts/
+          fc-cache -fv
 
           popd
 

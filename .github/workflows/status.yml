@@ -32,6 +32,8 @@ jobs:
           wget -q https://github.com/microsoft/cascadia-code/releases/download/v2407.24/CascadiaCode-2407.24.zip
           unzip CascadiaCode-2407.24.zip
           sudo mv ./ttf/*.ttf /usr/share/fonts/
+          sudo mv ./ttf/static/*.ttf /usr/share/fonts/
+          fc-cache -fv
 
           popd
 
@@ -51,7 +53,7 @@ jobs:
           mkdir -p assets
 
           codesnap -f status_output.txt \
-            --code-font-family "Cascadia Code" \
+            --code-font-family "Cascadia Mono" \
             --output ./assets/status.png
 
       - name: Deploy Figure to Github Page Branch
