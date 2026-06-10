@@ -37,6 +37,8 @@ CLASS := $(subst -,_,$(RAW_CLASS))
 
 # Temporary file for typst content generation
 TEMP := temp.typ
+# Header Typst file for typst functions / style configurations
+HEADER := header.typ
 # Directories to ignore when generating handbook
 IGNORE_DIRS := cue.mod assets asset bin src
 # Set shell to bash for compatibility
@@ -49,7 +51,8 @@ SHELL := /bin/bash
 package-export:
 	@echo "→ Starting to process package $(PACKAGE)/$(DIR) and single property $(TARGET) in it"
 	@echo "  Exporting CUE package to YAML and extracting $(TARGET).content"
-	@cue export $(PACKAGE)/$(DIR) --out yaml | yq -r ".$(TARGET).content" > $(TEMP)
+	@cat $(HEADER) > $(TEMP)
+	@cue export $(PACKAGE)/$(DIR) --out yaml | yq -r ".$(TARGET).content" >> $(TEMP)
 	@echo "→ Formatting generated raw typst file content"
 	@typstyle -i $(TEMP)
 	@echo "→ Temp typst file content:"
@@ -64,7 +67,12 @@ package-export:
 single-export:
 	@echo "→ Starting to process single CUE file $(FILE)"
 	@echo "  Exporting CUE file to YAML and extracting $(CLASS).content"
-	@cue export $(FILE) --out yaml | yq -r ".$(CLASS).content" > $(TEMP)
+	@cat $(HEADER) > $(TEMP)
+	@cue export $(FILE) --out yaml | yq -r ".$(CLASS).content" >> $(TEMP)
+	@echo "→ Formatting generated raw typst file content"
+	@typstyle -i $(TEMP)
+	@echo "→ Temp typst file content:"
+	@cat $(TEMP)
 	@echo "  Compiling typst file to $(RAW_CLASS).pdf"
 	@typst compile $(TEMP) $(RAW_CLASS).pdf
 	@rm -f $(TEMP)
@@ -87,7 +95,7 @@ handbook:
 	}; \
 	\
 	# Write handbook title to temp file \
-	cat header.typ > $(TEMP); \
+	cat $(HEADER) > $(TEMP); \
 	echo "" >> $(TEMP); \
 	echo "#align(center)[= Handbook of $$(title_func $(HANDBOOK_POSTFIX))]" >> $(TEMP); \
 	echo "#outline()" >> $(TEMP); \
