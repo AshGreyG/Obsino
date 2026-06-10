@@ -14,7 +14,7 @@ angular_momentum_theorem: {
     meaning: the rate of change of a particle's angular momentum equals the net
     torque acting on it.
 
-    For a system of $N$ particle, the total angular momentum is:
+    For a system of $N$ particles, the total angular momentum is:
 
     $ ub(L)_"total" = ∑_(i=1)^N ub(x)_i × ub(p)_i $
 
@@ -25,11 +25,11 @@ angular_momentum_theorem: {
       & = ∑_(i=1)^N (ub(v)_i × (m ub(v)_i) + ub(x)_i × (∑_(j≠i) ub(F)_(j→i) +
         ub(F)_i^(("ext")))) \
       & = ∑_(i=1)^N ub(x)_i × (∑_(j≠i) ub(F)_(j→i) + ub(F)_i^(("ext"))) \
-      & = ∑_(i=1)^N (ub(x)_i × ∑_(j≠i) ub(F)_(j→i)) + (∑_(i=1)^N ub(x)_i) ×
+      & = ∑_(i=1)^N (ub(x)_i × ∑_(j≠i) ub(F)_(j→i)) + ∑_(i=1)^N ub(x)_i ×
         ub(F)_i^(("ext")) $
 
     Notice that for *internal torque* part: for every pair of particles $i$ and $j$,
-    their contributions are $ub(x)_i × ub(F)(j→i) + ub(x)_j × ub(F)_(i→j)$.
+    their contributions are $ub(x)_i × ub(F)_(j→i) + ub(x)_j × ub(F)_(i→j)$.
     According to the Newton's Third Law, $ub(F)_(j→i) = -ub(F)_(i→j)$, so we know
     that:
 
