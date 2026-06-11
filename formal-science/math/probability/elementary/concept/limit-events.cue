@@ -34,6 +34,7 @@ limit_events: {
   """#
   related: [
     "concept/intersection-of-events",
-    "concept/union-of-events"
+    "concept/union-of-events",
+    "concept/continuity"
   ]
 }
