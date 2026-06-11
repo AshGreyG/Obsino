@@ -28,7 +28,7 @@ sigma_algebra: {
   """#
   related: [
     "concept/sample-space",
-    "concept/complementary-event",
+    "concept/complementary-events",
     "concept/countable-infinite-union",
     "desire/assign-probability-to-uncountable"
   ]
