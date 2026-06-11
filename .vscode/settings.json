@@ -33,5 +33,28 @@
     "complementation",
     "Borel",
     "Kolmogorov",
+
+    // natural-science.biology.biochemistry
+    "chimerax",
+    "ramachandran",
+    "hline",
+    "datapoints",
+    "protofilament",
+    "protofilaments",
+    "tetramer",
+    "tetramers",
+    "protofibril",
+    "cytoskeleton",
+    "microfilaments",
+    "microtubules",
+    "mercaptoethanol",
+    "disulfides",
+    "guanidinium",
+
+    // natural-science.biology.molecular-biology
+    "trizol",
+    "electroelution",
+    "agarose",
+    "chaotropic"
   ],
 }
