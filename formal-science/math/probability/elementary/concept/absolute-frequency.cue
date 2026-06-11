@@ -10,6 +10,6 @@ absolute_frequency: {
     $ n_A = "number of times event" A "occurs"  $
   """#
   related: [
-    "concept/absolute-frequency"
+    "concept/relative-frequency"
   ]
 }

@@ -13,4 +13,7 @@ geometric_probability_model: {
 
     $ P(A) = ("measure of" A)/("measure of" Ω) $
   """#
+  related: [
+    "concept/classical-probability-model"
+  ]
 }
