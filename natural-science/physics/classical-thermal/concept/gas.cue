@@ -7,7 +7,7 @@ gas: {
     fill any container and can be compressed easily. To describe a gas quantitatively
     we use state variables:
 
-    - $P$: pressure, force per unit area
+    - $p$: pressure, force per unit area
     - $V$: volume, the geometric space occupied by the gas
     - $T$: temperature, a measure of the average kinetic energy of the particles
     - $n$: amount of substance, number of moles
