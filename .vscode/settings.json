@@ -55,6 +55,9 @@
     "trizol",
     "electroelution",
     "agarose",
-    "chaotropic"
+    "chaotropic",
+
+    // natural-science.physics.classical-thermal
+    "diathermal"
   ],
 }
