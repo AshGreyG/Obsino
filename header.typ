@@ -37,6 +37,8 @@
 
 // shortcut functions for math utilities
 
+#let evaluated(expr, size: 100%) = $lr(#expr|, size: #size)$
+
 /// Functions for upright and bold font
 ///
 /// - c (content): The original content
