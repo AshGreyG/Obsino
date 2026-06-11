@@ -1,0 +1,37 @@
+{
+  "editor.tabSize": 2,
+  "cSpell.userWords": [
+    // common and binary names
+    "nixpkgs",
+    "nixos",
+    "pkgs",
+    "typst",
+    "typstyle",
+    "pushd",
+    "popd",
+
+    // typst packges
+    "cetz",
+
+    "pharmacokinetics",
+    "solubilizer",
+    "solubilizate",
+    "biopharmaceutics",
+    "hydrotropy",
+    "cosolubilization",
+    "hydrotropic",
+    "aminobenzoic",
+    "nicotinamide",
+    "interconvert",
+
+    // engineering.computer.security.web
+    "ssti",
+
+    // formal-science.math.probability.elementary
+    "uncountably",
+    "disjointness",
+    "complementation",
+    "Borel",
+    "Kolmogorov",
+  ],
+}
