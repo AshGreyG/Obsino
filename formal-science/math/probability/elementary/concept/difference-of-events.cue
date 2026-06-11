@@ -10,7 +10,7 @@ difference_of_events: {
     Special cases:
 
     1. When $A$ is the subset of $B$, $A ⊂ B$, then $A - B = ∅$
-    2. When $A$ and $B$ are mutually exclusive (disjoint)
+    2. When $A$ and $B$ are mutually exclusive (disjoint), then $A - B = A$
 
     Unlike union and intersection, difference is not *commutative*. When $A ≠ B$,
     $A - B ≠ B - A$. And these two are disjoint:

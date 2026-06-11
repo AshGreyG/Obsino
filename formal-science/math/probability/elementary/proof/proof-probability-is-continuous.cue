@@ -37,7 +37,7 @@ proof_probability_is_continuous: {
 
     Thus
 
-    $ lim_(n->∞) P(E_n) = P(⋃_(n=1)^∞ E_n) $
+    $ lim_(n->∞) P(E_n) = P(⋂_(n=1)^∞ E_n) $
 
     we prove the continuity from above of $P$.
   """#
