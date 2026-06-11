@@ -58,6 +58,7 @@
     "chaotropic",
 
     // natural-science.physics.classical-thermal
-    "diathermal"
+    "diathermal",
+    "lussac"
   ],
 }
