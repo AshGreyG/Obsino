@@ -59,6 +59,7 @@
 
     // natural-science.physics.classical-thermal
     "diathermal",
-    "lussac"
+    "lussac",
+    "Maxwellian"
   ],
 }
