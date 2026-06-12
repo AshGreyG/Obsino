@@ -56,7 +56,7 @@ pressure_from_molecular_collisions: {
 
       $ p V = 1/3 n m ⟨v^2⟩ = 2/3 n (1/2 m ⟨v^2⟩) = 2/3 n ⟨E_k⟩ $
 
-    This is the fundamental equation of the kinetic theory of gasses.
+    This is the fundamental equation of the kinetic theory of gases.
   """#
   external_related: [
     "natural-science.physics.classical-mechanics/concept/momentum",

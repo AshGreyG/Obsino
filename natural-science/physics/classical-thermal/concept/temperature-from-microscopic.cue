@@ -18,7 +18,7 @@ temperature_from_microscopic: {
 
     So *temperature is a measure of the average translational kinetic energy of
     the molecules*. At absolute zero, $T = 0$, so $⟨E_k⟩ = 0$ all molecular motion
-    stops. Temperature is not a property of a single molecule, it is a *statical
+    stops. Temperature is not a property of a single molecule, it is a *statistical
     average over a huge number of molecules*.
   """#
   related: [

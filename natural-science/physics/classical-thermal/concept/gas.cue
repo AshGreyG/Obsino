@@ -12,6 +12,6 @@ gas: {
     - $T$: temperature, a measure of the average kinetic energy of the particles
     - $n$: amount of substance, number of moles
 
-    These variables are not independent they are relayed by an equation of state.
+    These variables are not independent they are related by an equation of state.
   """#
 }
