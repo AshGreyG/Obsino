@@ -1,8 +1,3 @@
-**/.obsidian/
-**/_assets/
-_excalidraw/
-_output/
-
 **/*.pdf
 **/__pycache__
 **/.venv

@@ -12,6 +12,7 @@
 
     // typst packges
     "cetz",
+    "vline",
 
     "pharmacokinetics",
     "solubilizer",
@@ -55,6 +56,12 @@
     "trizol",
     "electroelution",
     "agarose",
-    "chaotropic"
+    "chaotropic",
+
+    // natural-science.physics.classical-thermal
+    "diathermal",
+    "lussac",
+    "Maxwellian",
+    "equipartition"
   ],
 }
