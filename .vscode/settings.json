@@ -12,6 +12,7 @@
 
     // typst packges
     "cetz",
+    "vline",
 
     "pharmacokinetics",
     "solubilizer",
