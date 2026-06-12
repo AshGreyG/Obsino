@@ -60,6 +60,7 @@
     // natural-science.physics.classical-thermal
     "diathermal",
     "lussac",
-    "Maxwellian"
+    "Maxwellian",
+    "equipartition"
   ],
 }
