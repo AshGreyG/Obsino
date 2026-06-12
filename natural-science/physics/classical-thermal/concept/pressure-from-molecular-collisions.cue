@@ -52,10 +52,17 @@ pressure_from_molecular_collisions: {
 
       $ p V = 1/3 n m ⟨v^2⟩ $
 
+      From the definition of average translational kinetic energy.
+
+      $ p V = 1/3 n m ⟨v^2⟩ = 2/3 n (1/2 m ⟨v^2⟩) = 2/3 n ⟨E_k⟩ $
+
     This is the fundamental equation of the kinetic theory of gasses.
   """#
   external_related: [
     "natural-science.physics.classical-mechanics/concept/momentum",
     "natural-science.physics.classical-mechanics/law/newton-third-law",
+  ]
+  related: [
+    "concept/average-translational-kinetic-energy"
   ]
 }
