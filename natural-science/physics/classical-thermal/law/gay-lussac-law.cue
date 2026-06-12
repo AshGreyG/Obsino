@@ -5,7 +5,7 @@ gay_lussac_law: {
     For a fixed amount of gas kept at constant pressure, the volume and temperature
     are *directly proportional*:
 
-    $ V_1/T_1 = V_2/T_2 = "constant" ("for fixed" p, T) $
+    $ V_1/T_1 = V_2/T_2 = "constant" ("for fixed" p, n) $
   """#
   related: [
     "law/charles-law",
