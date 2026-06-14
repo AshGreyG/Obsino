@@ -34,6 +34,7 @@
     "complementation",
     "Borel",
     "Kolmogorov",
+    "chebyshev",
 
     // natural-science.biology.biochemistry
     "chimerax",
