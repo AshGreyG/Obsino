@@ -1,6 +1,6 @@
 package specific
 
-cauchy_distribution_function: {
+cauchy_distribution: {
   content: """
     The *Cauchy distribution* (also known as the *Lorentz distribution* in physics)
     is a continuous probability distribution with heavy tails. Unlike the normal
