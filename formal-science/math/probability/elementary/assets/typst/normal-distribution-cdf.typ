@@ -51,6 +51,6 @@
         },
       )
     }),
-    caption: "PDF of Normal Distribution",
+    caption: "CDF of Normal Distribution",
   )
 ]

@@ -16,7 +16,7 @@ binomial_distribution: {
 
     Its CDF has no closed form:
 
-    $ F(k) = P(X ≤ k) = ∑_(i=0)^k binom(n, i) p^i (1 - p)^i $
+    $ F(k) = P(X ≤ k) = ∑_(i=0)^k binom(n, i) p^i (1 - p)^(n - i) $
 
     We can use Typst to draw its draft:
 

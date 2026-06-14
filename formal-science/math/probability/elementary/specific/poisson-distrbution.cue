@@ -21,7 +21,7 @@ poisson_distribution: {
 
     Consider random variable $X ~ "Poisson"(λ)$, then its expectation:
 
-    $ 𝔼[X] = ∑_(k=0)^∞ k (λ^k)/(k!) "e"^(-k)
+    $ 𝔼[X] = ∑_(k=0)^∞ k (λ^k)/(k!) "e"^(-λ)
       = λ"e"^(-λ) ∑_(k=1) (λ^(k-1))/((k-1)!) = λ "e"^(-λ) "e"^λ = λ $
 
     and its variance:

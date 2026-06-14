@@ -25,7 +25,7 @@ exponential_distribution: {
 
     For random variables obeying exponential distribution, its expectation:
 
-    $ 𝔼[X] & = ∫_0^∞ x λ "e"^(-λ x) = 1/λ ∫_0^∞ t "e"^(-t) "d"t \\
+    $ 𝔼[X] & = ∫_0^∞ x λ "e"^(-λ x) "d"x = 1/λ ∫_0^∞ t "e"^(-t) "d"t \\
       & = 1/λ ⋅ evaluated((-(t+1)"e"^(-t)))_0^∞ \\
       & = 1/λ $
 

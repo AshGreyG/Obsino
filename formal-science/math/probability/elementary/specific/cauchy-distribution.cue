@@ -4,8 +4,8 @@ cauchy_distribution: {
   content: """
     The *Cauchy distribution* (also known as the *Lorentz distribution* in physics)
     is a continuous probability distribution with heavy tails. Unlike the normal
-    distribution, it has *no finite mean* and *no finite variance*, its tails
-    decay so slowly that th expected value and variance do not exist. We can denote
+    distribution. It has *no finite mean* and *no finite variance*; its tails
+    decay so slowly that the expected value and variance do not exist. We can denote
     a random variable obeying Cauchy distribution:
 
     $ X ~ "Cauchy"(x_0, γ) $

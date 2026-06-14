@@ -26,7 +26,7 @@ expectation: {
     3. *Monotonicity*: if $X ≤ Y$ almost surely, then $𝔼[X] ≤ 𝔼[Y]$
     4. *Expectation of a function*:
 
-      $ 𝔼[g(X)] = ∑ g(X) p(X), space.en 𝔼[g(X)] = ∫ g(x) ⋅ f_X (x) "d"x $
+      $ 𝔼[g(X)] = ∑_i g(x_i) p(x_i), space.en 𝔼[g(X)] = ∫ g(x) ⋅ f_X (x) "d"x $
 
     5. *Independent product*: if $X$ and $Y$ are independent then $𝔼[X Y] = 
       𝔼[X] · 𝔼[Y]$
