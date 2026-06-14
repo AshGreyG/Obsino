@@ -35,6 +35,7 @@
     "Borel",
     "Kolmogorov",
     "chebyshev",
+    "abramowitz",
 
     // natural-science.biology.biochemistry
     "chimerax",

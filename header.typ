@@ -41,11 +41,12 @@
 
 // custom calculation functions
 
-/// Custom error function
+/// Custom error function, use Abramowitz & Stegun formula, its used for drawing
+/// pictures
 ///
 /// - x (int | float): 
 /// -> float
-#let erf(x) = {
+#let erf__abramowitz(x) = {
   if x == 0 { return 0 }
   let sign = if x < 0 { -1 } else { 1 }
   let t-val = calc.abs(x)
