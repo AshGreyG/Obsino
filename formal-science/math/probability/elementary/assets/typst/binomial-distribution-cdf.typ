@@ -13,31 +13,32 @@
       content((8.3, 0), $x$)
       content((0, 6.3), $y$)
 
-      let lambdas = (1, 2)
+      let n = 30
+      let ps = (0.3, 0.4)
       let colors = (blue, red)
 
-      let exponential-distribution-pdf(t, lambda) = (
-        lambda * calc.exp(-lambda * t)
+      let binomial-distribution-pmf(k, n, p) = (
+        calc.binom(n, k) * calc.pow(p, k) * calc.pow(1 - p, n - k)
       )
 
       plot.plot(
         size: (8, 5),
         axis-style: none,
         {
-          for (idx, lambda) in lambdas.enumerate() {
-            plot.add(
-              domain: (0, 3),
-              t => exponential-distribution-pdf(t, lambda),
-              style: (
-                stroke: (
-                  paint: colors.at(idx)
-                )
-              )
-            )
+          for (idx, p) in ps.enumerate() {
+            let points = ()
+            let sum = 0
+            for k in range(0, n + 1) {
+              sum += binomial-distribution-pmf(k, n, p)
+              points.push((k, sum))
+            }
+            plot.add(points, line: (
+              type: "raw",
+            ))
           }
         },
       )
     }),
-    caption: "PDF of Exponential Distribution",
+    caption: "CDF of Binomial Distribution",
   )
 ]
