@@ -31,7 +31,8 @@ cauchy_distribution_function: {
     \(figure_part_cauchy_distribution_cdf)
   """
   related: [
-    "concept/probability-density-function"
+    "concept/probability-density-function",
+    "concept/cumulative-distribution-function"
   ]
   figure_part_cauchy_distribution_pdf: #"""
     #let pdf-cauchy = "assets/typst/cauchy-distribution-pdf.typ"

@@ -24,7 +24,11 @@ probability_density_function: {
     integral of the PDF gives probabilities.* The cumulative distribution function
     (CDF) $F_X (x)$ and the PDF are related by:
 
-    $ f_X (x) = "d"/("d") F_X (x) $
+    $ f_X (x) = "d"/("d"x) F_X (x) $
+
+    The basic properties of probability density function:
+    1. Non-negative: $f_X (x) ≥ 0$
+    2. Normalization: $∫_(-∞)^(+∞) f_X (x) "d"x = 1$
   """#
   related: [
     "concept/distribution-column",
