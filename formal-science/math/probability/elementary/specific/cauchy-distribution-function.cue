@@ -5,7 +5,10 @@ cauchy_distribution_function: {
     The *Cauchy distribution* (also known as the *Lorentz distribution* in physics)
     is a continuous probability distribution with heavy tails. Unlike the normal
     distribution, it has *no finite mean* and *no finite variance*, its tails
-    decay so slowly that th expected value and variance do not exist:
+    decay so slowly that th expected value and variance do not exist. We can denote
+    a random variable obeying Cauchy distribution:
+
+    $ X ~ "Cauchy"(x_0, γ) $
 
     Recall the PDF of the Cauchy distribution, the standard Cauchy distribution
     has PDF:
@@ -29,6 +32,13 @@ cauchy_distribution_function: {
     $ F(x) = 1/2 + 1/π arctan((x - x_0)/γ), space.en -∞ < x < +∞ $
 
     \(figure_part_cauchy_distribution_cdf)
+
+    We proof the expectation of Cauchy distribution doesn't exist:
+
+    $ 𝔼[X] & = ∫_(-∞)^(+∞) |x| ⋅ 1/(π(1 + x^2)) "d"x
+      & = 2 ∫_0^(+∞) 1/π x/(1 + x^2) "d"x \\
+      & = 2 evaluated( (1/(2 π) ln(x^2 + 1)) )_0^(+∞) \\
+      & = +∞ $
   """
   related: [
     "concept/probability-density-function",
