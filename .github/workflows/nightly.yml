@@ -26,6 +26,19 @@ jobs:
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Install Cascadia Code Font
+        run: |
+          mkdir -p install
+          pushd ./install
+
+          wget -q https://github.com/microsoft/cascadia-code/releases/download/v2407.24/CascadiaCode-2407.24.zip
+          unzip CascadiaCode-2407.24.zip
+          sudo mv ./ttf/*.ttf /usr/share/fonts/
+          sudo mv ./ttf/static/*.ttf /usr/share/fonts/
+          fc-cache -fv
+
+          popd
+
       - name: Build Handbooks
         # This runs your custom Nix command which populates ./build
         run: nix run .#handbook

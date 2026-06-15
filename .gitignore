@@ -1,11 +1,6 @@
-**/.obsidian/
-**/_assets/
-_excalidraw/
-_output/
-**/.vscode
-
 **/*.pdf
 **/__pycache__
 **/.venv
 **/.pdb
 **/build
+**/assets/bin

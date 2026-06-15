@@ -14,4 +14,7 @@ tensor: {
 
     where $e$ and $f$ are real numbers
   """#
+  related: [
+    "desire/invariant-tensor"
+  ]
 }
