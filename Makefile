@@ -39,6 +39,7 @@ CLASS := $(subst -,_,$(RAW_CLASS))
 TEMP := temp.typ
 # Header Typst file for typst functions / style configurations
 HEADER := header.typ
+REMOTE_DOWNLOADS := download
 # Directories to ignore when generating handbook
 IGNORE_DIRS := cue.mod assets asset bin src
 # Set shell to bash for compatibility
@@ -52,7 +53,30 @@ package-export:
 	@echo "→ Starting to process package $(PACKAGE)/$(DIR) and single property $(TARGET) in it"
 	@echo "  Exporting CUE package to YAML and extracting $(TARGET).content"
 	@cat $(HEADER) > $(TEMP)
-	@cue export $(PACKAGE)/$(DIR) --out yaml | yq -r ".$(TARGET).content" >> $(TEMP)
+	@raw_content=$$(cue export $(PACKAGE)/$(DIR) --out yaml | yq -r ".$(TARGET).content"); \
+	\
+	mkdir -p $(REMOTE_DOWNLOADS); \
+	\
+	img_urls=$$(echo "$$raw_content" | grep -o 'image("https://[^"]*' | sed 's/image("//'); \
+	if [ -n "$$img_urls" ]; then \
+		while IFS= read -r url; do \
+			if [ -n "$$url" ]; then \
+				img_name=$$(basename "$$url"); \
+				echo "↓ Downloading remote asset: $$img_name"; \
+				\
+				curl -s -L "$$url" -o "$(REMOTE_DOWNLOADS)/$$img_name"; \
+				\
+				if [ $$? -eq 0 ] && [ -f "$(REMOTE_DOWNLOADS)/$$img_name" ]; then \
+					echo "✓ Downloaded successfully. Updating image links ..."; \
+					\
+					raw_content=$${raw_content//"$$url"/"$(REMOTE_DOWNLOADS)/$$img_name"}; \
+				else \
+					echo "  " >&2; \
+				fi; \
+			fi; \
+		done <<< "$$img_urls"; \
+	fi; \
+	echo "$$raw_content" >> $(TEMP)
 	@echo "→ Formatting generated raw typst file content"
 	@typstyle -i $(TEMP)
 	@echo "→ Temp typst file content:"
@@ -60,6 +84,7 @@ package-export:
 	@echo "  Compiling typst file to $(TARGET).pdf"
 	@typst compile $(TEMP) $(TARGET).pdf
 	@rm -f $(TEMP)
+	@rm -rf $(REMOTE_DOWNLOADS)
 	@echo "✅ successfully generate the pdf of content"
 
 # This subcommand exports a single CUE file directly
@@ -82,7 +107,7 @@ single-export:
 handbook:
 	@echo "→ Starting to export all the content into handbook-$(HANDBOOK_POSTFIX).pdf"; \
 	\
-	# Function to convert hyphen-case to Title Case for headings \
+	# Function to convert hyphen-case to Title Case for headings; \
 	title_func() { \
 		local str="$$1"; \
 		str=$${str//-/ }; \
@@ -94,38 +119,58 @@ handbook:
 		echo "$$processed"; \
 	}; \
 	\
-	# Write handbook title to temp file \
+	# Write handbook title to temp file; \
 	cat $(HEADER) > $(TEMP); \
 	echo "" >> $(TEMP); \
 	echo "#align(center)[= Handbook of $$(title_func $(HANDBOOK_POSTFIX))]" >> $(TEMP); \
 	echo "#outline()" >> $(TEMP); \
 	echo "#pagebreak()" >> $(TEMP); \
 	\
-	# 1. Get all directories, filtering out ignored ones \
+	# 1. Get all directories, filtering out ignored ones; \
 	i=0; \
 	t="ABCDEFGHIJKLMNOPQRSTUVWXYZ"; \
 	for dir in $$(ls -d */ | cut -f1 -d"/"); do \
 		if echo "$(IGNORE_DIRS)" | grep -qw "$$dir"; then continue; fi; \
 		echo "→ Entering directory: $$dir/"; \
 		\
-		# Write section header for each directory \
+		# Write section header for each directory; \
 		echo "#align(center)[= $${t:$$i:1} $$(title_func $$dir)]" >> $(TEMP); \
 		\
-		# 2. Iterate through CUE files in that directory \
+		# 2. Iterate through CUE files in that directory; \
 		for file in $$dir/*.cue; do \
 			echo "→   Exporting file $$file"; \
 			\
-			# Write file title \
+			# Write file title; \
 			echo "== $$(title_func $$(basename $$file | sed -e "s/.cue//g"))" >> $(TEMP); \
 			\
-			# Write file reference link \
+			# Write file reference link; \
 			reference="<$$(echo $$file | sed -e 's/\//-/g' -e 's/.cue//g')>"; \
 			echo $$reference >> $(TEMP); \
 			\
-			# Export file content and extract content property \
-			cue export $(PACKAGE)/$$dir --out yaml | yq -r ".$$(basename $$file | sed -e 's/.cue//g' -e 's/-/_/g').content" >> $(TEMP); \
+			# Export file content and extract content property; \
+			raw_content=$$(cue export $(PACKAGE)/$$dir --out yaml | yq -r ".$$(basename $$file | sed -e 's/.cue//g' -e 's/-/_/g').content"); \
+			mkdir -p $(REMOTE_DOWNLOADS); \
 			\
-			# Extract related knowledge links if they exist \
+			img_urls=$$(echo "$$raw_content" | grep -o 'image("https://[^"]*' | sed 's/image("//' ); \
+			if [ -n "$$img_urls" ]; then \
+				while IFS= read -r url; do \
+					if [ -n "$$url" ]; then \
+						img_name=$$(basename "$$url"); \
+						echo "→   ↓ Downloading remote asset: $$img_name from $$url"; \
+						\
+						curl -s -L "$$url" -o "$(REMOTE_DOWNLOADS)/$$img_name"; \
+						\
+						if [ $$? -eq 0 ] && [ -f "$(REMOTE_DOWNLOADS)/$$img_name" ]; then \
+							echo "→   ✓ Downloaded successfully. Updating image links ..."; \
+							raw_content=$${raw_content//"$$url"/"$(REMOTE_DOWNLOADS)/$$img_name"}; \
+						else \
+							echo "  " >&2; \
+						fi; \
+					fi; \
+				done <<< "$$img_urls"; \
+			fi; \
+			echo "$$raw_content" >> $(TEMP); \
+			\
 			related=$$(cue export $(PACKAGE)/$$dir --out json | yq -r ".$$(basename $$file | sed -e 's/.cue//g' -e 's/-/_/g').related"); \
 			if [[ ! $$related =~ "null" ]]; then \
 				echo -e "\nRelated Knowledge: " >> $(TEMP); \
@@ -142,11 +187,12 @@ handbook:
 	\
 	# Format and compile the handbook
 	@echo "→ Formatting handbook with typstyle"
-	@typstyle -i $(TEMP);
+	@typstyle -i $(TEMP)
 	@echo "→ Compiling handbook to PDF"
-	@typst compile $(TEMP) handbook-$(HANDBOOK_POSTFIX).pdf;
+	@typst compile $(TEMP) handbook-$(HANDBOOK_POSTFIX).pdf
 	@echo "→ Cleaning up temporary files"
-	@rm -rf $(TEMP);
+	@rm -f $(TEMP)
+	@rm -rf $(REMOTE_DOWNLOADS)
 	@echo "✅ successfully generate the pdf of content"
 
 # Clean up generated PDF files
