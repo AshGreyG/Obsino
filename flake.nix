@@ -44,12 +44,8 @@
             yq-go
             typst
             typstyle
-            source-han-serif
           ];
           text = ''
-            # Tell Typst where Nix installed the fonts
-            export TYPST_FONT_PATHS="${pkgs.source-han-serif}"
-
             # Define workspace root (relative to where flake is)
             WORKSPACE_ROOT=$(pwd)
             BUILD_DIR="$WORKSPACE_ROOT/build"
@@ -254,7 +250,6 @@
             yq-go
             typst
             typstyle
-            source-han-serif
           ];
 
           shellHook = ''
