@@ -32,6 +32,9 @@
 #show math.equation.where(block: true): it => {
   block(width: 100%, align(center, it))
 }
+#show figure: it => {
+  block(width: 100%, align(center, it))
+}
 #show link: set text(blue)
 #show: zebraw
 
