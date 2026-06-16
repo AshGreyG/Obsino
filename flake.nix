@@ -51,7 +51,7 @@
             WORKSPACE_ROOT=$(pwd)
             BUILD_DIR="$WORKSPACE_ROOT/build"
 
-            push .pipeline/smiles
+            pushd .pipeline/smiles
             pnpm install
             popd
 
