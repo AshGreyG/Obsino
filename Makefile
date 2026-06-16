@@ -26,6 +26,8 @@ FILE ?= <file>
 TARGET ?= <target>
 DIR ?= <directory>
 
+# Root directory
+ROOT := $(shell dirname $(shell readlink Makefile))
 # Extract package name from cue.mod/module.cue file
 PACKAGE := $(shell cat cue.mod/module.cue | yq -r ".module")
 # Extract directory name for handbook postfix (used in handbook filename)
@@ -75,6 +77,26 @@ package-export:
 				fi; \
 			fi; \
 		done <<< "$$img_urls"; \
+	fi; \
+	smiles=$$(echo "$$raw_content" | grep -o 'image("smiles://[^"]*' | sed 's/image("smiles:\/\///'); \
+	if [ -n "$$smiles" ]; then \
+		while IFS= read -r smile; do \
+			if [ -n "$$smile" ]; then \
+				pushd $(ROOT)/.pipeline/smiles >&2; \
+				echo "→ Jump to the SMILES pipeline folder: $$(pwd)"; \
+				./smiles.mjs "$$smile"; \
+				structure=(structure*.svg); \
+				if [[ -f "$${structure[0]}" ]]; then \
+					mv -- $${structure[0]} "/tmp/"; \
+				fi; \
+				popd >&2; \
+				mv -- "/tmp/$${structure[0]}" "./$(REMOTE_DOWNLOADS)/$${structure[0]}"; \
+				echo "✓ Rendered the SMILES expression successfully. Updating smiles image links ..."; \
+				\
+				expression=$$(echo "$$raw_content" | grep -o 'image("smiles://[^"]*' | sed 's/image("//'); \
+				raw_content=$${raw_content//"$$expression"/"$(REMOTE_DOWNLOADS)/$${structure[0]}"}; \
+			fi; \
+		done <<< "$$smiles"; \
 	fi; \
 	echo "$$raw_content" >> $(TEMP)
 	@echo "→ Formatting generated raw typst file content"
@@ -168,6 +190,26 @@ handbook:
 						fi; \
 					fi; \
 				done <<< "$$img_urls"; \
+			fi; \
+			smiles=$$(echo "$$raw_content" | grep -o 'image("smiles://[^"]*' | sed 's/image("smiles:\/\///'); \
+			if [ -n "$$smiles" ]; then \
+				while IFS= read -r smile; do \
+					if [ -n "$$smile" ]; then \
+						pushd $(ROOT)/.pipeline/smiles >&2; \
+						echo "→ Jump to the SMILES pipeline folder: $$(pwd)"; \
+						./smiles.mjs "$$smile"; \
+						structure=(structure*.svg); \
+						if [[ -f "$${structure[0]}" ]]; then \
+							mv -- $${structure[0]} "/tmp/"; \
+						fi; \
+						popd >&2; \
+						mv -- "/tmp/$${structure[0]}" "./$(REMOTE_DOWNLOADS)/$${structure[0]}"; \
+						echo "✓ Rendered the SMILES expression successfully. Updating smiles image links ..."; \
+						\
+						expression=$$(echo "$$raw_content" | grep -o 'image("smiles://[^"]*' | sed 's/image("//'); \
+						raw_content=$${raw_content//"$$expression"/"$(REMOTE_DOWNLOADS)/$${structure[0]}"}; \
+					fi; \
+				done <<< "$$smiles"; \
 			fi; \
 			echo "$$raw_content" >> $(TEMP); \
 			\

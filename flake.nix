@@ -44,11 +44,16 @@
             yq-go
             typst
             typstyle
+            pnpm
           ];
           text = ''
             # Define workspace root (relative to where flake is)
             WORKSPACE_ROOT=$(pwd)
             BUILD_DIR="$WORKSPACE_ROOT/build"
+
+            push .pipeline/smiles
+            pnpm install
+            popd
 
             # Debug for fonts list
 
@@ -250,6 +255,7 @@
             yq-go
             typst
             typstyle
+            pnpm
           ];
 
           shellHook = ''

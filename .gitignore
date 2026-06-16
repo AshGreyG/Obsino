@@ -4,3 +4,5 @@
 **/.pdb
 **/build
 **/assets/bin
+
+**/node_modules
