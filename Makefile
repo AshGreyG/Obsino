@@ -93,8 +93,11 @@ package-export:
 				mv -- "/tmp/$${structure[0]}" "./$(REMOTE_DOWNLOADS)/$${structure[0]}"; \
 				echo "✓ Rendered the SMILES expression successfully. Updating smiles image links ..."; \
 				\
-				expression=$$(echo "$$raw_content" | grep -o 'image("smiles://[^"]*' | sed 's/image("//'); \
-				raw_content=$${raw_content//"$$expression"/"$(REMOTE_DOWNLOADS)/$${structure[0]}"}; \
+				expression="smiles://$$smile"; \
+				esc=$$(echo "$$smile" | sed -e 's/\\/\\\\/g' -e 's/[]]/\\]/g' -e 's/\[/\\[/g' -e 's/\./\\./g' -e 's/\//\\\//g'); \
+				raw_content=$$(echo "$$raw_content" | sed "s|image(\"smiles://$$esc\")|image(\"$(REMOTE_DOWNLOADS)/$${structure[0]}\")|g"); \
+				echo "$$expression"; \
+				echo "$$raw_content"; \
 			fi; \
 		done <<< "$$smiles"; \
 	fi; \
@@ -206,8 +209,9 @@ handbook:
 						mv -- "/tmp/$${structure[0]}" "./$(REMOTE_DOWNLOADS)/$${structure[0]}"; \
 						echo "✓ Rendered the SMILES expression successfully. Updating smiles image links ..."; \
 						\
-						expression=$$(echo "$$raw_content" | grep -o 'image("smiles://[^"]*' | sed 's/image("//'); \
-						raw_content=$${raw_content//"$$expression"/"$(REMOTE_DOWNLOADS)/$${structure[0]}"}; \
+						expression="smiles://$$smile"; \
+						esc=$$(echo "$$smile" | sed -e 's/\\/\\\\/g' -e 's/[]]/\\]/g' -e 's/\[/\\[/g' -e 's/\./\\./g' -e 's/\//\\\//g'); \
+						raw_content=$$(echo "$$raw_content" | sed "s|image(\"smiles://$$esc\")|image(\"$(REMOTE_DOWNLOADS)/$${structure[0]}\")|g"); \
 					fi; \
 				done <<< "$$smiles"; \
 			fi; \
