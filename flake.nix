@@ -45,6 +45,7 @@
             typst
             typstyle
             pnpm
+            jq
           ];
           text = ''
             # Define workspace root (relative to where flake is)
@@ -256,6 +257,7 @@
             typst
             typstyle
             pnpm
+            jq
           ];
 
           shellHook = ''
@@ -264,6 +266,8 @@
             yq --version
             typst --version
             typstyle --version
+            pnpm --version
+            jq --version
           '';
         };
       });

@@ -41,6 +41,7 @@ CLASS := $(subst -,_,$(RAW_CLASS))
 TEMP := temp.typ
 # Header Typst file for typst functions / style configurations
 HEADER := header.typ
+RESOURCE := resource.yaml
 REMOTE_DOWNLOADS := download
 # Directories to ignore when generating handbook
 IGNORE_DIRS := cue.mod assets asset bin src
@@ -161,8 +162,29 @@ handbook:
 		# Write section header for each directory; \
 		echo "#align(center)[= $${t:$$i:1} $$(title_func $$dir)]" >> $(TEMP); \
 		\
-		# 2. Iterate through CUE files in that directory; \
-		for file in $$dir/*.cue; do \
+		# 2. Iterate through CUE files in directory order (from resource.yaml) or alphabetically; \
+		target_files=(); \
+		if [[ -f "$(RESOURCE)" ]]; then \
+			order_type=$$(yq -r ".order.$$dir | type" "$(RESOURCE)" 2>/dev/null); \
+			if [[ "$$order_type" == "array" ]]; then \
+				echo "→ Using ordering from resource.yaml for $$dir"; \
+				while IFS= read -r entry; do \
+					if [[ -n "$$entry" ]]; then \
+						cue_file="$$dir/$$entry.cue"; \
+						if [[ -f "$$cue_file" ]]; then \
+							target_files+=("$$cue_file"); \
+						else \
+							echo "! Warning: CUE file not found: $$cue_file (from resource.yaml order)"; \
+						fi; \
+					fi; \
+				done < <(yq -r ".order.$$dir[] // \"\"" "$(RESOURCE)" 2>/dev/null); \
+			fi; \
+		fi; \
+		if [[ $${#target_files[@]} -eq 0 ]]; then \
+			echo "→ Using alphabetical order for $$dir"; \
+			mapfile -t target_files < <(ls "$$dir"/*.cue 2>/dev/null); \
+		fi; \
+		for file in "$${target_files[@]}"; do \
 			echo "→   Exporting file $$file"; \
 			\
 			# Write file title; \
