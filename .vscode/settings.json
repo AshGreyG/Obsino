@@ -9,6 +9,8 @@
     "typstyle",
     "pushd",
     "popd",
+    "readlink",
+    "mapfile",
 
     // typst packges
     "cetz",
@@ -53,6 +55,12 @@
     "mercaptoethanol",
     "disulfides",
     "guanidinium",
+    "GPCR",
+    "guanosine",
+    "transmembrane",
+    "choanoflagellates",
+    "diphosphate",
+    "triphosphate",
 
     // natural-science.biology.molecular-biology
     "trizol",
