@@ -27,3 +27,43 @@ tests:
     completed: false
 papers:
   null
+order:
+  concept:
+    # Water
+    - "water-as-biological-medium"
+    # Amino acids and proteins
+    - "peptide-bond"
+    - "conformation"
+    - "anion-pi-interaction"
+    - "cation-pi-interaction"
+    - "pi-pi-interaction"
+    - "secondary-structure"
+    - "alpha-helix"
+    - "ramachandran-plot"
+    - "beta-conformation"
+    - "motif"
+    - "tertiary-structure"
+    - "quaternary-structure"
+    - "native-fold"
+    - "molecular-chaperones"
+    - "denaturation"
+    - "domain"
+    # Signal transduction
+    - "signal-transduction"
+    - "agonist"
+    - "antagonist"
+  specific:
+    # Amino acids and proteins
+    - "structure-of-alpha-keratin"
+    - "structure-of-collagen"
+    - "structure-of-myoglobin"
+    - "structure-of-silk-fibroin"
+    # Signal transduction
+    - "g-protein-coupled-receptors-signal-transduction"
+  phenomenon:
+    # Amino acids and proteins
+    - "exp-ribonuclease-refolding"
+    - "floppy-string-protein"
+  principle:
+    # ChimeraX
+    - "chimerax-report-secondary-structure"
