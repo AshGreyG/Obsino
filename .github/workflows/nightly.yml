@@ -51,6 +51,15 @@ jobs:
 
           popd
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Install Dependencies in .pipeline
+        run: |
+          pushd ./.pipeline/smiles
+          pnpm install
+          popd
+
       - name: Build Handbooks
         # This runs your custom Nix command which populates ./build
         run: nix run .#handbook

@@ -44,7 +44,6 @@
             yq-go
             typst
             typstyle
-            pnpm
             jq
           ];
           text = ''
@@ -52,9 +51,10 @@
             WORKSPACE_ROOT=$(pwd)
             BUILD_DIR="$WORKSPACE_ROOT/build"
 
-            pushd .pipeline/smiles
-            pnpm install
-            popd
+            if [[ ! -d ".pipeline/smiles/node_modules" ]]; then
+              echo "Error: .pipeline/smiles/node_modules is missing. Please run pnpm install in .pipeline/smiles"
+              exit 1
+            fi
 
             # Debug for fonts list
 
@@ -256,7 +256,6 @@
             yq-go
             typst
             typstyle
-            pnpm
             jq
           ];
 
@@ -266,7 +265,6 @@
             yq --version
             typst --version
             typstyle --version
-            pnpm --version
             jq --version
           '';
         };
