@@ -58,80 +58,7 @@ package-export:
 	@echo "  Exporting CUE package to YAML and extracting $(TARGET).content"
 	@cat $(HEADER) > $(TEMP)
 	@raw_content=$$(cue export $(PACKAGE)/$(DIR) --out yaml | yq -r ".$(TARGET).content"); \
-	\
-	mkdir -p $(REMOTE_DOWNLOADS); \
-	\
-	img_urls=$$(echo "$$raw_content" | grep -o 'image("https://[^"]*' | sed 's/image("//'); \
-	if [ -n "$$img_urls" ]; then \
-		while IFS= read -r url; do \
-			if [ -n "$$url" ]; then \
-				img_name=$$(basename "$$url"); \
-				echo "↓ Downloading remote asset: $$img_name"; \
-				\
-				curl -s -L "$$url" -o "$(REMOTE_DOWNLOADS)/$$img_name"; \
-				\
-				if [ $$? -eq 0 ] && [ -f "$(REMOTE_DOWNLOADS)/$$img_name" ]; then \
-					echo "✓ Downloaded successfully. Updating image links ..."; \
-					\
-					raw_content=$${raw_content//"$$url"/"$(REMOTE_DOWNLOADS)/$$img_name"}; \
-				else \
-					echo "  " >&2; \
-				fi; \
-			fi; \
-		done <<< "$$img_urls"; \
-	fi; \
-	smiles=$$(echo "$$raw_content" | grep -o 'image("smiles://[^"]*' | sed 's/image("smiles:\/\///'); \
-	if [ -n "$$smiles" ]; then \
-		while IFS= read -r smile; do \
-			if [ -n "$$smile" ]; then \
-				pushd $(ROOT)/.pipeline/smiles >&2; \
-				echo "→ Jump to the SMILES pipeline folder: $$(pwd)"; \
-				./smiles.mjs "$$smile"; \
-				structure=(structure*.svg); \
-				if [[ -f "$${structure[0]}" ]]; then \
-					mv -- $${structure[0]} "/tmp/"; \
-				fi; \
-				popd >&2; \
-				mv -- "/tmp/$${structure[0]}" "./$(REMOTE_DOWNLOADS)/$${structure[0]}"; \
-				echo "✓ Rendered the SMILES expression successfully. Updating smiles image links ..."; \
-				\
-				expression="smiles://$$smile"; \
-				esc=$$(echo "$$smile" | sed -e 's/\\/\\\\/g' -e 's/[]]/\\]/g' -e 's/\[/\\[/g' -e 's/\./\\./g' -e 's/\//\\\//g'); \
-				raw_content=$$(echo "$$raw_content" | sed "s|image(\"smiles://$$esc\")|image(\"$(REMOTE_DOWNLOADS)/$${structure[0]}\")|g"); \
-				echo "$$expression"; \
-				echo "$$raw_content"; \
-			fi; \
-		done <<< "$$smiles"; \
-	fi; \
-	figures=$$(echo "$$raw_content" | grep -o 'image("figures://[^"]*' | sed 's/image("figures:\/\///'); \
-	if [ -n "$$figures" ]; then \
-		while IFS= read -r label; do \
-			if [ -n "$$label" ]; then \
-				urls=$$(yq -r ".pictures[\"$$label\"][]" "$(PICTURES)" 2>/dev/null); \
-				if [ -n "$$urls" ]; then \
-					fig_downloaded=false; \
-					while IFS= read -r fig_url; do \
-						if [ -n "$$fig_url" ]; then \
-							fig_name=$$(basename "$$fig_url"); \
-							echo "↓ Downloading picture: $$fig_name (for figure label: $$label)"; \
-							curl -s -L "$$fig_url" -o "$(REMOTE_DOWNLOADS)/$$fig_name"; \
-							if [ $$? -eq 0 ] && [ -f "$(REMOTE_DOWNLOADS)/$$fig_name" ]; then \
-								echo "✓ Downloaded $$fig_name for label $$label"; \
-								raw_content=$$(echo "$$raw_content" | sed "s|figures://$$label|$(REMOTE_DOWNLOADS)/$$fig_name|g"); \
-								fig_downloaded=true; \
-								break; \
-							fi; \
-						fi; \
-					done <<< "$$urls"; \
-					if [ "$$fig_downloaded" = false ]; then \
-						echo "! Warning: Failed to download any URL for figure label: $$label" >&2; \
-					fi; \
-				else \
-					echo "! Warning: No URLs found for figure label: $$label in pictures.yaml" >&2; \
-				fi; \
-			fi; \
-		done <<< "$$figures"; \
-	fi; \
+	raw_content=$$(echo "$$raw_content" | $(ROOT)/.pipeline/process-content.sh --downloads $(REMOTE_DOWNLOADS)); \
 	echo "$$raw_content" >> $(TEMP)
 	@echo "→ Formatting generated raw typst file content"
 	@typstyle -i $(TEMP)
@@ -226,76 +153,7 @@ handbook:
 			\
 			# Export file content and extract content property; \
 			raw_content=$$(cue export $(PACKAGE)/$$dir --out yaml | yq -r ".$$(basename $$file | sed -e 's/.cue//g' -e 's/-/_/g').content"); \
-			mkdir -p $(REMOTE_DOWNLOADS); \
-			\
-			img_urls=$$(echo "$$raw_content" | grep -o 'image("https://[^"]*' | sed 's/image("//' ); \
-			if [ -n "$$img_urls" ]; then \
-				while IFS= read -r url; do \
-					if [ -n "$$url" ]; then \
-						img_name=$$(basename "$$url"); \
-						echo "→   ↓ Downloading remote asset: $$img_name from $$url"; \
-						\
-						curl -s -L "$$url" -o "$(REMOTE_DOWNLOADS)/$$img_name"; \
-						\
-						if [ $$? -eq 0 ] && [ -f "$(REMOTE_DOWNLOADS)/$$img_name" ]; then \
-							echo "→   ✓ Downloaded successfully. Updating image links ..."; \
-							raw_content=$${raw_content//"$$url"/"$(REMOTE_DOWNLOADS)/$$img_name"}; \
-						else \
-							echo "  " >&2; \
-						fi; \
-					fi; \
-				done <<< "$$img_urls"; \
-			fi; \
-			smiles=$$(echo "$$raw_content" | grep -o 'image("smiles://[^"]*' | sed 's/image("smiles:\/\///'); \
-			if [ -n "$$smiles" ]; then \
-				while IFS= read -r smile; do \
-					if [ -n "$$smile" ]; then \
-						pushd $(ROOT)/.pipeline/smiles >&2; \
-						echo "→ Jump to the SMILES pipeline folder: $$(pwd)"; \
-						./smiles.mjs "$$smile"; \
-						structure=(structure*.svg); \
-						if [[ -f "$${structure[0]}" ]]; then \
-							mv -- $${structure[0]} "/tmp/"; \
-						fi; \
-						popd >&2; \
-						mv -- "/tmp/$${structure[0]}" "./$(REMOTE_DOWNLOADS)/$${structure[0]}"; \
-						echo "✓ Rendered the SMILES expression successfully. Updating smiles image links ..."; \
-						\
-						expression="smiles://$$smile"; \
-						esc=$$(echo "$$smile" | sed -e 's/\\/\\\\/g' -e 's/[]]/\\]/g' -e 's/\[/\\[/g' -e 's/\./\\./g' -e 's/\//\\\//g'); \
-						raw_content=$$(echo "$$raw_content" | sed "s|image(\"smiles://$$esc\")|image(\"$(REMOTE_DOWNLOADS)/$${structure[0]}\")|g"); \
-					fi; \
-				done <<< "$$smiles"; \
-			fi; \
-			figures=$$(echo "$$raw_content" | grep -o 'image("figures://[^"]*' | sed 's/image("figures:\/\///'); \
-			if [ -n "$$figures" ]; then \
-				while IFS= read -r label; do \
-					if [ -n "$$label" ]; then \
-						urls=$$(yq -r ".pictures[\"$$label\"][]" "$(PICTURES)" 2>/dev/null); \
-						if [ -n "$$urls" ]; then \
-							fig_downloaded=false; \
-							while IFS= read -r fig_url; do \
-								if [ -n "$$fig_url" ]; then \
-									fig_name=$$(basename "$$fig_url"); \
-									echo "→   ↓ Downloading picture: $$fig_name (for figure label: $$label)"; \
-									curl -s -L "$$fig_url" -o "$(REMOTE_DOWNLOADS)/$$fig_name"; \
-									if [ $$? -eq 0 ] && [ -f "$(REMOTE_DOWNLOADS)/$$fig_name" ]; then \
-										echo "→   ✓ Downloaded $$fig_name for label $$label"; \
-										raw_content=$$(echo "$$raw_content" | sed "s|figures://$$label|$(REMOTE_DOWNLOADS)/$$fig_name|g"); \
-										fig_downloaded=true; \
-										break; \
-									fi; \
-								fi; \
-							done <<< "$$urls"; \
-							if [ "$$fig_downloaded" = false ]; then \
-								echo "! Warning: Failed to download any URL for figure label: $$label" >&2; \
-							fi; \
-						else \
-							echo "! Warning: No URLs found for figure label: $$label in pictures.yaml" >&2; \
-						fi; \
-					fi; \
-				done <<< "$$figures"; \
-			fi; \
+			raw_content=$$(echo "$$raw_content" | $(ROOT)/.pipeline/process-content.sh --downloads $(REMOTE_DOWNLOADS)); \
 			echo "$$raw_content" >> $(TEMP); \
 			\
 			related=$$(cue export $(PACKAGE)/$$dir --out json | yq -r ".$$(basename $$file | sed -e 's/.cue//g' -e 's/-/_/g').related"); \
