@@ -207,7 +207,7 @@ try {
     padding: 10,
     bondThickness: 2,
     terminalCarbons: false,
-    explicityHydrogens: false,
+    explicitHydrogens: false,
     debug: false,
   };
 
