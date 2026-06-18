@@ -20,12 +20,11 @@ structure_of_myoglobin: {
     \(figure_part_myoglobin_electrostatic)
   """
   figure_part_heme: #"""
-    #let heme = read("assets/heme.svg")
     #align(center)[
       #stack(dir: ltr)[
         #box(width: 40%)[
           #figure(
-            image(bytes(heme)),
+            image("smiles://CC1=C(C2=CC3=NC(=CC4=C(C(=C([N-]4)C=C5C(=C(C(=N5)C=C1[N-]2)C)C=C)C)C=C)C(=C3CCC(=O)O)C)CCC(=O)O.[Fe+2]"),
             caption: "Heme prosthetic group"
           )
         ]
@@ -33,12 +32,11 @@ structure_of_myoglobin: {
     ]
   """#
   figure_part_myoglobin_electrostatic: #"""
-    #let myoglobin-electrostatic = "assets/myoglobin-electrostatic.png"
     #align(center)[
       #stack(dir: ltr)[
         #box(width: 70%)[
           #figure(
-            image(myoglobin-electrostatic),
+            image("figures://electrostatic-structure-of-myoglobin"),
             caption: "Electrostatic graphic of Myoglobin"
           )
         ]

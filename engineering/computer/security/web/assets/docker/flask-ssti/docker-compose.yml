@@ -1,0 +1,10 @@
+services:
+  flask-ssti:
+    build: .
+    ports:
+      - "5000:5000"
+    # Security note: debug=True in the app exposes the Werkzeug debugger
+    # on the console; this is intentional for a PoC environment.
+    # Never use debug=True in production.
+    stdin_open: true
+    tty: true
