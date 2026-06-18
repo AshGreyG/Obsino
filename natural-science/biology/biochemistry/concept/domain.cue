@@ -15,12 +15,11 @@ domain: {
     \(figure_part_beta_barrel)
   """
   figure_part_beta_barrel: #"""
-    #let beta-barrel = "assets/beta-barrel.png"
     #align(center)[
       #stack(dir: ltr)[
         #box(width: 70%)[
           #figure(
-            image(beta-barrel),
+            image("figures://beta-barrel-in-extra-superfolder-gfp"),
             caption: "Beta Barrel in Extra-superfolder GFP"
           )
         ]

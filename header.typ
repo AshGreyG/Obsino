@@ -26,10 +26,13 @@
 
 // styles configuration
 
-#set text(font: ("Libertinus Serif", "Source Han Serif SC"), lang: "en")
+#set text(font: ("Libertinus Serif", "LXGW WenKai Mono"), lang: "en")
 #show raw.where(block: true): set text(font: "Cascadia Mono", 0.8em)
 #show raw.where(block: false): set text(font: "Cascadia Mono")
 #show math.equation.where(block: true): it => {
+  block(width: 100%, align(center, it))
+}
+#show figure: it => {
   block(width: 100%, align(center, it))
 }
 #show link: set text(blue)

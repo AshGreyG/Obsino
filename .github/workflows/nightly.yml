@@ -39,6 +39,27 @@ jobs:
 
           popd
 
+      - name: Install LXGW WenKai Font
+        run: |
+          mkdir -p install
+          pushd ./install
+
+          wget -q https://github.com/lxgw/LxgwWenKai/releases/download/v1.522/lxgw-wenkai-v1.522.zip
+          unzip lxgw-wenkai-v1.522.zip
+          sudo mv lxgw-wenkai-v1.522/*.ttf /usr/share/fonts
+          fc-cache -fv
+
+          popd
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Install Dependencies in .pipeline
+        run: |
+          pushd ./.pipeline/smiles
+          pnpm install
+          popd
+
       - name: Build Handbooks
         # This runs your custom Nix command which populates ./build
         run: nix run .#handbook

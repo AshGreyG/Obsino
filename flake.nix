@@ -44,15 +44,17 @@
             yq-go
             typst
             typstyle
-            source-han-serif
+            jq
           ];
           text = ''
-            # Tell Typst where Nix installed the fonts
-            export TYPST_FONT_PATHS="${pkgs.source-han-serif}"
-
             # Define workspace root (relative to where flake is)
             WORKSPACE_ROOT=$(pwd)
             BUILD_DIR="$WORKSPACE_ROOT/build"
+
+            if [[ ! -d ".pipeline/smiles/node_modules" ]]; then
+              echo "Error: .pipeline/smiles/node_modules is missing. Please run pnpm install in .pipeline/smiles"
+              exit 1
+            fi
 
             # Debug for fonts list
 
@@ -254,7 +256,7 @@
             yq-go
             typst
             typstyle
-            source-han-serif
+            jq
           ];
 
           shellHook = ''
@@ -263,6 +265,7 @@
             yq --version
             typst --version
             typstyle --version
+            jq --version
           '';
         };
       });

@@ -14,7 +14,7 @@ ramachandran_plot: {
     - Show the empirical distribution of datapoints observed in a single structure
       in usage for *structure validation*.
 
-    \(figure_part)
+    \(figure_part_ramachandran_of_1ca2)
 
     #align(center)[
       #table(
@@ -34,10 +34,10 @@ ramachandran_plot: {
       )
     ]
   """
-  figure_part: #"""
+  figure_part_ramachandran_of_1ca2: #"""
     #align(center)[
       #figure(
-        image("assets/1ca2-ramachandran.png", width: 50%),
+        image("figures://ramachandran-plot-of-1ca2", width: 50%),
         caption: "Ramachandran plot of 1CA2"
       )
     ]
