@@ -42,6 +42,7 @@ TEMP := temp.typ
 # Header Typst file for typst functions / style configurations
 HEADER := header.typ
 RESOURCE := resource.yaml
+PICTURES := $(ROOT)/pictures.yaml
 REMOTE_DOWNLOADS := download
 # Directories to ignore when generating handbook
 IGNORE_DIRS := cue.mod assets asset bin src
@@ -101,6 +102,35 @@ package-export:
 				echo "$$raw_content"; \
 			fi; \
 		done <<< "$$smiles"; \
+	fi; \
+	figures=$$(echo "$$raw_content" | grep -o 'image("figures://[^"]*' | sed 's/image("figures:\/\///'); \
+	if [ -n "$$figures" ]; then \
+		while IFS= read -r label; do \
+			if [ -n "$$label" ]; then \
+				urls=$$(yq -r ".pictures[\"$$label\"][]" "$(PICTURES)" 2>/dev/null); \
+				if [ -n "$$urls" ]; then \
+					fig_downloaded=false; \
+					while IFS= read -r fig_url; do \
+						if [ -n "$$fig_url" ]; then \
+							fig_name=$$(basename "$$fig_url"); \
+							echo "↓ Downloading picture: $$fig_name (for figure label: $$label)"; \
+							curl -s -L "$$fig_url" -o "$(REMOTE_DOWNLOADS)/$$fig_name"; \
+							if [ $$? -eq 0 ] && [ -f "$(REMOTE_DOWNLOADS)/$$fig_name" ]; then \
+								echo "✓ Downloaded $$fig_name for label $$label"; \
+								raw_content=$$(echo "$$raw_content" | sed "s|figures://$$label|$(REMOTE_DOWNLOADS)/$$fig_name|g"); \
+								fig_downloaded=true; \
+								break; \
+							fi; \
+						fi; \
+					done <<< "$$urls"; \
+					if [ "$$fig_downloaded" = false ]; then \
+						echo "! Warning: Failed to download any URL for figure label: $$label" >&2; \
+					fi; \
+				else \
+					echo "! Warning: No URLs found for figure label: $$label in pictures.yaml" >&2; \
+				fi; \
+			fi; \
+		done <<< "$$figures"; \
 	fi; \
 	echo "$$raw_content" >> $(TEMP)
 	@echo "→ Formatting generated raw typst file content"
@@ -236,6 +266,35 @@ handbook:
 						raw_content=$$(echo "$$raw_content" | sed "s|image(\"smiles://$$esc\")|image(\"$(REMOTE_DOWNLOADS)/$${structure[0]}\")|g"); \
 					fi; \
 				done <<< "$$smiles"; \
+			fi; \
+			figures=$$(echo "$$raw_content" | grep -o 'image("figures://[^"]*' | sed 's/image("figures:\/\///'); \
+			if [ -n "$$figures" ]; then \
+				while IFS= read -r label; do \
+					if [ -n "$$label" ]; then \
+						urls=$$(yq -r ".pictures[\"$$label\"][]" "$(PICTURES)" 2>/dev/null); \
+						if [ -n "$$urls" ]; then \
+							fig_downloaded=false; \
+							while IFS= read -r fig_url; do \
+								if [ -n "$$fig_url" ]; then \
+									fig_name=$$(basename "$$fig_url"); \
+									echo "→   ↓ Downloading picture: $$fig_name (for figure label: $$label)"; \
+									curl -s -L "$$fig_url" -o "$(REMOTE_DOWNLOADS)/$$fig_name"; \
+									if [ $$? -eq 0 ] && [ -f "$(REMOTE_DOWNLOADS)/$$fig_name" ]; then \
+										echo "→   ✓ Downloaded $$fig_name for label $$label"; \
+										raw_content=$$(echo "$$raw_content" | sed "s|figures://$$label|$(REMOTE_DOWNLOADS)/$$fig_name|g"); \
+										fig_downloaded=true; \
+										break; \
+									fi; \
+								fi; \
+							done <<< "$$urls"; \
+							if [ "$$fig_downloaded" = false ]; then \
+								echo "! Warning: Failed to download any URL for figure label: $$label" >&2; \
+							fi; \
+						else \
+							echo "! Warning: No URLs found for figure label: $$label in pictures.yaml" >&2; \
+						fi; \
+					fi; \
+				done <<< "$$figures"; \
 			fi; \
 			echo "$$raw_content" >> $(TEMP); \
 			\
