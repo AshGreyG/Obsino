@@ -44,11 +44,22 @@ mkdir -p "$CACHE_DIR"
 
 raw_content=$(cat)
 
+get_extension() {
+  local url="$1"
+  local base="${url%%\?*}"
+  local extension="${base##*.}"
+  if [ "$extension" == "$base" ]; then
+    echo ""
+  else
+    echo "$extension" | tr '[:upper:]' '[:lower:]'
+  fi
+}
+
 # Download a URL to the cache if not already present, then copy to downloads.
 cache_download() {
   local url="$1"
   local filename
-  filename=$(basename "$url")
+  filename="$(echo -n "$url" | md5sum | awk '{print $1}').$(get_extension "$url")"
 
   if [ -f "$CACHE_DIR/$filename" ] && [ -s "$CACHE_DIR/$filename" ]; then
     cp -- "$CACHE_DIR/$filename" "$REMOTE_DOWNLOADS/$filename"
@@ -78,7 +89,7 @@ if [ -n "$img_urls" ]; then
   while IFS= read -r url; do
     if [ -n "$url" ]; then
       if cache_download "$url"; then
-        img_name=$(basename "$url")
+        img_name="$(echo -n "$url" | md5sum | awk '{print $1}').$(get_extension "$url")"
         raw_content=$(echo "$raw_content" | sed "s|$url|$REMOTE_DOWNLOADS/$img_name|g")
       fi
     fi
@@ -131,7 +142,7 @@ if [ -n "$figures" ]; then
         fig_downloaded=false
         while IFS= read -r fig_url; do
           if [ -n "$fig_url" ]; then
-            fig_name=$(basename "$fig_url")
+            fig_name="$(echo -n "$fig_url" | md5sum | awk '{print $1}').$(get_extension "$fig_url")"
             if cache_download "$fig_url"; then
               raw_content=$(echo "$raw_content" \
                 | sed "s|figures://$label|$REMOTE_DOWNLOADS/$fig_name|g")
