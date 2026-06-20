@@ -1,0 +1,71 @@
+name: "Show Status of Obsino"
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  project-status:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v25
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate Status Text
+        run: |
+          git add -A 2>/dev/null || true
+          nix run .#status 2>/dev/null | sed 's/\x1b\[[0-9;]*m//g' >> status_output.txt
+
+      - name: Install Cascadia Code Font
+        run: |
+          mkdir -p install
+          pushd ./install
+
+          wget -q https://github.com/microsoft/cascadia-code/releases/download/v2407.24/CascadiaCode-2407.24.zip
+          unzip CascadiaCode-2407.24.zip
+          sudo mv ./ttf/*.ttf /usr/share/fonts/
+          sudo mv ./ttf/static/*.ttf /usr/share/fonts/
+          fc-cache -fv
+
+          popd
+
+      - name: Install Codesnap-CLI
+        run: |
+          mkdir -p install
+          pushd ./install
+
+          wget -q https://github.com/codesnap-rs/codesnap/releases/download/v0.13.4/codesnap-cli_v0.13.4_x86_64-unknown-linux-gnu.tar.gz
+          tar -zxvf codesnap-cli_v0.13.4_x86_64-unknown-linux-gnu.tar.gz
+          sudo mv ./codesnap /usr/bin/codesnap
+
+          popd
+
+      - name: Render Codesnap Figure
+        run: |
+          mkdir -p assets
+
+          codesnap -f status_output.txt \
+            --code-font-family "Cascadia Mono" \
+            --output ./assets/status.png
+
+      - name: Deploy Figure to Github Page Branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./assets
+          publish_branch: gh-pages
+          keep_files: false

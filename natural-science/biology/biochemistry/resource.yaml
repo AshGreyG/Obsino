@@ -1,0 +1,69 @@
+# Copyright 2026 AshGrey
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy of
+# this software and associated documentation files (the "Software"), to deal in the
+# Software without restriction, including without limitation the rights to use, copy,
+# modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+# and to permit persons to whom the Software is furnished to do so, subject to the
+# following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED
+# INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+# PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+# HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+# OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+# SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+textbooks:
+  - name: "Lehninger Principles of Biochemistry (6th edition)"
+    isbn: "978-1-4292-3414-6"
+    completed: false
+tests:
+  - name: "Chapter Tests of Lehinger Principles of Biochemistry"
+    isbn: "978-1-4292-3414-6"
+    completed: false
+papers:
+  null
+order:
+  concept:
+    # Water
+    - "water-as-biological-medium"
+    # Amino acids and proteins
+    - "peptide-bond"
+    - "conformation"
+    - "anion-pi-interaction"
+    - "cation-pi-interaction"
+    - "pi-pi-interaction"
+    - "secondary-structure"
+    - "alpha-helix"
+    - "ramachandran-plot"
+    - "beta-conformation"
+    - "motif"
+    - "tertiary-structure"
+    - "quaternary-structure"
+    - "native-fold"
+    - "molecular-chaperones"
+    - "denaturation"
+    - "domain"
+    # Signal transduction
+    - "signal-transduction"
+    - "agonist"
+    - "antagonist"
+  specific:
+    # Amino acids and proteins
+    - "structure-of-alpha-keratin"
+    - "structure-of-collagen"
+    - "structure-of-myoglobin"
+    - "structure-of-silk-fibroin"
+    # Signal transduction
+    - "g-protein-coupled-receptors-signal-transduction"
+  phenomenon:
+    # Amino acids and proteins
+    - "exp-ribonuclease-refolding"
+    - "floppy-string-protein"
+  principle:
+    # ChimeraX
+    - "chimerax-report-secondary-structure"

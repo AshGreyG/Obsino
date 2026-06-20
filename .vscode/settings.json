@@ -1,0 +1,77 @@
+{
+  "editor.tabSize": 2,
+  "cSpell.userWords": [
+    // common and binary names
+    "nixpkgs",
+    "nixos",
+    "pkgs",
+    "typst",
+    "typstyle",
+    "pushd",
+    "popd",
+    "readlink",
+    "mapfile",
+
+    // typst packges
+    "cetz",
+    "vline",
+
+    "pharmacokinetics",
+    "solubilizer",
+    "solubilizate",
+    "biopharmaceutics",
+    "hydrotropy",
+    "cosolubilization",
+    "hydrotropic",
+    "aminobenzoic",
+    "nicotinamide",
+    "interconvert",
+
+    // engineering.computer.security.web
+    "ssti",
+
+    // formal-science.math.probability.elementary
+    "uncountably",
+    "disjointness",
+    "complementation",
+    "Borel",
+    "Kolmogorov",
+    "chebyshev",
+    "abramowitz",
+
+    // natural-science.biology.biochemistry
+    "chimerax",
+    "ramachandran",
+    "hline",
+    "datapoints",
+    "protofilament",
+    "protofilaments",
+    "tetramer",
+    "tetramers",
+    "protofibril",
+    "cytoskeleton",
+    "microfilaments",
+    "microtubules",
+    "mercaptoethanol",
+    "disulfides",
+    "guanidinium",
+    "GPCR",
+    "guanosine",
+    "transmembrane",
+    "choanoflagellates",
+    "diphosphate",
+    "triphosphate",
+
+    // natural-science.biology.molecular-biology
+    "trizol",
+    "electroelution",
+    "agarose",
+    "chaotropic",
+
+    // natural-science.physics.classical-thermal
+    "diathermal",
+    "lussac",
+    "Maxwellian",
+    "equipartition"
+  ],
+}
