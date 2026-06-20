@@ -18,7 +18,7 @@ surfactant: {
     - Ampholytic
 
     By introducing the concept #link(<concept-critical-micelle-concentration>)[
-    critical micelle concentration), 
+    critical micelle concentration], 
   """
   related: [
     "concept/solubilizer",

@@ -38,5 +38,21 @@ order:
     - "critical-micelle-concentration"
     - "solubilizer"
     - "solubilizate"
+    - "solubility"
+    - "apparent-solubility"
+    - "intrinsic-solubility"
+    - "hydrotropy"
+    - "hlb"
+    - "optimal-hlb"
+    - "permeability"
+    - "turbidity"
+    # Solid preparations
+    - "capsule"
+    - "controlled-release-preparation"
+    - "drug-polymorphism"
+    - "granule"
+    - "matrix-tablet"
+    - "mrdds"
+    - "solid-dispersion"
   desire:
-    null
+    - "poor-aqueous-solubility"
