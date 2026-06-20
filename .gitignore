@@ -6,3 +6,4 @@
 **/assets/bin
 
 **/node_modules
+**/.cache
