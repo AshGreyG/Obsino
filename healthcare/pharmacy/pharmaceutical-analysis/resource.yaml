@@ -17,11 +17,28 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+# Resource metadata section
 textbooks:
   null
 tests:
   null
+papers:
+  - title: "Mass Spectrometry Using Electrospray Ionization"
+    journal: "Nature Review Methods Primers 3, 23 (2023)"
+    doi: "https://doi.org/10.1038/s43586-023-00203-4"
+    completed: false
 websites:
   - "https://www.ich.org"
+  - "https://www.fda.gov"
+  - "https://massbank.eu"
 standards:
-  - "https://database.ich.org/sites/default/files/Q3D-R1EWG_Document_Step4_Guideline_2019_0322.pdf"
+  - name: "ich-q3d"
+    url: "https://database.ich.org/sites/default/files/Q3D-R1EWG_Document_Step4_Guideline_2019_0322.pdf"
+  - name: "ich-q3c"
+    url: "https://www.fda.gov/files/drugs/published/Q3C-Tables-and-List-Rev.-3.pdf"
+  - name: "ich-m7r2"
+    url: "https://database.ich.org/sites/default/files/ICH_M7(R2)_Guideline_Step4_2023_0216_0.pdf"
+# Order section
+order:
+  principle:
+    - "mass-spectrometry"
