@@ -1,0 +1,2 @@
+# Those CUE files mainly use Typst as their content
+*.cue linguist-language=Typst
