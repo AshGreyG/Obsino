@@ -267,7 +267,6 @@ mass_spectrometry: {
   external_related: [
     "taylor-cone",
     "rayleigh-limit",
-    ""
   ]
   external_link: [
     "https://doi.org/10.1038/s43586-023-00203-4"
