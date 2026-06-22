@@ -115,9 +115,9 @@ if [ -n "$smiles_list" ]; then
       if [ -f "/tmp/${structure[0]}" ]; then
         mv -- "/tmp/${structure[0]}" "$REMOTE_DOWNLOADS/${structure[0]}"
         echo "> Rendered $smile -> ${structure[0]}" >&2
-        esc=$(echo "$smile" | sed -e 's/\\/\\\\/g' -e 's/[]]/\\]/g' -e 's/\[/\\[/g' -e 's/\./\\./g' -e 's/\//\\\//g')
-        raw_content=$(echo "$raw_content" \
-          | sed "s|image(\"smiles://$esc\")|image(\"$REMOTE_DOWNLOADS/${structure[0]}\")|g")
+        esc=$(echo "$smile" | sed -e 's/\\/\\\\/g' -e 's/\]/\\]/g' -e 's/\[/\\[/g' -e 's/\./\\./g' -e 's/\//\\\//g')
+        echo "> Escape-filtered SMILES: $esc" >&2
+        raw_content=$(echo "$raw_content" | sed "s|smiles://$esc|$REMOTE_DOWNLOADS/${structure[0]}|g")
       else
         echo "! Warning: Failed to render SMILES: $smile" >&2
       fi

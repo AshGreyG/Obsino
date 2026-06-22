@@ -40,6 +40,25 @@
     "chebyshev",
     "abramowitz",
 
+    // healthcare.pharmacy.pharmaceutical-analysis
+    "ionised",
+    "electrospray",
+    "ionisation",
+    "MALDI",
+    "HPLC",
+    "Coulombic",
+    "analyte",
+    "ketoprofen",
+    "hydroxyphenylacetic",
+    "APCI",
+    "eluent",
+    "dihydroxybenzoic",
+    "protonated",
+    "deprotonated",
+    "characterisation",
+    "oligomers",
+    "FWHM",
+
     // natural-science.biology.biochemistry
     "chimerax",
     "ramachandran",
