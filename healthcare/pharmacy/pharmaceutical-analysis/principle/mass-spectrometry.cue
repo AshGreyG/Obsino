@@ -2,6 +2,8 @@ package principle
 
 mass_spectrometry: {
   content: """
+    === Structure of Mass Spectrometry
+
     A *mass spectrometry* (质谱) works by generating charged molecules or molecular
     fragments either in a high vacuum or immediately prior to the sample entering
     the high-vacuum region. The ionised molecules have to be generated in the
@@ -24,6 +26,29 @@ mass_spectrometry: {
       - \(ion_generation_maldi)
 
     - *Ion separation*: 
+
+      // TODO: complete ion separation section
+
+    === Parameters of Mass Spectrometry
+
+    Next we will introduce some parameters of mass spectrometry:
+
+    - *ppm* (parts of million): 
+
+      $ "ppm" := 10^6 × ("experimental value" - "theoretical value") /
+        ("theoretical value") $
+
+    - *resolution*:
+
+      $ R := m / (Δ m) $
+
+      where
+      - $m$ is the mass-to-charge ratio ($m\\/z$) of the target ion, which is the
+        exact mass value at the center of the mass spectral peek;
+      - $Δ m$ is the mass width measured at $50%$ of the peak height (full width
+        at half maximum, FWHM).
+
+      \(figure_part_resolution)
   """
   ion_generation_esi: """
         The ESI is now the most widely applied method of ionisation because of its
@@ -229,6 +254,13 @@ mass_spectrometry: {
     #let angiotensin-ii-maldi = "assets/typst/angiotensin-ii-maldi-nist-msp.typ"
     #eval(
       str(read(angiotensin-ii-maldi)),
+      mode: "markup"
+    )
+  """#
+  figure_part_resolution: #"""
+    #let resolution = "assets/typst/resolution-of-mass-spectrometry.typ"
+    #eval(
+      str(read(resolution)),
       mode: "markup"
     )
   """#
