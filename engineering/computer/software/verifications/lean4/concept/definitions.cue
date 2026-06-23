@@ -33,13 +33,13 @@ definitions: {
   """
   code_part_definitions: #"""
     #raw-block-file(
-      "src/DefinitionBasicUsage.lean",
+      "src/basic/DefinitionBasicUsage.lean",
       "lean"
     )
   """#
   code_part_overloaded_number: #"""
     #raw-block-file(
-      "src/OverloadedNumber.lean",
+      "src/basic/OverloadedNumber.lean",
       "lean"
     )
   """#

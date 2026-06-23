@@ -10,7 +10,7 @@ condition_expression: {
   """
   code_part_condition: #"""
     #raw-block-file(
-      "src/ConditionExpression.lean",
+      "src/basic/ConditionExpression.lean",
       "lean"
     )
   """#

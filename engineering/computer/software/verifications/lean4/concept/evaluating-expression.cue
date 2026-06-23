@@ -24,7 +24,7 @@ evaluating_expression: {
   """
   code_part_evaluating: #"""
     #raw-block-file(
-      "src/EvaluatingExpression.lean",
+      "src/basic/EvaluatingExpression.lean",
       "lean"
     )
   """#

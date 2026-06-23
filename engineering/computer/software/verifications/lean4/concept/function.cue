@@ -24,7 +24,7 @@ function: {
   """
   code_part_function: #"""
     #raw-block-file(
-      "src/Function.lean",
+      "src/basic/Function.lean",
       "lean"
     )
   """#
