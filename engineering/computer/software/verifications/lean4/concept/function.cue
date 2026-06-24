@@ -2,6 +2,8 @@ package concept
 
 function: {
   content: """
+    === Functions: Definition
+
     There are variety ways to define functions in Lean:
 
     1. The simplest is to place the function's arguments before the definition's
@@ -21,6 +23,15 @@ function: {
       `Nat → Nat` should be parenthesized `Nat → (Nat → Nat)`.
 
     \(code_part_function)
+
+    === Functions: Recursive Functions
+
+    Recursive datatype like `inductive` is nicely complemented by recursive
+    functions. Lean ensures by default that every recursive function will eventually
+    reach a *base case*. From a programming perspective this rules out accidental
+    infinite loops.
+
+    \(code_part_recursive_function)
   """
   code_part_function: #"""
     #raw-block-file(
@@ -28,7 +39,15 @@ function: {
       "lean"
     )
   """#
+  code_part_recursive_function: #"""
+    #raw-block-file(
+      "src/basic/RecursiveFunction.lean",
+      "lean"
+    )
+  """#
   related: [
-    "concept/definitions"
+    "concept/definitions",
+    "concept/inductive-datatype",
+    "concept/pattern-matching"
   ]
 }
