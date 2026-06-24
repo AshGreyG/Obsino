@@ -39,3 +39,4 @@ order:
     - "function"
     - "condition-expression"
     - "structure"
+    - "inductive-datatype"

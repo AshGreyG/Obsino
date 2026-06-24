@@ -7,6 +7,10 @@ structure: {
     Defining a structure introduces a completely new type to Lean that can't be
     reduced to any type. For instance, a point might be represented using either
     Cartesian or polar coordinates, each being a pair of floating-point numbers.
+    Structures enable multiple independent pieces of data to be combined into
+    a coherent whole that is represented by a brand new type. Types such as
+    structures that group together a collection of values are called *product
+    types*.
 
     A Cartesian point is a structure with two `Float` fields, called `x` and `y`.
     This is declared using the `structure` keyword. And we can extract the 
