@@ -11,6 +11,7 @@
     "popd",
     "readlink",
     "mapfile",
+    "datatypes",
 
     // typst packges
     "cetz",

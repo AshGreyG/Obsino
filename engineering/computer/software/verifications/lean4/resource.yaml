@@ -41,3 +41,4 @@ order:
     - "structure"
     - "inductive-datatype"
     - "pattern-matching"
+    - "polymorphism"
