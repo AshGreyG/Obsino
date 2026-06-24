@@ -40,3 +40,4 @@ order:
     - "condition-expression"
     - "structure"
     - "inductive-datatype"
+    - "pattern-matching"
