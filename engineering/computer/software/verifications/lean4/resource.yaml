@@ -38,3 +38,4 @@ order:
     - "definitions"
     - "function"
     - "condition-expression"
+    - "structure"
