@@ -35,6 +35,7 @@ order:
   concept:
     - "evaluating-expression"
     - "primitive-types"
+    - "string-interpolation"
     - "definitions"
     - "function"
     - "condition-expression"
