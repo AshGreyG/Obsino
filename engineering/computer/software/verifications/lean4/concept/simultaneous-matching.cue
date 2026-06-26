@@ -3,7 +3,7 @@ package concept
 simultaneous_matching: {
   content: """
     Pattern-matching expressions just like pattern-matching definitions can match
-    on multiple values at one. Both the expressions to be inspected and the
+    on multiple values at once. Both the expressions to be inspected and the
     patterns that they match against are written with commas between them,
     similarly to the syntax used for definitions.
 

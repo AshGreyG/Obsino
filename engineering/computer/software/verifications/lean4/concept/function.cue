@@ -26,7 +26,7 @@ function: {
 
     2. Functions in Lean need not be defined at the top level. As expressions,
       functions are produced with the `fun` syntax. *Function expressions (
-      anonymous functions)* begin with the keyword `func`, followed by one or
+      anonymous functions)* begin with the keyword `fun`, followed by one or
       more parameters, which are separated from the return expression using `=>`.
 
       This style of anonymous function expression is often referred to as a
