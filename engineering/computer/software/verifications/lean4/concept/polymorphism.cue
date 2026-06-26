@@ -33,7 +33,9 @@ polymorphism: {
     \(code_part_polymorphism_linked_list)
 
     The type argument should be automatically inferred in some cases. we can use
-    *curly braces to instead of parentheses* when defining a function.
+    *curly braces to instead of parentheses* when defining a function. But when
+    there is no type can be inferred from the context, then we need to provide
+    explicit type annotations.
 
     \(code_part_polymorphism_infer)
   """

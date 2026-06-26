@@ -15,3 +15,6 @@ def length {α : Type} (list : List α) : Nat :=
 
 #eval length [1, 2, 3]
 -- It can be called without providing `Nat` explicitly
+#eval length [] (α := Int)
+-- When no type can be inferred, we should provide types explicitly
+#eval length ([] : List Int)

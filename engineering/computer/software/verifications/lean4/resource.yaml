@@ -42,3 +42,4 @@ order:
     - "inductive-datatype"
     - "pattern-matching"
     - "polymorphism"
+    - "builtin-datatype"
