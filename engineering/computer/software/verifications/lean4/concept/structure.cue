@@ -62,6 +62,15 @@ structure: {
     In addition to the constructor, an *accessor function* is defined for each
     field of a structure. These have the same name as the field but in the
     structure's namespace.
+
+    === Structure: Positional Structure Arguments
+
+    In some contexts, it can be convenient to pass arguments positionally, rather
+    than by name, but without naming the constructor directly. In these contexts,
+    the arguments can be enclosed in *angle brackets `⟨` and `⟩`*. Just as with
+    the brace notation for named constructor arguments, this positional syntax
+    can only be used in a context where *Lean can determine the structure's type*,
+    either from a type annotation or from other type information in the program.
   """
   code_part_structure_definition: #"""
     #raw-block-file(
@@ -78,6 +87,12 @@ structure: {
   code_part_structure_constructor: #"""
     #raw-block-file(
       "src/basic/StructureConstructor.lean",
+      "lean"
+    )
+  """#
+  code_part_structure_positional_args: #"""
+    #raw-block-file(
+      "src/basic/StructurePositionalArgs.lean",
       "lean"
     )
   """#
