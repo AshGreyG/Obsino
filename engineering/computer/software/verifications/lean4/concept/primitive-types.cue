@@ -30,7 +30,7 @@ primitive_types: {
   """
   code_part_primitive_types: #"""
     #raw-block-file(
-      "src/PrimitiveTypes.lean",
+      "src/basic/PrimitiveTypes.lean",
       "lean"
     )
   """#

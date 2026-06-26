@@ -11,10 +11,18 @@
     "popd",
     "readlink",
     "mapfile",
+    "datatypes",
 
     // typst packges
     "cetz",
+    "zebraw",
     "vline",
+    // Fonts name used in typst
+    "cascadia",
+    "libertinus",
+
+    // Lean keywords
+    "succ",
 
     "pharmacokinetics",
     "solubilizer",

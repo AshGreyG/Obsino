@@ -17,30 +17,36 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-words:
-  # healthcare.pharmacy.pharmaceutical-analysis
-  - "viscosity"
-  - "drainage"
-  - "pipette"
-  - "moisture"
-  - "distortion"
-  - "analyte"
-  - "burette"
-  - "rinse"
-  - "grease"
-  - "meniscus"
-  - "capillary"
-  - "disintegrate"
-  - "intact"
-  - "deviation"
-  - "progeny"
-  - "coaxial"
-  - "inert"
-  - "progeny"
-  - "supersede"
-  - "bombard"
-  - "rhenium"
-  - "tungsten"
-  - "eluent"
-  - "aerosol"
-  - "bureaucratic"
+# Resource metadata section
+textbooks:
+  - name: "https://lean-lang.org/functional_programming_in_lean/"
+    isbn: null
+    completed: false
+tests:
+  null
+papers:
+  null
+websites:
+  - "https://lean-lang.org/"
+standards:
+  null
+# Order section
+order:
+  concept:
+    - "evaluating-expression"
+    - "primitive-types"
+    - "string-interpolation"
+    - "definitions"
+    - "function"
+    - "condition-expression"
+    - "structure"
+    - "inductive-datatype"
+    - "pattern-matching"
+    - "polymorphism"
+    - "builtin-datatype"
+    - "automatic-implicit-type-param"
+    - "pattern-matching-definitions"
+    - "local-definitions"
+    - "if-let"
+    - "simultaneous-matching"
+    - "namespace"
