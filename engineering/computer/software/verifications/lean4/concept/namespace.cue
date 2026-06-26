@@ -11,6 +11,8 @@ namespace: {
     - *Namespaces may be opened prior to a command*. Namespaces may additionally
       be opened for all following commands for the rest of the file. To do this,
       simply omit the `in` from a top-level usage of `open`.
+
+    \(code_part_namespace)
   """
   code_part_namespace: #"""
     #raw-block-file(
