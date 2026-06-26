@@ -29,4 +29,8 @@ local_definitions: {
       "lean"
     )
   """#
+  related: [
+    "concept/function",
+    "concept/definitions"
+  ]
 }

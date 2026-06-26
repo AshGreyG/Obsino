@@ -46,3 +46,4 @@ order:
     - "automatic-implicit-type-param"
     - "pattern-matching-definitions"
     - "local-definitions"
+    - "simultaneous-matching"
