@@ -44,3 +44,4 @@ order:
     - "polymorphism"
     - "builtin-datatype"
     - "automatic-implicit-type-param"
+    - "pattern-matching-definitions"
