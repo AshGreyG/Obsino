@@ -22,7 +22,19 @@ function: {
       *currying*. Function arrows associative to the right, which means that
       `Nat → Nat` should be parenthesized `Nat → (Nat → Nat)`.
 
-    \(code_part_function)
+      \(code_part_function)
+
+    2. Functions in Lean need not be defined at the top level. As expressions,
+      functions are produced with the `fun` syntax. *Function expressions (
+      anonymous functions)* begin with the keyword `func`, followed by one or
+      more parameters, which are separated from the return expression using `=>`.
+
+      This style of anonymous function expression is often referred to as a
+      *lambda expression*, because the typical notation used in mathematical
+      descriptions of programming languages uses the Greek letter $λ$. Lean does
+      permit `λ` to be used instead of `fun`.
+
+      \(code_part_anonymous_function)
 
     === Functions: Recursive Functions
 
@@ -36,6 +48,12 @@ function: {
   code_part_function: #"""
     #raw-block-file(
       "src/basic/Function.lean",
+      "lean"
+    )
+  """#
+  code_part_anonymous_function: #"""
+    #raw-block-file(
+      "src/basic/AnonymousFunction.lean",
       "lean"
     )
   """#
