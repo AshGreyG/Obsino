@@ -35,5 +35,6 @@ order:
   concept:
     - "assignment"
     - "vector-arithmetic"
+    - "logic-vectors"
   specific:
     - "sequences"
