@@ -19,7 +19,7 @@ vector_arithmetic: {
   """
   code_part_vector_arithmetic: #"""
     #raw-block-file(
-      "src/basic/vector-arithmetic.r",
+      "src/basic/vector-arithmetic.R",
       "r"
     )
   """#

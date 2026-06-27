@@ -21,7 +21,7 @@ assignment: {
   """
   code_part_assignment: #"""
     #raw-block-file(
-      "src/basic/assignment.r",
+      "src/basic/assignment.R",
       "r"
     )
   """#
