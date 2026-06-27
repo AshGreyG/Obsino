@@ -34,3 +34,4 @@ standards:
 order:
   concept:
     - "assignment"
+    - "vector-arithmetic"
