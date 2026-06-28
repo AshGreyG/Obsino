@@ -37,5 +37,6 @@ order:
     - "vector-arithmetic"
     - "logic-vectors"
     - "index-vectors"
+    - "objects"
   specific:
     - "sequences"
