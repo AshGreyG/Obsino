@@ -39,5 +39,6 @@ order:
     - "index-vectors"
     - "objects"
     - "factors"
+    - "arrays"
   specific:
     - "sequences"
