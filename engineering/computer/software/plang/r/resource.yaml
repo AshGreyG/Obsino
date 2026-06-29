@@ -38,5 +38,6 @@ order:
     - "logic-vectors"
     - "index-vectors"
     - "objects"
+    - "factors"
   specific:
     - "sequences"
