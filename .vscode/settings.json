@@ -12,6 +12,7 @@
     "readlink",
     "mapfile",
     "datatypes",
+    "plang",
 
     // typst packges
     "cetz",
