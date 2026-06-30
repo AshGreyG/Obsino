@@ -2,6 +2,8 @@ package concept
 
 function: {
   content: """
+    === Functions: Definition
+
     There are variety ways to define functions in Lean:
 
     1. The simplest is to place the function's arguments before the definition's
@@ -20,15 +22,50 @@ function: {
       *currying*. Function arrows associative to the right, which means that
       `Nat → Nat` should be parenthesized `Nat → (Nat → Nat)`.
 
-    \(code_part_function)
+      \(code_part_function)
+
+    2. Functions in Lean need not be defined at the top level. As expressions,
+      functions are produced with the `fun` syntax. *Function expressions (
+      anonymous functions)* begin with the keyword `fun`, followed by one or
+      more parameters, which are separated from the return expression using `=>`.
+
+      This style of anonymous function expression is often referred to as a
+      *lambda expression*, because the typical notation used in mathematical
+      descriptions of programming languages uses the Greek letter $λ$. Lean does
+      permit `λ` to be used instead of `fun`.
+
+      \(code_part_anonymous_function)
+
+    === Functions: Recursive Functions
+
+    Recursive datatype like `inductive` is nicely complemented by recursive
+    functions. Lean ensures by default that every recursive function will eventually
+    reach a *base case*. From a programming perspective this rules out accidental
+    infinite loops.
+
+    \(code_part_recursive_function)
   """
   code_part_function: #"""
     #raw-block-file(
-      "src/Function.lean",
+      "src/basic/Function.lean",
+      "lean"
+    )
+  """#
+  code_part_anonymous_function: #"""
+    #raw-block-file(
+      "src/basic/AnonymousFunction.lean",
+      "lean"
+    )
+  """#
+  code_part_recursive_function: #"""
+    #raw-block-file(
+      "src/basic/RecursiveFunction.lean",
       "lean"
     )
   """#
   related: [
-    "concept/definitions"
+    "concept/definitions",
+    "concept/inductive-datatype",
+    "concept/pattern-matching"
   ]
 }

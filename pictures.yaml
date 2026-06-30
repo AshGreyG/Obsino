@@ -1,0 +1,40 @@
+# Copyright 2026 AshGrey
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy of
+# this software and associated documentation files (the "Software"), to deal in the
+# Software without restriction, including without limitation the rights to use, copy,
+# modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+# and to permit persons to whom the Software is furnished to do so, subject to the
+# following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED
+# INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+# PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+# HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+# OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+# SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+pictures:
+  atmospheric-pressure-chemical-ionisation:
+    - "https://upload.wikimedia.org/wikipedia/commons/c/cc/APCI_Source_With_Heated_Nebulizer.png"
+  beta-adrenergic-membrane-receptor:
+    - "https://a1.boltp.com/2026/06/16/6a30d63dc30f9.png"
+  beta-barrel-in-extra-superfolder-gfp:
+    - "https://a1.boltp.com/2026/06/18/6a33f69db0d83.png"
+  electron-impact-ionisation:
+    - "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Schematic_Diagram_of_Electron_Ionization_Instrumentation.svg/960px-Schematic_Diagram_of_Electron_Ionization_Instrumentation.svg.png"
+  electrospray-ionisation:
+    - "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/ESI_positive_mode_%2821589986840%29.jpg/1280px-ESI_positive_mode_%2821589986840%29.jpg"
+  electrostatic-structure-of-myoglobin:
+    - "https://a1.boltp.com/2026/06/18/6a33f69db4a6e.png"
+  matrix-assisted-laser-desorption-ionisation:
+    - "https://www.creative-proteomics.com/images/Matrix-assiste-Laser-Desorption-Ionization.jpg"
+  plasma-membrane-receptor:
+    - "https://cdn.rcsb.org/images/structures/1f88_chain-A.jpeg" 
+  polysorbate-80:
+    - "https://a1.boltp.com/2026/06/19/6a35267c8a51e.jpg"
+  ramachandran-plot-of-1ca2:
+    - "https://a1.boltp.com/2026/06/18/6a33f6311af88.png"
