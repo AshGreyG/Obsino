@@ -26,6 +26,6 @@ cumulative_distribution_function: {
       $ lim_(x-> x_0^(+0)) F_X (x) = F_X (x_0) $
   """#
   related: [
-    "concept/random-variables"
+    "concept/random-variable"
   ]
 }
