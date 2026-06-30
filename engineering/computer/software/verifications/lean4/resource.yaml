@@ -50,3 +50,5 @@ order:
     - "if-let"
     - "simultaneous-matching"
     - "namespace"
+  specific:
+    - "running-program"
