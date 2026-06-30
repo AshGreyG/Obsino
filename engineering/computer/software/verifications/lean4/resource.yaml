@@ -52,3 +52,5 @@ order:
     - "namespace"
   specific:
     - "running-program"
+  principle:
+    - "lake-project"
