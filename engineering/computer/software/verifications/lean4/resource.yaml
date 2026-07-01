@@ -57,6 +57,7 @@ order:
     - "namespace"
     - "dependent-type-theory-in-lean"
     - "variable-keyword"
+    - "section-keyword"
   specific:
     - "running-program"
   principle:
