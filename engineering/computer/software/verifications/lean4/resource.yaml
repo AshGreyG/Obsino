@@ -19,8 +19,13 @@
 
 # Resource metadata section
 textbooks:
-  - name: "https://lean-lang.org/functional_programming_in_lean/"
+  - name: "Functional Programming in Lean"
     isbn: null
+    url: "https://lean-lang.org/functional_programming_in_lean/"
+    completed: false
+  - name: "Theorem Proving in Lean4"
+    isbn: null
+    url: "https://lean-lang.org/theorem_proving_in_lean4"
     completed: false
 tests:
   null
@@ -51,6 +56,7 @@ order:
     - "simultaneous-matching"
     - "namespace"
     - "dependent-type-theory-in-lean"
+    - "variable-keyword"
   specific:
     - "running-program"
   principle:
