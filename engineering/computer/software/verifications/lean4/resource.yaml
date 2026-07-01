@@ -50,6 +50,7 @@ order:
     - "if-let"
     - "simultaneous-matching"
     - "namespace"
+    - "dependent-type-theory-in-lean"
   specific:
     - "running-program"
   principle:
