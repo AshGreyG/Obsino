@@ -36,6 +36,13 @@ running_program: {
     is an IO action that should be executed, with the result of the action saved
     in the local variable.
 
+    When Lean is compiling a `do` block, expressions that consist of a left
+    arrow immediately under parentheses are lifted to nearest enclosing `do` and
+    their results are bound to a unique name. This unique name replaces the
+    origin of the expression:
+
+    \(code_part_running_program_nested_action)
+
     === Running Program: `pure`
 
     \(code_part_running_program_pure)
@@ -58,6 +65,12 @@ running_program: {
   code_part_running_program_pure: #"""
     #raw-block-file(
       "src/specific/RunningProgramPure.lean",
+      "lean"
+    )
+  """#
+  code_part_running_program_nested_action: #"""
+    #raw-block-file(
+      "src/specific/DoBlockNestedAction.lean",
       "lean"
     )
   """#
