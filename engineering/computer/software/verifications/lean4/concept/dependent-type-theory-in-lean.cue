@@ -38,6 +38,17 @@ dependent_type_theory_in_lean: {
 
     An important feature of dependent theory: *every term has a computational
     behavior, and supports a notion of normalization*.
+
+    === Dependent Type Theory: What Is "Dependent"
+
+    \(code_part_dependent_type_theory)
+
+    This is an instance of a *dependent function type* or *dependent arrow type*.
+    Given `α : Type` and `β : α → Type`, we can think of `β` as a family of types
+    over `α`, that is a type `β a` for each `a : α`. In that case the type
+    `(a : α) → β a` denotes the type of functions `f` with the property that,
+    for each `a : α`, `f a` is an element of `β a`. *In other words, the type of
+    the value returned by `f` depends on its input*.
   """
   code_part_type_universe: #"""
     #raw-block-file(
@@ -48,6 +59,12 @@ dependent_type_theory_in_lean: {
   code_part_lambda_abstraction: #"""
     #raw-block-file(
       "src/basic/LambdaAbstraction.lean",
+      "lean"
+    )
+  """#
+  code_part_dependent_type_theory: #"""
+    #raw-block-file(
+      "src/basic/DependentTypeTheory.lean",
       "lean"
     )
   """#
