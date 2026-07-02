@@ -20,7 +20,7 @@ lake_project: {
     `<Project-name>/Basic.lean`. This means everything defined in
     `<Project-name>/Basic.lean` is also available to files that import
     `<Project-name>.lean`. *In `import` statements, dots are interpreted as
-    directories as disk*.
+    directories on disk*.
 
     To build the package, run the command `lake build`, the resulting binary
     has been placed in `.lake/build/bin`. The command `lake exe` can be used to
