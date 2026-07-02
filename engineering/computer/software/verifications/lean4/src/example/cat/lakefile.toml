@@ -1,0 +1,13 @@
+# Package settings at the top of the file
+name = "cat"
+version = "0.1.0"
+defaultTargets = ["cat"]
+
+# Library declaration
+[[lean_lib]]
+name = "Cat"
+
+# Executable declaration
+[[lean_exe]]
+name = "cat"
+root = "Main"

@@ -13,6 +13,8 @@
     "mapfile",
     "datatypes",
     "plang",
+    "println",
+    "lakefile",
 
     // typst packges
     "cetz",

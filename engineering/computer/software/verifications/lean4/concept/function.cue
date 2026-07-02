@@ -44,6 +44,16 @@ function: {
     infinite loops.
 
     \(code_part_recursive_function)
+
+    === Functions: Partial Functions
+
+    *Partial function* calls itself recursively on input that is not immediately
+    smaller than an argument. When a function is declared to be partial, Lean
+    does not require a *proof that it terminates*. On the other hand, partial
+    functions are also much less amenable to proofs of correctness, because
+    allowing infinite loops in Lean's logic would make it unsound.
+
+    \(code_part_partial_function)
   """
   code_part_function: #"""
     #raw-block-file(
@@ -62,6 +72,12 @@ function: {
       "src/basic/RecursiveFunction.lean",
       "lean"
     )
+  """#
+  code_part_partial_function: #"""
+    #raw-block-file(
+      "src/basic/PartialFunction.lean",
+      "lean"
+    ) 
   """#
   related: [
     "concept/definitions",
