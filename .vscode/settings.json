@@ -103,6 +103,9 @@
     "diathermal",
     "lussac",
     "Maxwellian",
-    "equipartition"
+    "equipartition",
+
+    // natural-science.biology.bioinformatics.structural.docking
+    "bioinformatics"
   ],
 }
