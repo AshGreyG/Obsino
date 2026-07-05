@@ -58,6 +58,7 @@ order:
     - "dependent-type-theory-in-lean"
     - "variable-keyword"
     - "section-keyword"
+    - "proposition"
   specific:
     - "running-program"
   principle:
