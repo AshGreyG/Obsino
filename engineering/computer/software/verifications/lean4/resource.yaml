@@ -63,3 +63,4 @@ order:
     - "running-program"
   principle:
     - "lake-project"
+    - "theorem-proof"
