@@ -103,6 +103,10 @@
     "diathermal",
     "lussac",
     "Maxwellian",
-    "equipartition"
+    "equipartition",
+
+    // engineering.computer.software.verifications.lean4
+    "subgoals",
+    "subgoal"
   ],
 }

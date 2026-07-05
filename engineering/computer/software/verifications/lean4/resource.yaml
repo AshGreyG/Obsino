@@ -65,3 +65,4 @@ order:
   principle:
     - "lake-project"
     - "theorem-proof"
+    - "auxiliary-subgoals"
