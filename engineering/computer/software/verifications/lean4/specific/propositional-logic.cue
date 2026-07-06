@@ -58,7 +58,7 @@ propositional_logic: {
     hypotheses, is represented by `absurd`*
 
     Identically `True` has only an introduction rule, `True.intro` is always
-    `True`.
+    a value `True`.
 
     === Propositional: Logical Equivalence
 
