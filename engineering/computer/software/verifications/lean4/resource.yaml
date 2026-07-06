@@ -62,6 +62,7 @@ order:
   specific:
     - "running-program"
     - "propositional-logic"
+    - "classical-logic"
   principle:
     - "lake-project"
     - "theorem-proof"
