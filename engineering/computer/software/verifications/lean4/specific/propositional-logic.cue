@@ -46,9 +46,7 @@ propositional_logic: {
     === Propositional: Negation and Falsity
 
     Negation, `¬p` is actually defined to be `p → False`, it's still an instance
-    from Curry-Howard isomorphism. If we want to prove `p` is opposite to our
-    assumption, then give a proof of `p` we can prove there is a contradiction
-    in this proof and `False` is exact representation of contradiction in Lean4.
+    from Curry-Howard isomorphism.
 
     \(code_part_negation)
 
