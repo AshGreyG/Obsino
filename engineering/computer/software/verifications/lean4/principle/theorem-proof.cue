@@ -1,4 +1,4 @@
-package specific
+package principle
 
 theorem_proof: {
   content: """
