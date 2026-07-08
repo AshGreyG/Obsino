@@ -112,33 +112,33 @@ example : ¬(p ∨ q) ↔ ¬p ∧ ¬q :=
         (fun hp : p => show False from h (Or.inl hp))
         (fun hq : q => show False from h (Or.inr hq)))
     (fun h : ¬p ∧ ¬q =>
-      have np : ¬p := h.left
-      have nq : ¬q := h.right
+      have hnp : ¬p := h.left
+      have hnq : ¬q := h.right
       fun hpq : p ∨ q =>
         Or.elim hpq
-          (fun hp : p => show False from np hp)
-          (fun hq : q => show False from nq hq))
+          (fun hp : p => show False from hnp hp)
+          (fun hq : q => show False from hnq hq))
 
 example : ¬p ∨ ¬q → ¬(p ∧ q) :=
   fun h : ¬p ∨ ¬q =>
     Or.elim h
-      (fun np : ¬p =>
-        fun hpq : p ∧ q => show False from np hpq.left)
-      (fun nq : ¬q =>
-        fun hpq : p ∧ q => show False from nq hpq.right)
+      (fun hnp : ¬p =>
+        fun hpq : p ∧ q => show False from hnp hpq.left)
+      (fun hnq : ¬q =>
+        fun hpq : p ∧ q => show False from hnq hpq.right)
 
 example : ¬(p ∧ ¬p) :=
   fun h : p ∧ ¬p =>
     have hp : p := h.left
-    have np : ¬p := h.right
-    show False from np hp
+    have hnp : ¬p := h.right
+    show False from hnp hp
 
 example : p ∧ ¬q → ¬(p → q) :=
   fun h : p ∧ ¬q =>
     have hp : p := h.left
-    have nq : ¬q := h.right
+    have hnq : ¬q := h.right
     fun hpq : p → q =>
-      show False from nq (hpq hp)
+      show False from hnq (hpq hp)
 
 example : ¬p → (p → q) :=
   fun hnp : ¬p =>
@@ -149,7 +149,7 @@ example : (¬p ∨ q) → (p → q) :=
   fun h : ¬p ∨ q =>
     fun hp : p =>
       Or.elim h
-        (fun np : ¬p => False.elim (np hp))
+        (fun hnp : ¬p => False.elim (hnp hp))
         (fun hq : q => hq)
 
 example : p ∨ False ↔ p :=
@@ -167,8 +167,8 @@ example : p ∧ False ↔ False :=
 
 example : (p → q) → (¬q → ¬p) :=
   fun h : p → q =>
-    fun nq : ¬q =>
-      fun hp : p => show False from nq (h hp)
+    fun hnq : ¬q =>
+      fun hp : p => show False from hnq (h hp)
 
 -- Under examples are all need to proved by classical logic, in constructive logic
 -- we need choose which branch is true and give the constructive proof, but in
