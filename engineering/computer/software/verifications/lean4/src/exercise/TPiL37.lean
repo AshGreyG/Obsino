@@ -169,3 +169,72 @@ example : (p → q) → (¬q → ¬p) :=
   fun h : p → q =>
     fun nq : ¬q =>
       fun hp : p => show False from nq (h hp)
+
+-- Under examples are all need to proved by classical logic, in constructive logic
+-- we need choose which branch is true and give the constructive proof, but in
+-- classical logic it's not needed.
+
+example : (p → q ∨ r) → ((p → q) ∨ (p → r)) :=
+  fun h : p → q ∨ r =>
+    Or.elim (em p)  -- em p is excluded middle
+      (fun hp : p =>
+        Or.elim (h hp)
+          (fun hq : q => show (p → q) ∨ (p → r) from Or.inl (fun _ => hq))
+          (fun hr : r => show (p → q) ∨ (p → r) from Or.inr (fun _ => hr)))
+      (fun hnp : ¬p =>
+        show (p → q) ∨ (p → r) from Or.inl (fun hp : p => False.elim (hnp hp)))
+
+example : ¬(p ∧ q) → ¬p ∨ ¬q :=
+  fun h : ¬(p ∧ q) =>
+    Or.elim (em p)
+      (fun hp : p =>
+        Or.elim (em q)
+          (fun hq : q =>
+            have hpq : p ∧ q := ⟨hp, hq⟩
+            show ¬p ∨ ¬q from False.elim (h hpq))
+          (fun hnq : ¬q => show ¬p ∨ ¬q from Or.inr hnq))
+      (fun hnp : ¬p => show ¬p ∨ ¬q from Or.inl hnp)
+
+example : ¬(p → q) → p ∧ ¬q :=
+  fun h : ¬(p → q) =>
+    Or.elim (em p)
+      (fun hp : p =>
+        Or.elim (em q)
+          (fun hq : q => show p ∧ ¬q from False.elim (h fun _ => hq))
+          (fun hnq : ¬q => show p ∧ ¬q from ⟨hp, hnq⟩))
+      (fun hnp : ¬p =>
+        Or.elim (em q)
+          (fun hq : q => show p ∧ ¬q from False.elim (h fun _ => hq))
+          (fun _ : ¬q =>
+            show p ∧ ¬q from False.elim (h fun hp => False.elim (hnp hp))))
+
+example : (p → q) → (¬p ∨ q) :=
+  fun h : p → q =>
+    Or.elim (em p)
+      (fun hp : p =>
+        have hq : q := h hp
+        show ¬p ∨ q from Or.inr hq)
+      (fun hnp : ¬p =>
+        show ¬p ∨ q from Or.inl hnp)
+
+example : (¬q → ¬p) → (p → q) :=
+  fun h : ¬q → ¬p =>
+    Or.elim (em q)
+      (fun hq : q => fun _ => hq)
+      (fun hnq : ¬q =>
+        have hnp : ¬p := h hnq
+        show p → q from fun hp : p => False.elim (hnp hp))
+
+example : p ∨ ¬p :=
+  Or.elim (em p)
+    (fun hp : p => Or.inl hp)
+    (fun hnp : ¬p => Or.inr hnp)
+
+example : (((p → q) → p) → p) :=
+  fun h : ((p → q) → p) =>
+    Or.elim (em p)
+      (fun hp : p => hp)
+      (fun hnp : ¬p =>
+        have hpq : p → q := fun hp : p => False.elim (hnp hp)
+        have hp : p := h hpq
+        show p from hp)
