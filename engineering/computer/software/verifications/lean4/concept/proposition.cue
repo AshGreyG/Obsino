@@ -2,7 +2,7 @@ package concept
 
 proposition: {
   content: """
-    Lean introduced a new type `Prop` to represent propositions, and introduce
+    Lean has a type `Prop` to represent propositions, and provides
     constructors to build new propositions from others. Whenever we have `p : Prop`
     we can interpret `p` as a type, namely, the *type of its proofs*. We can then
     read `t : p` as the assertion that *`t` is a proof of `p`*. Implication

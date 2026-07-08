@@ -23,7 +23,7 @@ propositional_logic: {
     treated separately in Lean.
 
     The `And` type is defined with a single canonical constructor which builds
-    and element of the type from a sequence of suitable arguments. Lean allows
+    an element of the type from a sequence of suitable arguments. Lean allows
     us to use anonymous constructor notation `⟨arg1, arg2, ⋯⟩`.
 
     === Propositional Logic: Disjunction
