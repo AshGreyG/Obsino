@@ -58,7 +58,12 @@ order:
     - "dependent-type-theory-in-lean"
     - "variable-keyword"
     - "section-keyword"
+    - "proposition"
   specific:
     - "running-program"
+    - "propositional-logic"
+    - "classical-logic"
   principle:
     - "lake-project"
+    - "theorem-proof"
+    - "auxiliary-subgoals"
