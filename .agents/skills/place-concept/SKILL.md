@@ -1,14 +1,15 @@
 ---
 name: place-concept
-description: Help determine which branch of the Obsino knowledge tree a new concept from a paper or research belongs to, and scaffold the entry.
+description: Help determine which branch of the Obsino knowledge tree a new concept from a paper or research belongs to, and optionally scaffold the entry.
 ---
 
 # Place a New Concept
 
 Use this skill when the user has a concept from a paper, book, or research and
-is unsure where it fits in the Obsino knowledge tree. This skill helps classify
-the concept, determine the correct directory and module, and scaffold the CUE
-entry.
+is unsure where it fits in the Obsino knowledge tree. By default, this skill
+classifies the concept and identifies the correct directory and module. Only
+create or edit files when the user explicitly asks to scaffold, create, add, or
+write the entry.
 
 ## Workflow
 
@@ -60,7 +61,20 @@ Within the module, choose one of these directory categories:
 
 Not all categories exist in every module — use the ones that fit the subject.
 
-### 5. Scaffold the entry
+### 5. Report the placement
+
+Unless the user explicitly asked for file creation, stop after reporting:
+
+- the chosen top-level domain;
+- the chosen module path and directory;
+- the category directory;
+- the recommended filename and CUE property name;
+- brief reasoning for the placement;
+- possible `related` cross-references to existing concepts.
+
+For multiple concepts, provide one placement per concept.
+
+### 6. Scaffold the entry when explicitly requested
 
 Once the location is determined, create the CUE file:
 
@@ -73,7 +87,7 @@ Once the location is determined, create the CUE file:
 - If a `resource.yaml` has an `order` list for the category, add the new
   filename (without `.cue`) to the appropriate position
 
-### 6. Update the handbook order
+### 7. Update the handbook order
 
 If a `resource.yaml` exists in the module root directory and has an `order`
 property for the category, insert the new concept filename (without `.cue`)
