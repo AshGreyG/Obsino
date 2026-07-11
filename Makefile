@@ -122,10 +122,11 @@ handbook:
 		# 2. Iterate through CUE files in directory order (from resource.yaml) or alphabetically; \
 		target_files=(); \
 		if [[ -f "$(RESOURCE)" ]]; then \
-			order_type=$$(yq -r ".order.$$dir | type" "$(RESOURCE)" 2>/dev/null); \
-			if [[ "$$order_type" == "array" ]]; then \
+			order_entries=(); \
+			mapfile -t order_entries < <(yq -r ".order.$$dir[] // \"\"" "$(RESOURCE)" 2>/dev/null); \
+			if [[ $${#order_entries[@]} -gt 0 ]]; then \
 				echo "→ Using ordering from resource.yaml for $$dir"; \
-				while IFS= read -r entry; do \
+				for entry in "$${order_entries[@]}"; do \
 					if [[ -n "$$entry" ]]; then \
 						cue_file="$$dir/$$entry.cue"; \
 						if [[ -f "$$cue_file" ]]; then \
@@ -134,7 +135,7 @@ handbook:
 							echo "! Warning: CUE file not found: $$cue_file (from resource.yaml order)"; \
 						fi; \
 					fi; \
-				done < <(yq -r ".order.$$dir[] // \"\"" "$(RESOURCE)" 2>/dev/null); \
+				done; \
 			fi; \
 		fi; \
 		if [[ $${#target_files[@]} -eq 0 ]]; then \

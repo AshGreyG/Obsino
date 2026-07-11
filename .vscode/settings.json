@@ -106,6 +106,9 @@
     "equipartition",
 
     // natural-science.biology.bioinformatics.structural.docking
-    "bioinformatics"
+    "bioinformatics",
+    // engineering.computer.software.verifications.lean4
+    "subgoals",
+    "subgoal"
   ],
 }
