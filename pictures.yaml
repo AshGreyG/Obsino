@@ -33,8 +33,10 @@ pictures:
   matrix-assisted-laser-desorption-ionisation:
     - "https://www.creative-proteomics.com/images/Matrix-assiste-Laser-Desorption-Ionization.jpg"
   plasma-membrane-receptor:
-    - "https://cdn.rcsb.org/images/structures/1f88_chain-A.jpeg" 
+    - "https://cdn.rcsb.org/images/structures/1f88_chain-A.jpeg"
   polysorbate-80:
     - "https://a1.boltp.com/2026/06/19/6a35267c8a51e.jpg"
   ramachandran-plot-of-1ca2:
     - "https://a1.boltp.com/2026/06/18/6a33f6311af88.png"
+  solvent-accessible-surface-area:
+    - "https://www.cgl.ucsf.edu/chimerax/docs/user/commands/surface-diagram.png"

@@ -1,4 +1,3 @@
-
 # Copyright 2026 AshGrey
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -24,5 +23,19 @@ tests:
   null
 papers:
   null
+websites:
+  # documents
+  - "https://sbl.inria.fr"
+  # databases
+  - "https://alphafold.com/"
+  - "https://www.expasy.org/resources/uniprotkb-swiss-prot"
+  # softwares
+  - "https://github.com/N283T/zsasa"
+  - "https://github.com/mittinatten/freesasa"
+  - "https://github.com/maxall41/RustSASA"
+  # researchers
+  - "https://github.com/N283T"
 order:
-  null
+  concept:
+    - "solvent-accessible-surface-area"
+    - "buried-surface-area"
