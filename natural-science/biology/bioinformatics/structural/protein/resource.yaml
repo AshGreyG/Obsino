@@ -30,13 +30,15 @@ websites:
   - "https://alphafold.com"
   - "https://www.expasy.org/resources/uniprotkb-swiss-prot"
   - "https://uniprot.org"
+  - "https://www.ebi.ac.uk/ena/browser/search"
   # softwares
   ## solvent-accessible-surface-area calculation
   - "https://github.com/N283T/zsasa"
   - "https://github.com/mittinatten/freesasa"
   - "https://github.com/maxall41/RustSASA"
-  ## fasta calculation
-  - "https://fasta.bioch.virginia.edu/fasta_www2/fasta_down.shtml"
+  ## fasta and its variants calculation
+  - "https://github.com/wrpearson/fasta36"
+  - "https://github.com/shenwei356/seqkit"
   # researchers
   - "https://github.com/N283T"
 order:
@@ -44,4 +46,4 @@ order:
     - "solvent-accessible-surface-area"
     - "buried-surface-area"
   standard:
-    - "fasta-format"
+    - "format-fasta"

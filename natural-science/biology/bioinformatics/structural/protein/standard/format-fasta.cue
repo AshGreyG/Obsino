@@ -29,6 +29,7 @@ fasta_format: {
     #link("\(external_link[0])")[github page] of NCBI.
   """
   external_link: [
-    "https://ncbi.github.io/cxx-toolkit/pages/ch_demo#ch_demo.id1_fetch.html_ref_fasta"
+    "https://ncbi.github.io/cxx-toolkit/pages/ch_demo#ch_demo.id1_fetch.html_ref_fasta",
+    "https://github.com/wrpearson/fasta36"
   ]
 }
