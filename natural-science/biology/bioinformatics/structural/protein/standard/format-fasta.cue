@@ -1,6 +1,6 @@
 package standard
 
-fasta_format: {
+format_fasta: {
   content: """
     The FASTA format is a text-based format for representing either nucleotide
     sequences or amino acids sequences, in which nucleotides or amino acids are

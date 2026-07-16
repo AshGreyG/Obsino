@@ -38,6 +38,7 @@ websites:
   - "https://github.com/maxall41/RustSASA"
   ## fasta and its variants calculation
   - "https://github.com/wrpearson/fasta36"
+  ## fasta-variant: fastq
   - "https://github.com/shenwei356/seqkit"
   # researchers
   - "https://github.com/N283T"
@@ -47,3 +48,4 @@ order:
     - "buried-surface-area"
   standard:
     - "format-fasta"
+    - "format-a3m"
