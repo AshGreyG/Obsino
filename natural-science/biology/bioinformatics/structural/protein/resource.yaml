@@ -27,15 +27,21 @@ websites:
   # documents
   - "https://sbl.inria.fr"
   # databases
-  - "https://alphafold.com/"
+  - "https://alphafold.com"
   - "https://www.expasy.org/resources/uniprotkb-swiss-prot"
+  - "https://uniprot.org"
   # softwares
+  ## solvent-accessible-surface-area calculation
   - "https://github.com/N283T/zsasa"
   - "https://github.com/mittinatten/freesasa"
   - "https://github.com/maxall41/RustSASA"
+  ## fasta calculation
+  - "https://fasta.bioch.virginia.edu/fasta_www2/fasta_down.shtml"
   # researchers
   - "https://github.com/N283T"
 order:
   concept:
     - "solvent-accessible-surface-area"
     - "buried-surface-area"
+  standard:
+    - "fasta-format"

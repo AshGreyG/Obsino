@@ -28,4 +28,7 @@ buried_surface_area: {
   external_link: [
     "https://sbl.inria.fr/doc/Buried_surface_area-user-manual.html"
   ]
+  related: [
+    "concept/solvent-accessible-surface-area"
+  ]
 }
