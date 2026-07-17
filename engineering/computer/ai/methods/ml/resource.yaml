@@ -24,4 +24,7 @@ tests:
 papers:
   null
 order:
-  null
+  concept:
+    - "learning-algorithm"
+    - "unsupervised-learning-algorithm"
+    - "supervised-learning-algorithm"
