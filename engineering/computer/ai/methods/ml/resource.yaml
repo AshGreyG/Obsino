@@ -29,5 +29,7 @@ order:
     - "unsupervised-learning-algorithm"
     - "supervised-learning-algorithm"
     - "training-error"
+    - "hypothesis-space"
   specific:
     - "linear-regression"
+    - "polynomial-regression"
