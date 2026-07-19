@@ -28,5 +28,6 @@ order:
     - "learning-algorithm"
     - "unsupervised-learning-algorithm"
     - "supervised-learning-algorithm"
+    - "training-error"
   specific:
     - "linear-regression"

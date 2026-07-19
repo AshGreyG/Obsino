@@ -107,6 +107,12 @@
 
     // engineering.computer.software.verifications.lean4
     "subgoals",
-    "subgoal"
+    "subgoal",
+
+    // engineering.computer.ai.methods.ml
+    "underfit",
+    "underfitting",
+    "overfit",
+    "overfitting"
   ],
 }
