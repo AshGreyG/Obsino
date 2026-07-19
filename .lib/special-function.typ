@@ -16,9 +16,6 @@
 // HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 // OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 // SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-//
-// This is the header of every handbook, you can add predefined functions or
-// styles here.
 
 /// Custom error function, use Abramowitz & Stegun formula, its used for drawing
 /// pictures
