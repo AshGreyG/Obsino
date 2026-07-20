@@ -113,6 +113,8 @@
     "underfit",
     "underfitting",
     "overfit",
-    "overfitting"
+    "overfitting",
+    "vapnik",
+    "chervonenkis"
   ],
 }

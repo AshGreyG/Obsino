@@ -30,6 +30,7 @@ order:
     - "supervised-learning-algorithm"
     - "training-error"
     - "hypothesis-space"
+    - "gradient-descent"
   specific:
     - "linear-regression"
     - "polynomial-regression"
