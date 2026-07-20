@@ -2,8 +2,27 @@
 #import "@preview/cetz-plot:0.1.4": plot
 #import "/.lib/ml.typ" as ml
 
-#let x-train-data = (0, 1, 2, 3, 4, 5)
-#let y-train-data = (0.2, 0.8, 2.1, 2.9, 4.1, 5.3)
+#let true-bias = 0.35
+#let true-slope = 0.95
+#let sample-count = 120
+#let x-min = 0
+#let x-max = 5
+
+#let noise(i) = {
+  let raw = calc.sin((i + 1) * 12.9898) * 43758.5453
+  let fractional = raw - calc.floor(raw)
+  (fractional - 0.5) * 0.8
+}
+
+#let true-relation(x) = true-bias + true-slope * x
+
+#let x-train-data = ()
+#let y-train-data = ()
+#for i in range(sample-count) {
+  let x = x-min + i * (x-max - x-min) / (sample-count - 1)
+  x-train-data.push(x)
+  y-train-data.push(true-relation(x) + noise(i))
+}
 
 #let weights = ml.linear-regression(x-train-data, y-train-data, digits: 3)
 #let bias = weights.at(0).at(0)
@@ -26,7 +45,7 @@
         y-label: [Target $y$],
         x-min: -0.2,
         x-max: 5.2,
-        y-min: 0,
+        y-min: -0.2,
         y-max: 5.8,
         x-tick-step: 1,
         y-tick-step: 1,

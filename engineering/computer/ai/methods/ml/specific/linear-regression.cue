@@ -77,7 +77,7 @@ linear_regression: {
 
       $ ∇_(ub(w))(bold(a)^⊤ ub(w)) = ∇_(ub(w))(ub(w)^⊤ bold(a)) = bold(a) $
 
-      $ ∇_(ub(w))(ub(w)^⊤ ub(A) ub(w)) = 2ub(A)ub(w) $
+      $ ∇_(ub(w))(ub(w)^⊤ ub(A) ub(w)) = (ub(A) + ub(A)^⊤)ub(w) = 2ub(A)ub(w) $
 
       where $ub(A)$ is a symmetric matrix.
 
