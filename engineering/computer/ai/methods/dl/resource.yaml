@@ -23,5 +23,7 @@ tests:
   null
 papers:
   null
+websites:
+  - "https://d2l.ai"
 order:
   null
