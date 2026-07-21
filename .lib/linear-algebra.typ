@@ -237,7 +237,16 @@
   return (mat.len(), first-len)
 }
 
+/// Check if a matrix is empty.
+///
+/// - mat (array): The input matrix
+/// -> bool
+#let is-empty(mat) = {
+  return shape(mat) == (0, 0)
+}
+
 #let is-matrix(mat) = {
+  assert(not is-empty(mat), message: "is-matrix() expects non-empty matrix")
   assert(
     type(mat) == array,
     message: "is-matrix() expects an array, got:" + str(type(mat)),
@@ -262,14 +271,6 @@
 #let is-square(mat) = {
   let (rows, cols) = shape(mat)
   return rows == cols
-}
-
-/// Check if a matrix is empty.
-///
-/// - mat (array): The input matrix
-/// -> bool
-#let is-empty(mat) = {
-  return shape(mat) == (0, 0)
 }
 
 /// Check if a matrix is symmetric.
