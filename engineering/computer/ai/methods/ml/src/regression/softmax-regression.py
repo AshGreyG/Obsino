@@ -2,28 +2,29 @@ from __future__ import annotations
 
 import torch
 import torchvision
-import os
+import matplotlib
+import json
+matplotlib.use('Agg')
 
 from dataclasses import dataclass
-from pathlib import Path
-from typing import Iterable, Sequence
+from typing import Dict, Iterable, List, Sequence, Any
 from matplotlib import pyplot as plt
 from torch import Tensor
 from torch.utils import data
 from torchvision import transforms
 
-os.environ.setdefault("MPLCONFIGDIR", "/tmp/matplotlib")
+plt.rcParams["font.family"] = "Libertinus Serif"
 
 DATALOADER_WORKERS = 4
 BATCH_SIZE = 256
 DIMENSION_INPUTS = 28 * 28
 DIMENSION_OUTPUT = 10
 LEARNING_RATE = 0.1
-EPOCHS = 10
+EPOCHS = 100
+RESULT_JSON_PATH = "assets/output/result.json"
 
 Batch = tuple[Tensor, Tensor]
 DataLoader = data.DataLoader[Batch]
-
 
 @dataclass(frozen=True)
 class SoftmaxRegressionParams:
@@ -201,20 +202,67 @@ def train(epochs: int = EPOCHS, learning_rate: float = LEARNING_RATE) -> None:
             f"test_acc={test_accuracy:.4f}",
         )
         history.append({
-            "epoch": epoch,
+            "epoch": epoch + 1,
             "loss": train_metrics.loss,
             "train_accuracy": train_metrics.accuracy,
             "test_accuracy": test_accuracy
         })
 
-    plt.plot(
+    with open(RESULT_JSON_PATH, "w", encoding="utf-8") as f:
+        json.dump(history, f, indent=2, ensure_ascii=False)
+
+def draw_result() -> None:
+    # plot loss
+
+    with open(RESULT_JSON_PATH, "r", encoding="utf-8") as f:
+        history: List[Dict[str, Any]] = json.load(f)
+
+    fig, ax = plt.subplots(figsize=(6,4))
+    ax.plot(
         [iteration["epoch"] for iteration in history],
-        [iteration["loss"] for iteration in history]
+        [iteration["loss"] for iteration in history],
+        color="green",
+        linewidth=1,
+        alpha=0.6
     )
-    plt.show()
+    ax.set_xlabel("Epoch")
+    ax.set_ylabel("Loss")
+    ax.set_title("Training Error")
+    ax.grid(True)
+    fig.savefig("loss_curve.png", dpi=500)
+    ax.clear()
+    fig.clear()
+    plt.close()
+
+    # plot accuracy
+
+    fig, ax = plt.subplots(figsize=(6,4))
+    ax.plot(
+        [iteration["epoch"] for iteration in history],
+        [iteration["train_accuracy"] for iteration in history],
+        color="blue",
+        linewidth=1,
+        alpha=0.6,
+        label="Train Accuracy"
+    )
+    ax.plot(
+        [iteration["epoch"] for iteration in history],
+        [iteration["test_accuracy"] for iteration in history],
+        color="red",
+        linewidth=1,
+        alpha=0.6,
+        label="Test Accuracy"
+    )
+    ax.set_xlabel("Epoch")
+    ax.set_ylabel("Accuracy")
+    ax.set_title("Train / Test Accuracy")
+    ax.legend()
+    ax.grid(True)
+    fig.savefig("accuracy.png", dpi=500)
+    plt.close()
 
 def main() -> None:
-    train()
+    draw_result()
 
 if __name__ == "__main__":
     main()
