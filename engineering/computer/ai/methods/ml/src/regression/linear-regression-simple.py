@@ -23,8 +23,7 @@ def synthetic_data(
     return X, y.reshape((-1, 1))
 
 def load_array(
-    data_arrays:
-    Tuple[torch.Tensor, torch.Tensor],
+    data_arrays: Tuple[torch.Tensor, torch.Tensor],
     batch_size: int,
     is_train: bool = True
 ) -> data.DataLoader:
