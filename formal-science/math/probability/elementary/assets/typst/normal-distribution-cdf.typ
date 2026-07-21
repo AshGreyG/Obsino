@@ -1,5 +1,6 @@
 #import "@preview/cetz:0.5.2"
 #import "@preview/cetz-plot:0.1.4": plot
+#import "/.lib/special-function.typ" as sf
 
 #align(center)[
   #figure(
@@ -19,7 +20,7 @@
 
       let normal-distribution-cdf(t, deviation, mean) = (
         // erf is injected by header.typ with scope: ("erf": erf)
-        1 / 2 * (1 + erf((t - mean) / (calc.sqrt(2) * deviation)))
+        1 / 2 * (1 + sf.erf__abramowitz((t - mean) / (calc.sqrt(2) * deviation)))
       )
 
       plot.plot(

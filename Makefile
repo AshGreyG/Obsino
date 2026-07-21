@@ -65,7 +65,7 @@ package-export:
 	@echo "→ Temp typst file content:"
 	@cat $(TEMP)
 	@echo "  Compiling typst file to $(TARGET).pdf"
-	@typst compile $(TEMP) $(TARGET).pdf
+	@typst compile --root $(ROOT) $(TEMP) $(TARGET).pdf
 	@rm -f $(TEMP)
 	@rm -rf $(REMOTE_DOWNLOADS)
 	@echo "✅ successfully generate the pdf of content"
@@ -82,7 +82,7 @@ single-export:
 	@echo "→ Temp typst file content:"
 	@cat $(TEMP)
 	@echo "  Compiling typst file to $(RAW_CLASS).pdf"
-	@typst compile $(TEMP) $(RAW_CLASS).pdf
+	@typst compile --root $(ROOT) $(TEMP) $(RAW_CLASS).pdf
 	@rm -f $(TEMP)
 	@echo "✅ successfully generate the pdf of content"
 
@@ -175,7 +175,7 @@ handbook:
 	@echo "→ Formatting handbook with typstyle"
 	@typstyle -i $(TEMP)
 	@echo "→ Compiling handbook to PDF"
-	@typst compile $(TEMP) handbook-$(HANDBOOK_POSTFIX).pdf
+	@typst compile --root $(ROOT) $(TEMP) handbook-$(HANDBOOK_POSTFIX).pdf
 	@echo "→ Cleaning up temporary files"
 	@rm -f $(TEMP)
 	@rm -rf $(REMOTE_DOWNLOADS)
