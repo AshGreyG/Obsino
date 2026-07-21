@@ -1,9 +1,10 @@
-from typing import Tuple, Generator, Iterable
-from matplotlib import pyplot as plt
-
 import torch
 import random
 import numpy as np
+
+from typing import Tuple, Generator, Iterable
+from matplotlib import pyplot as plt
+from typing import Tuple
 
 
 TRAINING_DATA_SIZE = 1000
@@ -47,8 +48,12 @@ def squared_loss(y_hat: torch.Tensor, y: torch.Tensor) -> torch.Tensor:
 def sgd(params: Iterable[torch.Tensor], learning_rate: float, batch_size: int):
     with torch.no_grad():
         for param in params:
-            param -= learning_rate * param.grad / batch_size
-            param.grad.zero_()
+            grad = param.grad
+            if grad is None:
+                continue
+            else:
+                param -= learning_rate * grad / batch_size
+                grad.zero_()
 
 def main() -> None:
     print("[-] Generating synthetic data")

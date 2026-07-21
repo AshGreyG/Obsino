@@ -1,8 +1,9 @@
-from torch import nn
-from torch.utils import data
-
 import numpy as np
 import torch
+
+from torch import nn
+from torch.utils import data
+from typing import Tuple
 
 
 TRAINING_DATA_SIZE = 1000
@@ -21,7 +22,12 @@ def synthetic_data(
 
     return X, y.reshape((-1, 1))
 
-def load_array(data_arrays: torch.Tensor, batch_size: int, is_train: bool = True) -> data.DataLoader:
+def load_array(
+    data_arrays:
+    Tuple[torch.Tensor, torch.Tensor],
+    batch_size: int,
+    is_train: bool = True
+) -> data.DataLoader:
     dataset = data.TensorDataset(*data_arrays)
     return data.DataLoader(dataset, batch_size, shuffle=is_train)
 
@@ -32,8 +38,11 @@ def main() -> None:
     data_iter = load_array((features, labels), BATCH_SIZE)
 
     net = nn.Sequential(nn.Linear(2, 1))
-    net[0].weight.data.normal_(0, 0.01)
-    net[0].bias.data.fill_(0)
+    linear_layer = net[0]
+    assert isinstance(linear_layer, nn.Linear)
+    # make sure pyright not to raise error
+    linear_layer.weight.data.normal_(0, 0.01)
+    linear_layer.bias.data.fill_(0)
     loss = nn.MSELoss()
     trainer = torch.optim.SGD(net.parameters(), lr=LEARNING_RATE)
 

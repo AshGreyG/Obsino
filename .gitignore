@@ -1,9 +1,15 @@
 **/*.pdf
 **/__pycache__
 **/.venv
+**/.vscode
+!/.vscode
+**/.ruff_cache
 **/.pdb
 **/build
 **/assets/bin
+**/src/assets
+**/src/gpu-upload.sh
+# This bash script invokes rsync to upload the local pytorch codebase to
 
 **/node_modules
 **/.cache
