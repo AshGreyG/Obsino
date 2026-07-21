@@ -34,3 +34,6 @@ order:
   specific:
     - "linear-regression"
     - "polynomial-regression"
+    - "softmax-regression"
+    - "l1-loss"
+    - "l2-loss"
