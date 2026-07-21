@@ -51,6 +51,12 @@
 /// -> content
 #let ub(c) = math.upright(math.bold(c))
 
+/// Functions for argmax operator
+///
+/// - c (content): The under index content of argmax
+/// -> c content
+#let argmax(c) = $limits("argmax")_(#c) space.en$
+
 // shortcut functions for code block utilities
 
 /// Functions for code block

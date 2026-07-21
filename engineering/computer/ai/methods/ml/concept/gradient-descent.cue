@@ -41,6 +41,6 @@ gradient_descent: {
       - $ub(w)$ is the weights and $b$ is the bias
 
     Frequently mini-batch size and learning rate are *user-defined*, such tunable
-    parameters that are not updated in the training loop are called *hyperparameter*s.
+    parameters that are not updated in the training loop are called *hyperparameter*.
   """#
 }

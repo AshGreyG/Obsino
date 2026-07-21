@@ -115,6 +115,8 @@
     "overfit",
     "overfitting",
     "vapnik",
-    "chervonenkis"
+    "chervonenkis",
+    "softmax",
+    "argmax"
   ],
 }
