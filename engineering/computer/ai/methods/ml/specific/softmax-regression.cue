@@ -88,6 +88,8 @@ softmax_regression: {
     This loss function is often called *cross-entropy loss*. Since $ub(y)$ is a
     one-hot vector of length $q$, the sum over its coordinates $j$ vanishes for
     all but one term.
+
+    \(figure_part_softmax_regression)
   """
   figure_part_fully_connected_layer: #"""
     #let fully-connected-layer = "assets/typst/fully-connected-layer.typ"
@@ -95,5 +97,23 @@ softmax_regression: {
       str(read(fully-connected-layer)),
       mode: "markup"
     )
+  """#
+  figure_part_softmax_regression: #"""
+    #align(center)[
+      #grid(
+        columns: (47%, 47%),
+        gutter: 5%,
+        align: top,
+
+        figure(
+          image("figures://softmax-train-loss"),
+          caption: [Loss-Epoch Curve During \ Image Classification Training]
+        ),
+        figure(
+          image("figures://softmax-train-accuracy"),
+          caption: [Training Set / Test Set Accuracy- \ Epoch Curve During Image Classification Training]
+        )
+      )
+    ]
   """#
 }
