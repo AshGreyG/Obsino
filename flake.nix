@@ -29,7 +29,7 @@
     let
       # Define the systems you want to support
       allSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
-      
+
       # A helper function to generate the shell for each system
       forAllSystems = f: nixpkgs.lib.genAttrs allSystems (system: f {
         pkgs = import nixpkgs { inherit system; };
@@ -85,6 +85,7 @@
                 echo "    → Compiled book copied to build/"
               else
                 echo "    x Make failed in $dir"
+                exit 1
               fi
 
               popd > /dev/null
@@ -100,6 +101,7 @@
               echo "✅ clean successfully"
             else
               echo "❌ failed to clean because there are no matched files"
+              exit 1
             fi
           '';
         };
@@ -141,7 +143,7 @@
               local dir="$1"
               local prefix="$2"
 
-              # Find immediate subdirectories that contain a Makefile (symlink) 
+              # Find immediate subdirectories that contain a Makefile (symlink)
               # OR contain subdirectories that eventually have a Makefile
 
               local find_excluded=()
