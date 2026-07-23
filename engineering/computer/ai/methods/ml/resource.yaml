@@ -31,6 +31,7 @@ order:
     - "training-error"
     - "hypothesis-space"
     - "gradient-descent"
+    - "vapnik-chervonenkis-dimension"
   specific:
     - "linear-regression"
     - "polynomial-regression"
