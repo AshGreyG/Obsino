@@ -1,0 +1,75 @@
+name: Knowledge Source
+description: Track a book, paper, project, or entity as source material for Obsino.
+title: "book[domain]: complete xxx book"
+labels:
+  - knowledge
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use one of these title formats:
+
+        - `book[<domain>]: <summary>`
+        - `paper[<domain>]: <summary>`
+        - `course[<domain>]: <summary>`
+        - `project[<open-source-project-name>]: <summary>`
+        - `entity[<entity-id>]: <summary>`
+
+        Examples:
+
+        - `book[probability]: complete Introduction to Probability`
+        - `paper[prediction]: summarize AlphaFold 3`
+        - `course[deep-learning]: complete LiMu Deep Learning Course`
+        - `project[lean4]: document theorem proving workflow`
+        - `entity[CVE-2024-3094]: analyze xz backdoor`
+  - type: dropdown
+    id: issue_category
+    attributes:
+      label: Issue Category
+      description: Select the source type. The issue title should use the matching prefix.
+      options:
+        - book[<domain>]
+        - paper[<domain>]
+        - course[<domain>]
+        - project[<open-source-project-name>]
+        - entity[<entity-id>]
+    validations:
+      required: true
+  - type: input
+    id: domain_or_id
+    attributes:
+      label: Domain, Project, or Entity ID
+      description: Use a knowledge-tree domain for books/papers, a project name for open-source projects, or an entity identifier such as CVE/protein/PDB ID.
+      placeholder: probability
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: Name, citation, URL, ISBN, DOI, repository, or entity page.
+      placeholder: "Book title, DOI, repository URL, CVE ID, PDB ID, UniProt ID, ..."
+    validations:
+      required: true
+  - type: textarea
+    id: knowledge_checklist
+    attributes:
+      label: Knowledge Checklist
+      description: For books, list chapter-level knowledge tasks. For other sources, list sections, claims, modules, or entities to extract.
+      value: |
+        - [ ] Chapter 1:
+        - [ ] Chapter 2:
+        - [ ] Chapter 3:
+    validations:
+      required: true
+  - type: textarea
+    id: placement_notes
+    attributes:
+      label: Placement Notes
+      description: Candidate Obsino modules, categories, or related concepts.
+      placeholder: |
+        - Module:
+        - Category:
+        - Related concepts:
+    validations:
+      required: false

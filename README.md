@@ -1,6 +1,6 @@
 <div align="center" name="markdown">
 
-![Obsino](https://socialify.git.ci/AshGreyG/Obsino/image?custom_language=Typst&description=1&font=Source+Code+Pro&language=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FNixOS%2Fnixos-artwork%2F9d2cdedd73d64a068214482902adea3d02783ba8%2Flogo%2Fnix-snowflake-colours.svg&name=1&owner=1&pattern=Transparent&theme=Dark)
+![Obsino](https://socialify.git.ci/AshGreyG/Obsino/image?custom_language=Typst&description=1&font=Source+Code+Pro&language=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FNixOS%2Fnixos-artwork%2F9d2cdedd73d64a068214482902adea3d02783ba8%2Flogo%2Fnix-snowflake-colours.svg&name=1&owner=1&pattern=Charlie+Brown&theme=Dark)
 
 [![build](https://img.shields.io/github/actions/workflow/status/AshGreyG/Obsino/nightly.yml?label=nightly)](https://github.com/AshGreyG/Obsino/actions/workflows/nightly.yml)
 [![status](https://img.shields.io/github/actions/workflow/status/AshGreyG/Obsino/status.yml?label=status)](https://github.com/AshGreyG/Obsino/actions/workflows/status.yml)
@@ -117,7 +117,7 @@ nix run .#status      # check the status of project
 
 ## ♻️ CI
 
-- A nightly GitHub Action builds all handbooks and publishes them as a pre-release.
+- A nightly GitHub Action builds all handbooks and publishes them as a latest build.
 - A status Github Action embeds the status to README.md.
 
 <div name="status-figure" align="center">

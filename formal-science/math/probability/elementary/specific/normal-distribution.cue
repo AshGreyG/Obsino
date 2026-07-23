@@ -74,9 +74,6 @@ normal_distribution: {
     #eval(
       str(read(normal-cdf)),
       mode: "markup",
-      scope: (
-        "erf": erf__abramowitz
-      )
     )
   """#
 }
