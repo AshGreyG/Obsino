@@ -11,13 +11,15 @@ body:
 
         - `book[<domain>]: <summary>`
         - `paper[<domain>]: <summary>`
+        - `course[<domain>]: <summary>`
         - `project[<open-source-project-name>]: <summary>`
         - `entity[<entity-id>]: <summary>`
 
         Examples:
 
         - `book[probability]: complete Introduction to Probability`
-        - `paper[biochemistry]: summarize AlphaFold 3`
+        - `paper[prediction]: summarize AlphaFold 3`
+        - `course[deep-learning]: complete LiMu Deep Learning Course`
         - `project[lean4]: document theorem proving workflow`
         - `entity[CVE-2024-3094]: analyze xz backdoor`
   - type: dropdown
@@ -28,6 +30,7 @@ body:
       options:
         - book[<domain>]
         - paper[<domain>]
+        - course[<domain>]
         - project[<open-source-project-name>]
         - entity[<entity-id>]
     validations:
