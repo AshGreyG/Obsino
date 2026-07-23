@@ -51,17 +51,6 @@ jobs:
 
           popd
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v6
-        with: 
-          version: 10
-
-      - name: Install Dependencies in .pipeline
-        run: |
-          pushd ./.pipeline/smiles
-          pnpm install
-          popd
-
       - name: Build Handbooks
         # This runs your custom Nix command which populates ./build
         run: nix run .#handbook
@@ -78,7 +67,7 @@ jobs:
 
           prerelease: false
           # This grabs every PDF in your build folder
-          files: build/*.pdf 
+          files: build/*.pdf
           # Overwrites the existing 'nightly' tag assets
           make_latest: true
         env:

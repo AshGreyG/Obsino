@@ -45,6 +45,7 @@
             typst
             typstyle
             jq
+            pnpm
           ];
           text = ''
             # Define workspace root (relative to where flake is)
@@ -52,8 +53,9 @@
             BUILD_DIR="$WORKSPACE_ROOT/build"
 
             if [[ ! -d ".pipeline/smiles/node_modules" ]]; then
-              echo "Error: .pipeline/smiles/node_modules is missing. Please run pnpm install in .pipeline/smiles"
-              exit 1
+              pushd .pipeline/smiles
+              pnpm install
+              popd
             fi
 
             # Debug for fonts list
@@ -259,6 +261,7 @@
             typst
             typstyle
             jq
+            pnpm
           ];
 
           shellHook = ''
@@ -268,6 +271,7 @@
             typst --version
             typstyle --version
             jq --version
+            pnpm --version
           '';
         };
       });
