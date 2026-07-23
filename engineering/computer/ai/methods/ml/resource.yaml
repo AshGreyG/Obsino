@@ -32,6 +32,7 @@ order:
     - "hypothesis-space"
     - "gradient-descent"
     - "vapnik-chervonenkis-dimension"
+    - "non-parametric-model"
   specific:
     - "linear-regression"
     - "polynomial-regression"
