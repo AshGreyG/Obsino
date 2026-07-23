@@ -72,9 +72,12 @@
   cols: none,
   fill: none,
 ) = {
+  let data = args.pos()
+  // current Typst version consider `args` as argument type and has no .len()
+  // method, we need convert it to array first
+
   // when rows and cols are given simultaneously
   if rows != none and cols != none {
-    let data = args
     let expected = rows * cols
     assert(
       data.len() <= expected,
@@ -92,7 +95,7 @@
       for j in range(1, cols + 1) {
         if (i - 1) * cols + j - 1 <= data.len() - 1 {
           // use named argument `default`
-          temp.push(args.at((i - 1) * cols + j - 1, default: fill))
+          temp.push(data.at((i - 1) * cols + j - 1, default: fill))
         } else {
           assert(
             fill != none,
@@ -118,8 +121,8 @@
   // we can only construct from `args`
   if (rows == none and cols == none) {
     let at-least-one-array = false
-    for i in range(args.len()) {
-      if type(args.at(i)) == array {
+    for i in range(data.len()) {
+      if type(data.at(i)) == array {
         at-least-one-array = true
         break
       }
@@ -132,16 +135,16 @@
     let result = ()
     let max-column = 1
     // first we need to specify the maximum length of input rows
-    for i in range(args.len()) {
-      if (type(args.at(i)) == array and args.at(i).len() > max-column) {
-        max-column = args.at(i).len()
+    for i in range(data.len()) {
+      if (type(data.at(i)) == array and data.at(i).len() > max-column) {
+        max-column = data.at(i).len()
       }
     }
-    for i in range(args.len()) {
+    for i in range(data.len()) {
       let temp = ()
-      let type-element = type(args.at(i))
+      let type-element = type(data.at(i))
       if (type-element == array) {
-        if max-column != args.at(i).len() {
+        if max-column != data.at(i).len() {
           // we also need to specify, when every row is not same length, is
           // provided `fill` parameter a number
           assert(
@@ -154,14 +157,14 @@
           )
         }
         for j in range(max-column) {
-          if (j <= args.at(i).len() - 1) {
-            temp.push(args.at(i).at(j))
+          if (j <= data.at(i).len() - 1) {
+            temp.push(data.at(i).at(j))
           } else {
             temp.push(fill)
           }
         }
       } else if type-element in (int, float) {
-        temp.push(args.at(i))
+        temp.push(data.at(i))
         for j in range(max-column - 1) {
           assert(
             fill != none,
