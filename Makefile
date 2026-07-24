@@ -25,6 +25,7 @@
 FILE ?= <file>
 TARGET ?= <target>
 DIR ?= <directory>
+PAPER ?= <paper>
 
 # Root directory
 ROOT := $(shell dirname $(shell readlink Makefile))
@@ -45,11 +46,11 @@ RESOURCE := resource.yaml
 PICTURES := $(ROOT)/pictures.yaml
 REMOTE_DOWNLOADS := download
 # Directories to ignore when generating handbook
-IGNORE_DIRS := cue.mod assets asset bin src
+IGNORE_DIRS := cue.mod assets asset bin src @paper
 # Set shell to bash for compatibility
 SHELL := /bin/bash
 
-.PHONY: single-export package-export handbook clean clean-cache help
+.PHONY: single-export package-export handbook paper clean clean-cache help
 
 # This subcommand exports a single cue file through the CUE package system
 # It extracts a specific property (TARGET) from a package and generates PDF
@@ -69,6 +70,100 @@ package-export:
 	@rm -f $(TEMP)
 	@rm -rf $(REMOTE_DOWNLOADS)
 	@echo "✅ successfully generate the pdf of content"
+
+# This subcommand exports paper notes into a PDF.
+# Paper metadata and note ordering are read from resource.yaml.
+paper:
+	@echo "→ Starting to export paper notes"; \
+	\
+	title_func() { \
+		local str="$$1"; \
+		str=$${str//-/ }; \
+		local -a words=($$str); \
+		local processed=""; \
+		for w in "$${words[@]}"; do \
+			processed+=" $${w^}"; \
+		done; \
+		echo "$$processed"; \
+	}; \
+	\
+	if [[ ! -f "$(RESOURCE)" ]]; then \
+		echo "x Missing $(RESOURCE); paper metadata and order are required"; \
+		exit 1; \
+	fi; \
+	\
+	paper_id="$(PAPER)"; \
+	if [[ -z "$$paper_id" || "$$paper_id" == "<paper>" ]]; then \
+		paper_id=$$(yq -r '.papers[0].id // ""' "$(RESOURCE)"); \
+	fi; \
+	if [[ -z "$$paper_id" || "$$paper_id" == "null" ]]; then \
+		echo "x No paper id found in $(RESOURCE)"; \
+		exit 1; \
+	fi; \
+	\
+	title=$$(PAPER_ID="$$paper_id" yq -r '.papers[] | select(.id == env(PAPER_ID)) | .title // ""' "$(RESOURCE)"); \
+	if [[ -z "$$title" ]]; then \
+		echo "x Paper not found in $(RESOURCE): $$paper_id"; \
+		exit 1; \
+	fi; \
+	journal=$$(PAPER_ID="$$paper_id" yq -r '.papers[] | select(.id == env(PAPER_ID)) | .journal // ""' "$(RESOURCE)"); \
+	doi=$$(PAPER_ID="$$paper_id" yq -r '.papers[] | select(.id == env(PAPER_ID)) | .doi // ""' "$(RESOURCE)"); \
+	date=$$(PAPER_ID="$$paper_id" yq -r '.papers[] | select(.id == env(PAPER_ID)) | .date // ""' "$(RESOURCE)"); \
+	output="paper-$$paper_id.pdf"; \
+	\
+	cat $(HEADER) > $(TEMP); \
+	echo "" >> $(TEMP); \
+	echo "#align(center)[= $$title]" >> $(TEMP); \
+	echo "" >> $(TEMP); \
+	if [[ -n "$$journal" && "$$journal" != "null" ]]; then \
+		echo "#align(center)[*Journal:* $$journal]" >> $(TEMP); \
+	fi; \
+	if [[ -n "$$doi" && "$$doi" != "null" ]]; then \
+		echo "#align(center)[*DOI:* #link(\"$$doi\")[$$doi]]" >> $(TEMP); \
+	fi; \
+	if [[ -n "$$date" && "$$date" != "null" ]]; then \
+		echo "#align(center)[*Date:* $$date]" >> $(TEMP); \
+	fi; \
+	echo "" >> $(TEMP); \
+	echo "#outline()" >> $(TEMP); \
+	echo "#pagebreak()" >> $(TEMP); \
+	\
+	wrote_notes=0; \
+	mapfile -t categories < <(PAPER_ID="$$paper_id" yq -r '.papers[] | select(.id == env(PAPER_ID)) | .order | to_entries | .[].key' "$(RESOURCE)" 2>/dev/null); \
+	for category in "$${categories[@]}"; do \
+		if [[ -z "$$category" || "$$category" == "null" ]]; then continue; fi; \
+		echo "→ Reading paper note category: $$category"; \
+		echo "== $$(title_func $$category)" >> $(TEMP); \
+		mapfile -t entries < <(PAPER_ID="$$paper_id" CATEGORY="$$category" yq -r '.papers[] | select(.id == env(PAPER_ID)) | .order[env(CATEGORY)][] // ""' "$(RESOURCE)" 2>/dev/null); \
+		for entry in "$${entries[@]}"; do \
+			if [[ -z "$$entry" || "$$entry" == "null" ]]; then continue; fi; \
+			cue_file="@paper/$$category/$$entry.cue"; \
+			if [[ ! -f "$$cue_file" ]]; then \
+				echo "! Warning: CUE file not found: $$cue_file"; \
+				continue; \
+			fi; \
+			echo "→   Exporting paper note $$cue_file"; \
+			property=$$(echo "$$entry" | sed -e 's/-/_/g'); \
+			echo "=== $$(title_func $$entry)" >> $(TEMP); \
+			raw_content=$$(cue export "$$cue_file" --out yaml | yq -r ".$$property.content"); \
+			raw_content=$$(echo "$$raw_content" | $(ROOT)/.pipeline/process-content.sh --downloads $(REMOTE_DOWNLOADS)); \
+			echo "$$raw_content" >> $(TEMP); \
+			wrote_notes=1; \
+		done; \
+	done; \
+	if [[ "$$wrote_notes" -eq 0 ]]; then \
+		echo "x No paper notes were exported for $$paper_id"; \
+		rm -f $(TEMP); \
+		exit 1; \
+	fi; \
+	echo "→ Formatting paper notes with typstyle"; \
+	typstyle -i $(TEMP); \
+	echo "→ Compiling paper notes to $$output"; \
+	typst compile --root $(ROOT) $(TEMP) "$$output"; \
+	echo "→ Cleaning up temporary files"; \
+	rm -f $(TEMP); \
+	rm -rf $(REMOTE_DOWNLOADS); \
+	echo "✅ successfully generated $$output"
 
 # This subcommand exports a single CUE file directly
 # It processes a single file and generates PDF from its content property
@@ -218,3 +313,10 @@ help:
 	@echo    "    use TARGET flag to export our target single file. Notice TARGET"
 	@echo    "    is not the file name but the property name in this package."
 	@echo    "    \"make package-export PACKAGE=formal-science.cs.algorithm/principle TARGET=maximum_subarray_problem_solution\""
+	@echo    ""
+	@echo -e " \033[32m paper PAPER=<paper-id> \033[0m"
+	@echo    ""
+	@echo    "  → paper will read papers[].metadata and papers[].order from resource.yaml,"
+	@echo    "    then compile ordered CUE fragments under @paper/ into one PDF."
+	@echo    "    PAPER defaults to the first papers[].id when omitted."
+	@echo    "    \"make paper PAPER=snac-db\""
