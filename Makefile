@@ -75,6 +75,9 @@ package-export:
 # Paper metadata and note ordering are read from resource.yaml.
 paper:
 	@echo "→ Starting to export paper notes"; \
+	# 1. Get all directories, filtering out ignored ones; \
+	i=0; \
+	t="ABCDEFGHIJKLMNOPQRSTUVWXYZ"; \
 	\
 	title_func() { \
 		local str="$$1"; \
@@ -133,7 +136,7 @@ paper:
 	for category in "$${categories[@]}"; do \
 		if [[ -z "$$category" || "$$category" == "null" ]]; then continue; fi; \
 		echo "→ Reading paper note category: $$category"; \
-		echo "== $$(title_func $$category)" >> $(TEMP); \
+		echo "#align(center)[= $${t:$$i:1} $$(title_func $$category)]" >> $(TEMP); \
 		mapfile -t entries < <(PAPER_ID="$$paper_id" CATEGORY="$$category" yq -r '.papers[] | select(.id == env(PAPER_ID)) | .order[env(CATEGORY)][] // ""' "$(RESOURCE)" 2>/dev/null); \
 		for entry in "$${entries[@]}"; do \
 			if [[ -z "$$entry" || "$$entry" == "null" ]]; then continue; fi; \
@@ -144,7 +147,7 @@ paper:
 			fi; \
 			echo "→   Exporting paper note $$cue_file"; \
 			property=$$(echo "$$entry" | sed -e 's/-/_/g'); \
-			echo "=== $$(title_func $$entry)" >> $(TEMP); \
+			echo "== $$(title_func $$entry)" >> $(TEMP); \
 			raw_content=$$(cue export "$$cue_file" --out yaml | yq -r ".$$property.content"); \
 			raw_content=$$(echo "$$raw_content" | $(ROOT)/.pipeline/process-content.sh --downloads $(REMOTE_DOWNLOADS)); \
 			echo "$$raw_content" >> $(TEMP); \
