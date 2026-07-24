@@ -221,12 +221,38 @@
                     local folder_name
                     folder_name=$(basename "''${path}")
 
+                    if [[ "$folder_name" == "@paper" ]]; then
+                      local paper_subdirs
+                      mapfile -t paper_subdirs < <(find "$path" -maxdepth 1 -mindepth 1 -type d | sort)
+
+                      for paper_path in "''${paper_subdirs[@]}"; do
+                        local paper_category
+                        paper_category=$(basename "''${paper_path}")
+
+                        pushd "$paper_path" > /dev/null
+
+                        local counts
+                        counts=$(find . -maxdepth 1 -name "*.cue" | wc -l)
+                        local lines
+                        lines=$(find . -maxdepth 1 -name "*.cue" -exec cat {} + | wc -l)
+
+                        total_counts=$(( total_counts + counts ))
+                        total_lines=$(( total_lines + lines ))
+
+                        echo -e "''${prefix}''${status_connector}  \033[35m[→] @paper/''${paper_category}: ''${counts} | ''${lines}\033[0m"
+
+                        popd > /dev/null
+                      done
+
+                      continue
+                    fi
+
                     pushd "$path" > /dev/null
 
                     local counts
-                    counts=$(find ./*.cue | wc -l)
+                    counts=$(find . -maxdepth 1 -name "*.cue" | wc -l)
                     local lines
-                    lines=$(find . -name "*.cue" -exec cat {} + | wc -l)
+                    lines=$(find . -maxdepth 1 -name "*.cue" -exec cat {} + | wc -l)
 
                     total_counts=$(( total_counts + counts ))
                     total_lines=$(( total_lines + lines ))
