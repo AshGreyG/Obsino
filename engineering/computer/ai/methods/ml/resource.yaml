@@ -39,3 +39,5 @@ order:
     - "softmax-regression"
     - "l1-loss"
     - "l2-loss"
+  principle:
+    - "pytorch-print-model"
