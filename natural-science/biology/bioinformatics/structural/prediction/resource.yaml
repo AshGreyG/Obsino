@@ -38,6 +38,8 @@ papers:
     date: "2026-06-20"
     completed: false
     order:
+      desire:
+        - "sabdab2-2026-desire"
       result:
         - "sabdab2-result-database"
 order:
