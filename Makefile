@@ -164,6 +164,7 @@ paper:
 			echo "$$raw_content" >> $(TEMP); \
 			wrote_notes=1; \
 		done; \
+    i=$$((i + 1)); \
 	done; \
 	if [[ "$$wrote_notes" -eq 0 ]]; then \
 		echo "x No paper notes were exported for $$paper_id"; \
