@@ -97,7 +97,18 @@ paper:
 	\
 	paper_id="$(PAPER)"; \
 	if [[ -z "$$paper_id" || "$$paper_id" == "<paper>" ]]; then \
-		paper_id=$$(yq -r '.papers[0].id // ""' "$(RESOURCE)"); \
+		mapfile -t paper_ids < <(yq -r '.papers[]?.id // ""' "$(RESOURCE)"); \
+		paper_count=0; \
+		for paper_id in "$${paper_ids[@]}"; do \
+			if [[ -z "$$paper_id" || "$$paper_id" == "null" ]]; then continue; fi; \
+			paper_count=$$((paper_count + 1)); \
+			$(MAKE) --no-print-directory paper PAPER="$$paper_id" || exit 1; \
+		done; \
+		if [[ "$$paper_count" -eq 0 ]]; then \
+			echo "x No paper ids found in $(RESOURCE)"; \
+			exit 1; \
+		fi; \
+		exit 0; \
 	fi; \
 	if [[ -z "$$paper_id" || "$$paper_id" == "null" ]]; then \
 		echo "x No paper id found in $(RESOURCE)"; \
@@ -321,5 +332,5 @@ help:
 	@echo    ""
 	@echo    "  → paper will read papers[].metadata and papers[].order from resource.yaml,"
 	@echo    "    then compile ordered CUE fragments under @paper/ into one PDF."
-	@echo    "    PAPER defaults to the first papers[].id when omitted."
+	@echo    "    When PAPER is omitted, every papers[].id is compiled in YAML order."
 	@echo    "    \"make paper PAPER=snac-db\""
