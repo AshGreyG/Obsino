@@ -31,5 +31,14 @@ papers:
     order:
       desire:
         - "snac-db-2026-limitation"
+  - id: "sabdab2"
+    title: "SAbDab2: The structural antibody database in the age of machine learning"
+    journal: "biorxiv"
+    doi: "https://doi.org/10.64898/2026.06.16.732554"
+    date: "2026-06-20"
+    completed: false
+    order:
+      result:
+        - "sabdab2-result-database"
 order:
   null
