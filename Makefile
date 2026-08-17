@@ -45,7 +45,7 @@ RESOURCE := resource.yaml
 PICTURES := $(ROOT)/pictures.yaml
 REMOTE_DOWNLOADS := download
 # Directories to ignore when generating handbook
-IGNORE_DIRS := cue.mod assets asset bin src
+IGNORE_DIRS := cue.mod assets asset bin src @paper
 # Set shell to bash for compatibility
 SHELL := /bin/bash
 
